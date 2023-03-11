@@ -13,6 +13,8 @@ public class Bus : MonoBehaviour
     private bool _inBus;
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
+    public BoxCollider2D wallTrigger;
+
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class Bus : MonoBehaviour
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
             _isDriving = true;
+            hospitalPoint.GetComponent<BoxCollider2D>().enabled = true;
             if (!bus.activeInHierarchy)
                 bus.SetActive(true);
         }
@@ -49,11 +52,17 @@ public class Bus : MonoBehaviour
             mainCamera.Follow = character.transform;
             _isDriving = false;
             _inBus = false;
+            hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(DrivingAway());
+        }
+
+        if (bus.GetComponent<BoxCollider2D>().IsTouching(wallTrigger))
+        {
+            wallTrigger.isTrigger = false;
         }
 
         if (_inBus)
             character.transform.position = bus.transform.position;
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -80,10 +89,18 @@ public class Bus : MonoBehaviour
 
     IEnumerator WaitForPlayer()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         character.GetComponent<SpriteRenderer>().enabled = false;
         mainCamera.Follow = bus.transform;
         _isDriving = true;
         _inBus = true;
+    }
+
+    IEnumerator DrivingAway()
+    {
+        yield return new WaitForSeconds(1.5f);
+        _isDriving = true;
+        yield return new WaitForSeconds(5f);
+        bus.SetActive(false);
     }
 }
