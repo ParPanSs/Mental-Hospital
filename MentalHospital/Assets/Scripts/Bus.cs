@@ -1,54 +1,76 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
 public class Bus : MonoBehaviour
 {
     public GameObject bus;
-    private float _speedOfBus = 5f;
+    private Rigidbody2D _busRb;
     public GameObject character;
     public Transform hospitalPoint;
     private bool _isInStation;
+    private bool _isDriving;
+    private bool _inBus;
     public Transform busSpawnPosition;
-    public Transform busStopPosition;
     public CinemachineVirtualCamera mainCamera;
-    
+
+    private void Start()
+    {
+        _busRb = bus.GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
+            character.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
-            bus.SetActive(true);
-            //if(bus.transform.position != gameObject.transform.position)
-            //StartCoroutine(WaitForPlayer());
-
+            _isDriving = true;
+            if (!bus.activeInHierarchy)
+                bus.SetActive(true);
         }
-        if(bus.transform.position.x < busStopPosition.position.x)
-            bus.transform.Translate(new Vector3(_speedOfBus * Time.deltaTime, 0, 0));
+
+        if (_isDriving)
+        {
+            _busRb.bodyType = RigidbodyType2D.Dynamic;
+            _busRb.AddForce(Vector2.right, ForceMode2D.Force);
+        }
         else
         {
-            bus.transform.Translate(new Vector3(0, 0, 0));
-            StartCoroutine(WaitForPlayer());
+            _busRb.Sleep();
+            _busRb.bodyType = RigidbodyType2D.Kinematic;
         }
+        
+        if (bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
+        {
+            character.GetComponent<SpriteRenderer>().enabled = true;
+            character.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            mainCamera.Follow = character.transform;
+            _isDriving = false;
+            _inBus = false;
+        }
+
+        if (_inBus)
+            character.transform.position = bus.transform.position;
 
     }
-    /*
-    void Minibus()
-    {
-        while (bus.transform.position != gameObject.transform.position)
-        {
-            bus.transform.position = new Vector2(bus.transform.position.x + 2, bus.transform.position.y);
-        }
 
-    }*/
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bus"))
+        {
+            _isDriving = false;
+            StartCoroutine(WaitForPlayer());
+        }
+        
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player")) 
             _isInStation = true;
+        
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -58,19 +80,10 @@ public class Bus : MonoBehaviour
 
     IEnumerator WaitForPlayer()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         character.GetComponent<SpriteRenderer>().enabled = false;
-
-        //character.GetComponent<Rigidbody2D>().velocity = new Vector2(_speedOfBus * Time.deltaTime, 0);
         mainCamera.Follow = bus.transform;
-        bus.transform.Translate(new Vector3(_speedOfBus * Time.deltaTime, 0, 0));
-        if (bus.transform.position.x > hospitalPoint.position.x)
-        {
-            character.transform.position = new Vector2(hospitalPoint.position.x, hospitalPoint.transform.position.y);
-            character.GetComponent<SpriteRenderer>().enabled = true;
-            mainCamera.Follow = character.transform;
-            bus.transform.position = hospitalPoint.position;
-
-        }
+        _isDriving = true;
+        _inBus = true;
     }
 }
