@@ -5,7 +5,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
 
-    private float _speed = 5f;
+    private float _speed = 3.5f;
     private float _horizontal;
     private float _vertical;
 
