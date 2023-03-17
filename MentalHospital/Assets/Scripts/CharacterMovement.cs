@@ -1,11 +1,12 @@
+using UnityEditor;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Animator _animator;
-
-    private float _speed = 2.5f;
+    
+    private readonly float _speed = 4.5f;
     private float _horizontal;
     private float _vertical;
 
@@ -19,7 +20,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        Flip();
+        if (Input.GetKeyDown(0))
+        {
+        }
+        if(_rb.bodyType != RigidbodyType2D.Static)
+            Flip();
     }
 
     void FixedUpdate()
@@ -27,7 +32,7 @@ public class CharacterMovement : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal") * _speed;
         _vertical = Input.GetAxis("Vertical") * _speed;
         _rb.velocity = new Vector2(_horizontal, _vertical);
-        if (_horizontal != 0 || _vertical != 0)
+        if ((_horizontal != 0 || _vertical != 0) && _rb.bodyType != RigidbodyType2D.Static)
         {
             _animator.SetBool("isWalk", true);
         }
