@@ -5404,6 +5404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735ea8a6feb904286a99e6a9d9739029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: {fileID: 1518538300}
   miniGame: {fileID: 847460028}
 --- !u!50 &492876633
 Rigidbody2D:
@@ -14655,6 +14656,7 @@ MonoBehaviour:
   bus: {fileID: 5610143051614237767}
   character: {fileID: 492876629}
   hospitalPoint: {fileID: 1394114113}
+  canMove: 1
   busSpawnPosition: {fileID: 205505515}
   mainCamera: {fileID: 772181210}
   wallTrigger: {fileID: 1765712139}

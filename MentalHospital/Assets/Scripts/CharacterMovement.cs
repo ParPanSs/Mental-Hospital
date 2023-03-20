@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public Bus canMove;
     private Rigidbody2D _rb;
     private Animator _animator;
     public GameObject miniGame;
@@ -20,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if (miniGame.activeInHierarchy)
+        if (miniGame.activeInHierarchy || !canMove.canMove)
             _rb.bodyType = RigidbodyType2D.Static;
         else
             _rb.bodyType = RigidbodyType2D.Dynamic;

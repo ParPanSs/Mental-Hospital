@@ -11,6 +11,7 @@ public class Bus : MonoBehaviour
     private bool _isInStation;
     private bool _isDriving;
     private bool _inBus;
+    public bool canMove = true;
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
     public BoxCollider2D wallTrigger;
@@ -25,6 +26,7 @@ public class Bus : MonoBehaviour
     {
         if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
+            canMove = false;
             character.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
@@ -32,6 +34,7 @@ public class Bus : MonoBehaviour
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = true;
             if (!bus.activeInHierarchy)
                 bus.SetActive(true);
+            
         }
 
         if (_isDriving)
@@ -47,6 +50,7 @@ public class Bus : MonoBehaviour
         
         if (bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
         {
+            canMove = true;
             character.GetComponent<SpriteRenderer>().enabled = true;
             character.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             mainCamera.Follow = character.transform;
@@ -100,7 +104,7 @@ public class Bus : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         _isDriving = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         bus.SetActive(false);
     }
 }
