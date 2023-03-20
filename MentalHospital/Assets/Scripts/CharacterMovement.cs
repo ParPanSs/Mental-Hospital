@@ -1,10 +1,10 @@
-using UnityEditor;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Animator _animator;
+    public GameObject miniGame;
     
     private readonly float _speed = 4.5f;
     private float _horizontal;
@@ -20,9 +20,10 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(0))
-        {
-        }
+        if (miniGame.activeInHierarchy)
+            _rb.bodyType = RigidbodyType2D.Static;
+        else
+            _rb.bodyType = RigidbodyType2D.Dynamic;
         if(_rb.bodyType != RigidbodyType2D.Static)
             Flip();
     }
