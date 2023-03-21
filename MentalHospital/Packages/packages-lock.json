@@ -1,10 +1,11 @@
 {
   "dependencies": {
     "com.gametoolkit.localization": {
-      "version": "file:/Users/parpanss/Downloads/GameToolkit-Localization-master/Packages/com.gametoolkit.localization",
+      "version": "https://github.com/ibrahimpenekli/GameToolkit-Localization.git#2.2.1",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "758fae11aab7ed38cbd2e13ff4237322c9a5269b"
     },
     "com.unity.2d.animation": {
       "version": "8.0.4",
