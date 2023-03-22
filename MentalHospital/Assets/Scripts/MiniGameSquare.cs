@@ -118,11 +118,15 @@ public class MiniGameSquare : MonoBehaviour
 
     IEnumerator CloseMiniGame()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         foreach (var border in worldBorders)
         {
             border.isTrigger = false;
         }
-        miniGame.SetActive(false);
+
+        if (introversion.text == "10/10" || extraversion.text == "10/10")
+            miniGame.SetActive(false);
+        else
+            StartCoroutine(CloseMiniGame());
     }
 }
