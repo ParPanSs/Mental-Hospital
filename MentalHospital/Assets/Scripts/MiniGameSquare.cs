@@ -36,7 +36,7 @@ public class MiniGameSquare : MonoBehaviour
                 collider: introversionWall.GetComponent<PolygonCollider2D>()
             )).ToList();
             touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
-            introversion.text = touchedDot.Count.ToString();
+            introversion.text = touchedDot.Count + "/10";
         }
         for (int i = 0; i < dots.Length; i++)
         {
@@ -44,7 +44,7 @@ public class MiniGameSquare : MonoBehaviour
                 collider: _rb.transform.GetChild(1).GetComponent<CircleCollider2D>()
             )).ToList();
             touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
-            extraversion.text = touchedDot.Count.ToString();
+            extraversion.text = touchedDot.Count + "/10";
         }
 
         if (introversion.text == "10" || extraversion.text == "10")

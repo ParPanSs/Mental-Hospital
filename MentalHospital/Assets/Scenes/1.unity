@@ -4959,12 +4959,12 @@ PolygonCollider2D:
       - {x: 0.53791237, y: 0.5435739}
       - {x: 0.53866005, y: -0.2247298}
       - {x: 0.5391407, y: -0.5295275}
-      - {x: 0.5701828, y: -0.5553763}
-      - {x: 0.56624985, y: 0.5711636}
-      - {x: -0.56264114, y: 0.57581604}
-      - {x: -0.569213, y: -0.49305078}
-      - {x: -0.57342285, y: -0.5643264}
-      - {x: 0.57342875, y: -0.5643263}
+      - {x: 0.97086716, y: -0.9464979}
+      - {x: 0.88863945, y: 0.7582219}
+      - {x: -1.023201, y: 0.7458688}
+      - {x: -0.9652949, y: -0.48171395}
+      - {x: -0.8405451, y: -0.79106355}
+      - {x: 0.8497635, y: -0.83641094}
       - {x: 0.5260668, y: -0.5285964}
   m_UseDelaunayMesh: 0
 --- !u!1 &459396471
@@ -13335,7 +13335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80.6, y: 49.6}
+  m_AnchoredPosition: {x: -123.03, y: 49.6}
   m_SizeDelta: {x: 21.7907, y: 27.816}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326923178
@@ -13360,8 +13360,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
+  m_sharedMaterial: {fileID: 497740587192337113, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13421,7 +13421,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.59332275, y: -4.03598, z: -23.710327, w: 1.1931725}
+  m_margin: {x: 0.59332275, y: -4.03598, z: -80.64818, w: 1.1931725}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18956,8 +18956,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
+  m_sharedMaterial: {fileID: 497740587192337113, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19017,7 +19017,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -25.426483, w: 0}
+  m_margin: {x: 0, y: 0, z: -90.31769, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
