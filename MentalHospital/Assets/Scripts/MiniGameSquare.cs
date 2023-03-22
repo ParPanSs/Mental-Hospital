@@ -25,6 +25,7 @@ public class MiniGameSquare : MonoBehaviour
     //interact
     public GameObject introversionWall;
     public GameObject miniGame;
+    public BoxCollider2D[] worldBorders;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -71,7 +72,7 @@ public class MiniGameSquare : MonoBehaviour
                     )).ToList();
                     touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
                     touchedDot.ForEach(d => 
-                        d.AddForce((d.position - (Vector2)gameObject.transform.position).normalized * _speed));
+                        d.AddForce((d.position - (Vector2)gameObject.transform.position).normalized * 0.5f));
                 }
             }
             else
@@ -103,7 +104,7 @@ public class MiniGameSquare : MonoBehaviour
                     )).ToList();
                     touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
                     touchedDot.ForEach(d => 
-                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * _speed));
+                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * 0.5f));
                 }
             }
         }
@@ -118,6 +119,10 @@ public class MiniGameSquare : MonoBehaviour
     IEnumerator CloseMiniGame()
     {
         yield return new WaitForSeconds(1f);
+        foreach (var border in worldBorders)
+        {
+            border.isTrigger = false;
+        }
         miniGame.SetActive(false);
     }
 }
