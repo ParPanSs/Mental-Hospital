@@ -8,6 +8,8 @@ using Unity.VisualScripting;
 public class MiniGameSquare : MonoBehaviour
 {
     private bool _isTouchingDot;
+
+    private bool _isTouchingWall;
     //square moving
     private Rigidbody2D _rb;
     
@@ -47,7 +49,7 @@ public class MiniGameSquare : MonoBehaviour
             extraversion.text = touchedDot.Count + "/10";
         }
 
-        if (introversion.text == "10" || extraversion.text == "10")
+        if (introversion.text == "10/10" || extraversion.text == "10/10")
             StartCoroutine(CloseMiniGame());
     }
 
@@ -79,7 +81,16 @@ public class MiniGameSquare : MonoBehaviour
                     var touchedDot = dots.Where(d => d.IsTouching(
                         collider: _rb.GetComponentInChildren<CircleCollider2D>()
                     )).ToList();
-                    touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = true);
+                    touchedDot.ForEach(d =>
+                    {
+                        var isTrigger = d.IsTouching(
+                            introversionWall.GetComponent<PolygonCollider2D>());
+                        if (isTrigger)
+                            d.GetComponent<CircleCollider2D>().isTrigger = false;
+                        else
+                            d.GetComponent<CircleCollider2D>().isTrigger = true;
+
+                    });
                 }
             }
 
@@ -95,19 +106,9 @@ public class MiniGameSquare : MonoBehaviour
                         d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * _speed));
                 }
             }
-            else
-            {
-                for (int i = 0; i < dots.Length; i++)
-                {
-                    var touchedDot = dots.Where(d => d.IsTouching(
-                        collider: _rb.GetComponentInChildren<CircleCollider2D>()
-                    )).ToList();
-                    touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = true);
-                }
-            }
         }
     }
-
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Dot"))
