@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -6,6 +8,9 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
     public GameObject miniGame;
+    public Dialog momsDialog;
+
+    public bool _nearMom;
     
     private readonly float _speed = 4.5f;
     private float _horizontal;
@@ -25,8 +30,16 @@ public class CharacterMovement : MonoBehaviour
             _rb.bodyType = RigidbodyType2D.Static;
         else
             _rb.bodyType = RigidbodyType2D.Dynamic;
-        if(_rb.bodyType != RigidbodyType2D.Static)
+        if (_rb.bodyType != RigidbodyType2D.Static)
+        {
             Flip();
+            if (Input.GetKeyDown(KeyCode.L))
+                SceneManager.LoadScene(1);
+        }
+
+        if (_nearMom)
+        {
+        }
     }
 
     void FixedUpdate()
@@ -52,6 +65,14 @@ public class CharacterMovement : MonoBehaviour
             _isFacingRight = !_isFacingRight;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Mom"))
+        {
+            FindObjectOfType<DialogTrigger>().TriggerDialogue();
         }
     }
 }

@@ -35,18 +35,20 @@ public class MiniGameSquare : MonoBehaviour
             var touchedDot = dots.Where(d => d.IsTouching(
                 collider: introversionWall.GetComponent<PolygonCollider2D>()
             )).ToList();
+            touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
             introversion.text = touchedDot.Count.ToString();
         }
         for (int i = 0; i < dots.Length; i++)
         {
             var touchedDot = dots.Where(d => d.IsTouching(
-                collider: _rb.GetComponentInChildren<CircleCollider2D>()
+                collider: _rb.transform.GetChild(1).GetComponent<CircleCollider2D>()
             )).ToList();
+            touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
             extraversion.text = touchedDot.Count.ToString();
         }
 
         if (introversion.text == "10" || extraversion.text == "10")
-            StartCoroutine(CLoseMiniGame());
+            StartCoroutine(CloseMiniGame());
     }
 
     private void FixedUpdate()
@@ -65,7 +67,19 @@ public class MiniGameSquare : MonoBehaviour
                     var touchedDot = dots.Where(d => d.IsTouching(
                         collider: _rb.GetComponentInChildren<CircleCollider2D>()
                     )).ToList();
-                    touchedDot.ForEach(d => d.AddForce(Vector2.left, ForceMode2D.Force));
+                    touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
+                    touchedDot.ForEach(d => 
+                        d.AddForce((d.position - (Vector2)gameObject.transform.position).normalized * _speed));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dots.Length; i++)
+                {
+                    var touchedDot = dots.Where(d => d.IsTouching(
+                        collider: _rb.GetComponentInChildren<CircleCollider2D>()
+                    )).ToList();
+                    touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = true);
                 }
             }
 
@@ -76,7 +90,19 @@ public class MiniGameSquare : MonoBehaviour
                     var touchedDot = dots.Where(d => d.IsTouching(
                         collider: _rb.GetComponentInChildren<CircleCollider2D>()
                     )).ToList();
-                    touchedDot.ForEach(d => d.position = new Vector2(_rb.position.x + .25f, _rb.position.y));
+                    touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
+                    touchedDot.ForEach(d => 
+                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * _speed));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dots.Length; i++)
+                {
+                    var touchedDot = dots.Where(d => d.IsTouching(
+                        collider: _rb.GetComponentInChildren<CircleCollider2D>()
+                    )).ToList();
+                    touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = true);
                 }
             }
         }
@@ -88,7 +114,7 @@ public class MiniGameSquare : MonoBehaviour
             _isTouchingDot = true;
     }
 
-    IEnumerator CLoseMiniGame()
+    IEnumerator CloseMiniGame()
     {
         yield return new WaitForSeconds(1f);
         miniGame.SetActive(false);
