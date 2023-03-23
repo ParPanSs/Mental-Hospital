@@ -72,7 +72,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (col.CompareTag("Mom"))
         {
-            FindObjectOfType<DialogTrigger>().TriggerDialogue();
+            FindObjectOfType<DialogManager>().StartDialogue(momsDialog);
         }
     }
 }

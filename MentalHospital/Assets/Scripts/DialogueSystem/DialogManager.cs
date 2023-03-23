@@ -16,12 +16,11 @@ public class DialogManager : MonoBehaviour
     public void StartDialogue(Dialog dialogue)
     {
         animator.SetBool("IsOpen", true);
+        dialogueText.text = "";
         _sentences.Clear();
 
-        foreach (string sentence in _sentences)
-        {        
-            Debug.Log(sentence);
-
+        foreach (string sentence in dialogue.sentences)
+        {
             _sentences.Enqueue(sentence);
         }
 
@@ -33,11 +32,10 @@ public class DialogManager : MonoBehaviour
         if (_sentences.Count == 0)
         {
             EndDialogue();
-            return;
         }
 
         string sentence = _sentences.Dequeue();
-        StopAllCoroutines();
+        //StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
 
@@ -53,6 +51,5 @@ public class DialogManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-
     }
 }
