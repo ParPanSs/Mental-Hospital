@@ -18,16 +18,16 @@ MonoBehaviour:
       m_Name: English
       m_Code: en
       m_Custom: 0
-    m_Value: This is an example of localization.
+    m_Value: Settings
   - m_Language: -1
     m_Language2:
       m_Name: Czech
       m_Code: cs
       m_Custom: 0
-    m_Value: "To je p\u0159\xEDklad lokalizaci."
+    m_Value: "Nastaven\xED"
   - m_Language: -1
     m_Language2:
       m_Name: Russian
       m_Code: ru
       m_Custom: 0
-    m_Value: "\u042D\u0442\u043E \u043F\u0440\u0438\u043C\u0435\u0440 \u043B\u043E\u043A\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438."
+    m_Value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"

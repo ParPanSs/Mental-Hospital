@@ -104,7 +104,7 @@ public class MiniGameSquare : MonoBehaviour
                     )).ToList();
                     touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
                     touchedDot.ForEach(d => 
-                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * 0.5f));
+                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * 6f));
                 }
             }
         }

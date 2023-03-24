@@ -33,12 +33,6 @@ public class CharacterMovement : MonoBehaviour
         if (_rb.bodyType != RigidbodyType2D.Static)
         {
             Flip();
-            if (Input.GetKeyDown(KeyCode.L))
-                SceneManager.LoadScene(1);
-        }
-
-        if (_nearMom)
-        {
         }
     }
 
@@ -74,5 +68,11 @@ public class CharacterMovement : MonoBehaviour
         {
             FindObjectOfType<DialogManager>().StartDialogue(momsDialog);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Mom"))
+            FindObjectOfType<DialogManager>().EndDialogue();
     }
 }
