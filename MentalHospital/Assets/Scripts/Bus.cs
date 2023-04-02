@@ -6,16 +6,15 @@ public class Bus : MonoBehaviour
 {
     public GameObject bus;
     private Rigidbody2D _busRb;
-    public GameObject character;
+    [SerializeField] private CharacterController character;
     public Transform hospitalPoint;
     private bool _isInStation;
     private bool _isDriving;
     private bool _inBus;
-    public bool canMove = true;
+    private bool _canMove = true;
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
     public BoxCollider2D wallTrigger;
-
 
     private void Start()
     {
@@ -26,21 +25,20 @@ public class Bus : MonoBehaviour
     {
         if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
-            canMove = false;
-            character.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            _canMove = !_canMove;
+            character.rb.bodyType = RigidbodyType2D.Static;
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
             _isDriving = true;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = true;
             if (!bus.activeInHierarchy)
                 bus.SetActive(true);
-            
         }
 
         if (_isDriving)
         {
             _busRb.bodyType = RigidbodyType2D.Dynamic;
-            _busRb.AddForce(Vector2.right, ForceMode2D.Force);
+            _busRb.AddForce(Vector2.right.normalized * 0.5f);
         }
         else
         {
@@ -50,10 +48,10 @@ public class Bus : MonoBehaviour
         
         if (bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
         {
-            canMove = true;
-            character.GetComponent<SpriteRenderer>().enabled = true;
-            character.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            mainCamera.Follow = character.transform;
+            _canMove = !_canMove;
+            character.rb.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            character.rb.bodyType = RigidbodyType2D.Dynamic;
+            mainCamera.Follow = character.gameObject.transform;
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
@@ -94,7 +92,7 @@ public class Bus : MonoBehaviour
     IEnumerator WaitForPlayer()
     {
         yield return new WaitForSeconds(1.5f);
-        character.GetComponent<SpriteRenderer>().enabled = false;
+        character.rb.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         mainCamera.Follow = bus.transform;
         _isDriving = true;
         _inBus = true;

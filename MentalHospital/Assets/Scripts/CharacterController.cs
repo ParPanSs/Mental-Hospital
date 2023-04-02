@@ -1,16 +1,11 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
-    public Bus canMove;
     private Rigidbody2D _rb;
+    public Rigidbody2D rb => _rb;
     private Animator _animator;
-    public GameObject miniGame;
     public Dialog momsDialog;
-
-    public bool _nearMom;
     
     private readonly float _speed = 4.5f;
     private float _horizontal;
@@ -24,30 +19,19 @@ public class CharacterMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (miniGame.activeInHierarchy || !canMove.canMove)
-            _rb.bodyType = RigidbodyType2D.Static;
-        else
-            _rb.bodyType = RigidbodyType2D.Dynamic;
-        if (_rb.bodyType != RigidbodyType2D.Static)
-        {
-            Flip();
-        }
-    }
-
     void FixedUpdate()
     {
         _horizontal = Input.GetAxis("Horizontal") * _speed;
         _vertical = Input.GetAxis("Vertical") * _speed;
-        _rb.velocity = new Vector2(_horizontal, _vertical);
-        if ((_horizontal != 0 || _vertical != 0) && _rb.bodyType != RigidbodyType2D.Static)
+        
+        if (_rb.bodyType != RigidbodyType2D.Static)
         {
-            _animator.SetBool("isWalk", true);
-        }
-        else
-        {
-            _animator.SetBool("isWalk", false);
+            Flip();
+            _rb.velocity = new Vector2(_horizontal, _vertical);
+            if (_horizontal != 0 || _vertical != 0)
+                _animator.SetBool("isWalk", true);
+            else
+                _animator.SetBool("isWalk", false);
         }
     }
 

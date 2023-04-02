@@ -3,29 +3,27 @@ using System.Collections;
 using UnityEngine;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class MiniGameSquare : MonoBehaviour
 {
     private bool _isTouchingDot;
 
     private bool _isTouchingWall;
+    
     //square moving
     private Rigidbody2D _rb;
-    
-    private readonly float _speed = 3f;
+    private readonly float _speed = 1f;
     
     //dots
     public Rigidbody2D[] dots;
     
     //text
-    public TextMeshProUGUI introversion;
-    public TextMeshProUGUI extraversion;
+    public TextMeshProUGUI introversionCounter;
+    public TextMeshProUGUI extraversionCounter;
     
     //interact
-    public GameObject introversionWall;
-    public GameObject miniGame;
-    public BoxCollider2D[] worldBorders;
+    public GameObject miniGameBorder;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -35,22 +33,20 @@ public class MiniGameSquare : MonoBehaviour
     {
         for (int i = 0; i < dots.Length; i++)
         {
-            var touchedDot = dots.Where(d => d.IsTouching(
-                collider: introversionWall.GetComponent<PolygonCollider2D>()
+            var pushedDot = dots.Where(d => d.IsTouching(
+                collider: miniGameBorder.GetComponent<PolygonCollider2D>()
             )).ToList();
-            touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
-            introversion.text = touchedDot.Count + "/10";
-        }
-        for (int i = 0; i < dots.Length; i++)
-        {
-            var touchedDot = dots.Where(d => d.IsTouching(
+            pushedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
+            introversionCounter.text = pushedDot.Count + "/10";
+            
+            var pulledDot = dots.Where(d => d.IsTouching(
                 collider: _rb.transform.GetChild(1).GetComponent<CircleCollider2D>()
             )).ToList();
-            touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
-            extraversion.text = touchedDot.Count + "/10";
+            //pulledDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
+            extraversionCounter.text = pulledDot.Count + "/10";
         }
 
-        if (introversion.text == "10/10" || extraversion.text == "10/10")
+        if (introversionCounter.text == "10/10" || extraversionCounter.text == "10/10")
             StartCoroutine(CloseMiniGame());
     }
 
@@ -84,8 +80,7 @@ public class MiniGameSquare : MonoBehaviour
                     )).ToList();
                     touchedDot.ForEach(d =>
                     {
-                        var isTrigger = d.IsTouching(
-                            introversionWall.GetComponent<PolygonCollider2D>());
+                        var isTrigger = d.IsTouching(miniGameBorder.GetComponent<PolygonCollider2D>());
                         if (isTrigger)
                             d.GetComponent<CircleCollider2D>().isTrigger = false;
                         else
@@ -104,7 +99,7 @@ public class MiniGameSquare : MonoBehaviour
                     )).ToList();
                     touchedDot.ForEach(d => d.GetComponent<CircleCollider2D>().isTrigger = false);
                     touchedDot.ForEach(d => 
-                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * 6f));
+                        d.AddForce(((Vector2)gameObject.transform.position - d.position).normalized * 2f));
                 }
             }
         }
@@ -118,15 +113,11 @@ public class MiniGameSquare : MonoBehaviour
 
     IEnumerator CloseMiniGame()
     {
-        yield return new WaitForSeconds(2f);
-        foreach (var border in worldBorders)
-        {
-            border.isTrigger = false;
-        }
-
-        if (introversion.text == "10/10" || extraversion.text == "10/10")
-            miniGame.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        if (introversionCounter.text == "10/10" || extraversionCounter.text == "10/10")
+            SceneManager.LoadScene(2);
         else
-            StartCoroutine(CloseMiniGame());
+            StopCoroutine(CloseMiniGame());
+
     }
 }
