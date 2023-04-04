@@ -1,15 +1,27 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour, IDropHandler
+public class ItemSlot : MonoBehaviour
 {
-    public void OnDrop(PointerEventData eventData)
+    /*private bool isOccupied = false;
+    private DragNDrop draggableObject;
+
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnDrop");
-        if (eventData.pointerDrag != null)
+        if (col.gameObject.GetComponent<DragNDrop>() != null && !isOccupied)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-                GetComponent<RectTransform>().anchoredPosition;
+            draggableObject = col.gameObject.GetComponent<DragNDrop>();
+            isOccupied = true;
+            draggableObject.transform.position = transform.position;
+            draggableObject.GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.GetComponent<DragNDrop>() != null)
+        {
+            isOccupied = false;
+            draggableObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        }
+    }*/
 }

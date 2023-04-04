@@ -1,47 +1,66 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class DragNDrop : MonoBehaviour
 {
-    [SerializeField] private Canvas canvas;
-    
-    private RectTransform _rectTransform;
-    private CanvasGroup _canvasGroup;
+    private bool isDragging = false;
+    private Vector3 startPosition;
+    private Transform startParent;
 
-    private void Awake()
+    private void Start()
     {
-        _rectTransform = GetComponent<RectTransform>();
-        _canvasGroup = GetComponent<CanvasGroup>();
+        startPosition = transform.position;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void OnMouseDown()
     {
-        Debug.Log("OnPointerDown");
+        if (!isDragging)
+        {
+            startParent = transform.parent;
+            isDragging = true;
+        }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    private void OnMouseDrag()
     {
-        Debug.Log("OnBeginDrag");
-        _canvasGroup.blocksRaycasts = false;
-        _canvasGroup.alpha = .6f;
+        if (isDragging)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
+        }
     }
 
-    public void OnDrag(PointerEventData eventData)
+    private void OnMouseUp()
     {
-        Debug.Log("OnDrag");
-        _rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-    }
+        isDragging = false;
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Debug.Log("OnEndDrag");
-        _canvasGroup.blocksRaycasts = true;
-        _canvasGroup.alpha = 1f;
-    }
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        
+        bool isOverSlot = false;
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Slot"))
+            {
+                if (collider.gameObject.transform.childCount >= 1)
+                {
+                    transform.position = startPosition;
+                }
+                else
+                {
+                    transform.position = collider.transform.position;
+                    transform.SetParent(collider.transform);
+                    isOverSlot = true;
+                    break;
+                }
+            }
+
+            
+        }
+
+        if (!isOverSlot)
+        {
+            transform.position = startPosition;
+            transform.SetParent(startParent);
+        }
     }
 }

@@ -83,14 +83,14 @@ public class MiniGameSquare : MonoBehaviour
                         var isTrigger = d.IsTouching(miniGameBorder.GetComponent<PolygonCollider2D>());
                         if (isTrigger)
                             d.GetComponent<CircleCollider2D>().isTrigger = false;
-                        else
-                            d.GetComponent<CircleCollider2D>().isTrigger = true;
+                        /*else
+                            d.GetComponent<CircleCollider2D>().isTrigger = true;*/
 
                     });
                 }
             }
 
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))
             {
                 for (int i = 0; i < dots.Length; i++)
                 {

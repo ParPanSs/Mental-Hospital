@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Bus
   - Dot
+  - Slot
+  - Draggable
+  - Bounds
+  - GameField
   layers:
   - Default
   - TransparentFX
