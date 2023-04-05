@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dog_anim_1_0
+      name: Dog_Anim_1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 282
-        width: 68
-        height: 94
+        y: 618
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4b6dd9ac02a44bde8f67919440df983
-      internalID: -1317495736
+      spriteID: 558a38640185e4dd9946d00aa3fe3a48
+      internalID: -361956866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_1
+      name: Dog_Anim_1_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 282
-        width: 68
-        height: 94
+        x: 148
+        y: 618
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118a90054ab2b4f32bee28891b800f0f
-      internalID: -443504742
+      spriteID: cc01564c1edcd4eb39f69cd63ddf51a7
+      internalID: 77673169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_2
+      name: Dog_Anim_1_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 282
-        width: 68
-        height: 94
+        x: 296
+        y: 618
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2653661192b9c44a389ec7ad2c83d097
-      internalID: -1277363482
+      spriteID: 0cba29c498c3c4c65b0a37c335aa55cd
+      internalID: -697332269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_3
+      name: Dog_Anim_1_3
       rect:
         serializedVersion: 2
-        x: 204
-        y: 282
-        width: 68
-        height: 94
+        x: 444
+        y: 618
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,104 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9916005c459464c75b8a8c0ce9494e66
-      internalID: -699967402
+      spriteID: dd349586a2e2e4f3fa303c7f6a036266
+      internalID: 1296416222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 188
-        width: 68
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93f1c9b50432941348e1e56cbeff6acf
-      internalID: 1454647754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog_anim_1_5
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 188
-        width: 68
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d87df67f84d77473da5eed4536dae391
-      internalID: 122826019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog_anim_1_6
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 188
-        width: 68
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad304df1fbfe64fc7afccbff87fcafc0
-      internalID: -1643356818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog_anim_1_7
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 188
-        width: 68
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f22959cb9954848af94ff29dada9a0e1
-      internalID: 1123123859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog_anim_1_8
+      name: Dog_Anim_1_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 94
-        width: 68
-        height: 94
+        y: 412
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63cdc5ee5fc6e40f8b9fdb6cec3b73ff
-      internalID: 1277287109
+      spriteID: 0d68a67a57dca43ada05ebf6c599ebe6
+      internalID: 1793272896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_9
+      name: Dog_Anim_1_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 94
-        width: 68
-        height: 94
+        x: 148
+        y: 412
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba24ae8a132464326819753a8579d979
-      internalID: -273064
+      spriteID: 5fb19b26572d24c67808f8adc9499cf4
+      internalID: -1663866997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_10
+      name: Dog_Anim_1_6
       rect:
         serializedVersion: 2
-        x: 136
-        y: 94
-        width: 68
-        height: 94
+        x: 296
+        y: 412
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ab33af12e61c42999a8bb88240a38c5
-      internalID: 1893489168
+      spriteID: a8e0b6a70b9634cc58b6da2789786fd0
+      internalID: 924001371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_11
+      name: Dog_Anim_1_7
       rect:
         serializedVersion: 2
-        x: 204
-        y: 94
-        width: 68
-        height: 94
+        x: 444
+        y: 412
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +280,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3632261b6f2ad45b3833a26c9991e0a9
-      internalID: -491585217
+      spriteID: 026adfb253c254915a5ff32ca2637357
+      internalID: 2076282894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_12
+      name: Dog_Anim_1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 148
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c485ff3282246fcab8e43f99e45b61
+      internalID: -314976623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Anim_1_9
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 206
+        width: 148
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719a0f22c2c59459eae4e51db3c2dbf0
+      internalID: -30964022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Anim_1_10
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 206
+        width: 148
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df262e85e98a47a18dfa9db6666819e
+      internalID: -491193465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Anim_1_11
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 206
+        width: 148
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2b3b7b884fb4975b2422defda1d414
+      internalID: 1630449171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Anim_1_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 68
-        height: 94
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,20 +385,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88c61018a23b3479e9a536f1425c5b53
-      internalID: -1336149680
+      spriteID: fceadbfa78fde4b1783598b2c7045423
+      internalID: 415828587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_13
+      name: Dog_Anim_1_13
       rect:
         serializedVersion: 2
-        x: 68
+        x: 148
         y: 0
-        width: 68
-        height: 94
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,20 +406,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 099eec6cdca9543a09eb8f1597d08f92
-      internalID: 899479852
+      spriteID: adae3e3daaf26481cb7070ae38ae5215
+      internalID: 957827607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_14
+      name: Dog_Anim_1_14
       rect:
         serializedVersion: 2
-        x: 136
+        x: 296
         y: 0
-        width: 68
-        height: 94
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,20 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93e1ea092455b463faa9cb79e678ba62
-      internalID: -1886952790
+      spriteID: 4d88940a7192f4455ba62010eb67de5e
+      internalID: 858751268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dog_anim_1_15
+      name: Dog_Anim_1_15
       rect:
         serializedVersion: 2
-        x: 204
+        x: 444
         y: 0
-        width: 68
-        height: 94
+        width: 148
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -448,8 +448,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6be6f0d474eb14e6590ef5802f6d6a0a
-      internalID: -1536560766
+      spriteID: bf5bc926c85d94d83ab37227cc848393
+      internalID: -90471576
       vertices: []
       indices: 
       edges: []
@@ -465,22 +465,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dog_anim_1_2: -1277363482
-      dog_anim_1_5: 122826019
-      dog_anim_1_11: -491585217
-      dog_anim_1_14: -1886952790
-      dog_anim_1_7: 1123123859
-      dog_anim_1_0: -1317495736
-      dog_anim_1_6: -1643356818
-      dog_anim_1_10: 1893489168
-      dog_anim_1_4: 1454647754
-      dog_anim_1_9: -273064
-      dog_anim_1_8: 1277287109
-      dog_anim_1_15: -1536560766
-      dog_anim_1_13: 899479852
-      dog_anim_1_1: -443504742
-      dog_anim_1_3: -699967402
-      dog_anim_1_12: -1336149680
+      Dog_Anim_1_10: -491193465
+      Dog_Anim_1_6: 924001371
+      Dog_Anim_1_4: 1793272896
+      Dog_Anim_1_7: 2076282894
+      Dog_Anim_1_8: -314976623
+      Dog_Anim_1_12: 415828587
+      Dog_Anim_1_5: -1663866997
+      Dog_Anim_1_14: 858751268
+      Dog_Anim_1_13: 957827607
+      Dog_Anim_1_0: -361956866
+      Dog_Anim_1_2: -697332269
+      Dog_Anim_1_9: -30964022
+      Dog_Anim_1_15: -90471576
+      Dog_Anim_1_11: 1630449171
+      Dog_Anim_1_3: 1296416222
+      Dog_Anim_1_1: 77673169
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

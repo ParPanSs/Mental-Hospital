@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -5,6 +6,10 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D _rb;
     public Rigidbody2D rb => _rb;
     private Animator _animator;
+
+    private bool _isTouchingWall;
+    public bool isTouchingWall => _isTouchingWall;
+    
     public Dialog momsDialog;
     
     private readonly float _speed = 4.5f;
@@ -46,6 +51,17 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.CompareTag("Wall"))
+            _isTouchingWall = true;
+    }
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.transform.CompareTag("Wall"))
+            _isTouchingWall = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Mom"))
@@ -53,7 +69,7 @@ public class CharacterController : MonoBehaviour
             FindObjectOfType<DialogManager>().StartDialogue(momsDialog);
         }
     }
-
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Mom"))

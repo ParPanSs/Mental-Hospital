@@ -15,6 +15,7 @@ public class Bus : MonoBehaviour
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
     public BoxCollider2D wallTrigger;
+    public GameObject stationWall;
 
     private void Start()
     {
@@ -61,6 +62,7 @@ public class Bus : MonoBehaviour
         if (bus.GetComponent<BoxCollider2D>().IsTouching(wallTrigger))
         {
             wallTrigger.isTrigger = false;
+            stationWall.SetActive(false);
         }
 
         if (_inBus)

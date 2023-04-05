@@ -2,26 +2,16 @@ using UnityEngine;
 
 public class ItemSlot : MonoBehaviour
 {
-    /*private bool isOccupied = false;
-    private DragNDrop draggableObject;
-
-    void OnTriggerEnter2D(Collider2D col)
+    [SerializeField] private SlotsManager slotsManager;
+    void Update()
     {
-        if (col.gameObject.GetComponent<DragNDrop>() != null && !isOccupied)
+        if (transform.childCount == 0)
         {
-            draggableObject = col.gameObject.GetComponent<DragNDrop>();
-            isOccupied = true;
-            draggableObject.transform.position = transform.position;
-            draggableObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<SpriteRenderer>().enabled = true;
         }
+
+        slotsManager.CheckFull();
     }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.GetComponent<DragNDrop>() != null)
-        {
-            isOccupied = false;
-            draggableObject.GetComponent<Rigidbody2D>().isKinematic = false;
-        }
-    }*/
+    
+    
 }

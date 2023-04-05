@@ -9,13 +9,13 @@ public class DragNDrop : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+        startParent = transform.parent;
     }
 
     private void OnMouseDown()
     {
         if (!isDragging)
         {
-            startParent = transform.parent;
             isDragging = true;
         }
     }
@@ -41,12 +41,13 @@ public class DragNDrop : MonoBehaviour
         {
             if (collider.CompareTag("Slot"))
             {
-                if (collider.gameObject.transform.childCount >= 1)
+                if (collider.gameObject.transform.childCount == 1)
                 {
                     transform.position = startPosition;
                 }
                 else
                 {
+                    collider.transform.GetComponent<SpriteRenderer>().enabled = false;
                     transform.position = collider.transform.position;
                     transform.SetParent(collider.transform);
                     isOverSlot = true;
@@ -62,5 +63,8 @@ public class DragNDrop : MonoBehaviour
             transform.position = startPosition;
             transform.SetParent(startParent);
         }
+
     }
+
+    
 }
