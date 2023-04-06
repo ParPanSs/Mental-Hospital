@@ -17,12 +17,12 @@ MonoBehaviour:
   m_AvailableLanguages2:
   - m_Name: English
     m_Code: en
-    m_Custom: 0
+    m_Custom: 1
   - m_Name: Czech
     m_Code: cs
-    m_Custom: 0
+    m_Custom: 1
   - m_Name: Russian
     m_Code: ru
-    m_Custom: 0
+    m_Custom: 1
   m_ImportLocation: Assets/Resources
   GoogleAuthenticationFile: {fileID: 0}
