@@ -54,7 +54,7 @@ public class Bus : MonoBehaviour
         if (_isDriving)
         {
             _busRb.bodyType = RigidbodyType2D.Dynamic;
-            _busRb.AddForce(Vector2.right.normalized * 0.5f);
+            _busRb.AddForce(Vector2.right.normalized * 2.5f);
         }
         else
         {

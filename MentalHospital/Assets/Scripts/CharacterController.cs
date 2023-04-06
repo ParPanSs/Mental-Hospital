@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (DialogManager.GetInstance().dialogueIsPlaying)
+        if (DialogManager.GetInstance().dialogueIsPlaying || rb.bodyType == RigidbodyType2D.Static)
         {
             _animator.SetBool("isWalk", false);
             _rb.velocity = new Vector2(0, 0);

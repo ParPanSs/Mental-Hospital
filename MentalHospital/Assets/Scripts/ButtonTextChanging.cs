@@ -19,12 +19,10 @@ public class ButtonTextChanging : MonoBehaviour
             case "English":
                 break;
             case "Czech":
-                PlayerPrefs.SetString("GameLanguage", "cs");
                 break;
             case "Russian":
                 break;
         }
         Debug.Log(PlayerPrefs.GetString("GameLanguage"));
-        Debug.Log(PlayerPrefs.GetString("Language"));
     }
 }
