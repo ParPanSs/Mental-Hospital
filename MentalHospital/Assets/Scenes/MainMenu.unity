@@ -1224,6 +1224,7 @@ GameObject:
   - component: {fileID: 525061378}
   - component: {fileID: 525061380}
   - component: {fileID: 525061379}
+  - component: {fileID: 525061381}
   m_Layer: 5
   m_Name: Greetings
   m_TagString: Untagged
@@ -1271,10 +1272,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u0422\u0410\u041D\u0418\u0421\u041B\u0410\u0412 \u0412\u0418\u041A\u0422\u041E\u0420\u041E\u0412\u0418\u0427,
-    \u041F\u0420\u0418\u0412\u0415\u0422 \u0418\u0417 \u041F\u0420\u0410\u0413\u0418!\n\u041C\u0435\u043D\u044E
-    \u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043A \u043F\u043E\u043A\u0430 \u0447\u0442\u043E
-    \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435 :("
+  m_text: "STANISLAV VIKTOROVICH, GREETINGS FROM PRAGUE! \nSettings menu is building
+    right now :("
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e8e6063395c647c297bba888913da09, type: 2}
   m_sharedMaterial: {fileID: 8210575896395459655, guid: 1e8e6063395c647c297bba888913da09, type: 2}
@@ -1351,6 +1350,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525061377}
   m_CullTransparentMesh: 1
+--- !u!114 &525061381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525061377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 525061379}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: 40dd13b550a9c47d0b4ac910ecba4c4b, type: 2}
+  m_FormatArgs: []
 --- !u!1 &556383325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +1996,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2144972765}
+        m_TargetAssemblyTypeName: ButtonTextChanging, Assembly-CSharp
+        m_MethodName: SaveLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1045946568
 MonoBehaviour:
@@ -2852,6 +2879,7 @@ GameObject:
   - component: {fileID: 1691036534}
   - component: {fileID: 1691036536}
   - component: {fileID: 1691036535}
+  - component: {fileID: 1691036537}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2976,6 +3004,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691036533}
   m_CullTransparentMesh: 1
+--- !u!114 &1691036537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691036533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 1691036535}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: de632818e6d2e4f22935809a3681e58b, type: 2}
+  m_FormatArgs: []
 --- !u!1 &1715153026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,6 +3248,7 @@ GameObject:
   - component: {fileID: 1888292497}
   - component: {fileID: 1888292499}
   - component: {fileID: 1888292498}
+  - component: {fileID: 1888292500}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3328,6 +3373,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888292496}
   m_CullTransparentMesh: 1
+--- !u!114 &1888292500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888292496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725bf5ddb878f09429d39010d9e2d59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Component: {fileID: 1888292498}
+  m_Property: text
+  m_LocalizedAsset: {fileID: 11400000, guid: d1dc4787bbe614008add014f92abbb73, type: 2}
+  m_FormatArgs: []
 --- !u!1 &2026880255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,10 +3768,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdown: {fileID: 1045946567}
-  button_text: {fileID: 1691036535}
-  sampleText: {fileID: 1888292498}
-  greetings: {fileID: 525061379}
-  text:
-  - {fileID: 11400000, guid: de632818e6d2e4f22935809a3681e58b, type: 2}
-  - {fileID: 11400000, guid: d1dc4787bbe614008add014f92abbb73, type: 2}
-  - {fileID: 11400000, guid: 40dd13b550a9c47d0b4ac910ecba4c4b, type: 2}

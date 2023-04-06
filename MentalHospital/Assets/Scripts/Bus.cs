@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bus : MonoBehaviour
 {
+    private static Bus instance;
+    
     public GameObject bus;
     private Rigidbody2D _busRb;
     [SerializeField] private CharacterController character;
@@ -12,11 +14,23 @@ public class Bus : MonoBehaviour
     private bool _isDriving;
     private bool _inBus;
     private bool _canMove = true;
+
+    public bool isPlayerWait { get; private set; }
+
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
     public BoxCollider2D wallTrigger;
     public GameObject stationWall;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public static Bus GetInstance()
+    {
+        return instance;
+    }
     private void Start()
     {
         _busRb = bus.GetComponent<Rigidbody2D>();
@@ -26,6 +40,7 @@ public class Bus : MonoBehaviour
     {
         if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
+            isPlayerWait = true;
             _canMove = !_canMove;
             character.rb.bodyType = RigidbodyType2D.Static;
             var position = busSpawnPosition.position;
@@ -56,6 +71,7 @@ public class Bus : MonoBehaviour
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
+            isPlayerWait = false;
             StartCoroutine(DrivingAway());
         }
 

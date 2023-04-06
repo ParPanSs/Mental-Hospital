@@ -2,10 +2,38 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    public Dialog dialogue;
+    private bool playerInRange;
+    [SerializeField] private TextAsset inkJSON;
 
-    public void TriggerDialogue()
+    private void Awake()
     {
-        FindObjectOfType<DialogManager>().StartDialogue(dialogue);
+        
+    }
+
+    private void Update()
+    {
+        if (playerInRange && !DialogManager.GetInstance().dialogueIsPlaying)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                DialogManager.GetInstance().EnterDialogueMode(inkJSON);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
     }
 }

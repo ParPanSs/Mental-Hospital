@@ -9,9 +9,7 @@ public class CharacterController : MonoBehaviour
 
     private bool _isTouchingWall;
     public bool isTouchingWall => _isTouchingWall;
-    
-    public Dialog momsDialog;
-    
+
     private readonly float _speed = 4.5f;
     private float _horizontal;
     private float _vertical;
@@ -26,11 +24,17 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        _horizontal = Input.GetAxis("Horizontal") * _speed;
-        _vertical = Input.GetAxis("Vertical") * _speed;
-        
-        if (_rb.bodyType != RigidbodyType2D.Static)
+        if (DialogManager.GetInstance().dialogueIsPlaying)
         {
+            _animator.SetBool("isWalk", false);
+            _rb.velocity = new Vector2(0, 0);
+            return;
+        }
+        else
+        {
+            _horizontal = Input.GetAxis("Horizontal") * _speed;
+            _vertical = Input.GetAxis("Vertical") * _speed;
+
             Flip();
             _rb.velocity = new Vector2(_horizontal, _vertical);
             if (_horizontal != 0 || _vertical != 0)
@@ -51,28 +55,14 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = true;
     }
-    private void OnCollisionExit2D(Collision2D col)
+    private void OnTriggerExit2D(Collider2D col)
     {
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Mom"))
-        {
-            FindObjectOfType<DialogManager>().StartDialogue(momsDialog);
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.CompareTag("Mom"))
-            FindObjectOfType<DialogManager>().EndDialogue();
     }
 }
