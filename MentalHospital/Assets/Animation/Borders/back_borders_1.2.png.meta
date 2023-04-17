@@ -124,10 +124,10 @@ TextureImporter:
         serializedVersion: 2
         x: 3840
         y: 4320
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,10 +145,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 3240
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,10 +166,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1920
         y: 3240
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,10 +187,10 @@ TextureImporter:
         serializedVersion: 2
         x: 3840
         y: 3240
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,10 +208,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 2160
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,10 +229,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1920
         y: 2160
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,10 +250,10 @@ TextureImporter:
         serializedVersion: 2
         x: 3840
         y: 2160
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -271,10 +271,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 1080
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -292,10 +292,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1920
         y: 1080
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,10 +313,10 @@ TextureImporter:
         serializedVersion: 2
         x: 3840
         y: 1080
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,10 +334,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -355,10 +355,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1920
         y: 0
-        width: 1850
+        width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -366,6 +366,27 @@ TextureImporter:
       bones: []
       spriteID: c5c4be1bd7b954309ac20a3c0b031876
       internalID: -367996780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back_borders_1.2_12
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2ca79193371492ebe99418c50e8921
+      internalID: 808645240
       vertices: []
       indices: 
       edges: []

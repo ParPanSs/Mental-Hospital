@@ -1,8 +1,8 @@
-using System;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    private static CharacterController instance;
     private Rigidbody2D _rb;
     public Rigidbody2D rb => _rb;
     private Animator _animator;
@@ -15,11 +15,23 @@ public class CharacterController : MonoBehaviour
     private float _vertical;
 
     private bool _isFacingRight;
+    
+    public bool extraversion;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+    }
+    
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public static CharacterController GetInstance()
+    {
+        return instance;
     }
 
     void FixedUpdate()
@@ -30,7 +42,7 @@ public class CharacterController : MonoBehaviour
             _rb.velocity = new Vector2(0, 0);
             return;
         }
-        else
+        if (rb.bodyType != RigidbodyType2D.Static)
         {
             _horizontal = Input.GetAxis("Horizontal") * _speed;
             _vertical = Input.GetAxis("Vertical") * _speed;

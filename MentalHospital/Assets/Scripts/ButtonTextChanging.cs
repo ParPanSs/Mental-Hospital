@@ -1,28 +1,41 @@
-using System;
+using System.Linq;
+using GameToolkit.Localization;
 using TMPro;
 using UnityEngine;
 
 public class ButtonTextChanging : MonoBehaviour
 {
-    public TMP_Dropdown dropdown;
-    public LocalizationPrefs localization;
+    [SerializeField] private TMP_Dropdown dropdown;
 
-    public void Start()
+    private void Start()
     {
-        PlayerPrefs.DeleteAll();
+        dropdown.captionText.text = PlayerPrefs.GetString("GameLanguage", "");
     }
 
-    public void Update()
+    public void ChangeLanguage()
     {
-        switch (dropdown.captionText.text)
+        PlayerPrefs.SetString("GameLanguage", dropdown.captionText.text);
+        PlayerPrefs.Save();
+        var language = GetSavedLanguage();
+        if (language != Language.Unknown)
         {
-            case "English":
-                break;
-            case "Czech":
-                break;
-            case "Russian":
-                break;
+            Localization.Instance.CurrentLanguage = language;
         }
-        Debug.Log(PlayerPrefs.GetString("GameLanguage"));
+    }
+    
+    private Language GetSavedLanguage()
+    {
+        if (PlayerPrefs.HasKey("GameLanguage"))
+        {
+            var languageCode = PlayerPrefs.GetString("GameLanguage", "");
+            var language = 
+                LocalizationSettings.Instance.AvailableLanguages.FirstOrDefault(x => x.Code == languageCode);
+            if (language != null)
+            {
+                return language;
+            }
+        }
+
+        return Language.Unknown;
     }
 }

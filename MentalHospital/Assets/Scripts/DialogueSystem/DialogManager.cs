@@ -56,15 +56,27 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        currentStory.BindExternalFunction("language", (string currentLang) =>
+        {
+            if (currentLang != null)
+            {
+                currentLang = PlayerPrefs.GetString("GameLanguage");
+                Debug.Log(currentLang);
+            }
+            return currentLang;
+        });
+        
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
+        currentStory.UnbindExternalFunction("language");
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";

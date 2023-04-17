@@ -1272,8 +1272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "STANISLAV VIKTOROVICH, GREETINGS FROM PRAGUE! \nSettings menu is building
-    right now :("
+  m_text: Hi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e8e6063395c647c297bba888913da09, type: 2}
   m_sharedMaterial: {fileID: 8210575896395459655, guid: 1e8e6063395c647c297bba888913da09, type: 2}
@@ -1364,7 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Component: {fileID: 525061379}
   m_Property: text
-  m_LocalizedAsset: {fileID: 11400000, guid: 40dd13b550a9c47d0b4ac910ecba4c4b, type: 2}
+  m_LocalizedAsset: {fileID: 11400000, guid: 9a59e9515d40746588e4f72ccabdb55d, type: 2}
   m_FormatArgs: []
 --- !u!1 &556383325
 GameObject:
@@ -1534,7 +1533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &829421126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1569,7 +1568,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829421125}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7d510e0ccc8fb4caaba30f72db347a53, type: 3}
@@ -1999,7 +1998,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2144972765}
         m_TargetAssemblyTypeName: ButtonTextChanging, Assembly-CSharp
-        m_MethodName: Update
+        m_MethodName: ChangeLanguage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2283,7 +2282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1146666843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3751,4 +3750,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdown: {fileID: 1045946567}
-  localization: {fileID: 1715153027}

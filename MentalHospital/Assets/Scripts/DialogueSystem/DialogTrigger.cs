@@ -5,11 +5,6 @@ public class DialogTrigger : MonoBehaviour
     private bool playerInRange;
     [SerializeField] private TextAsset inkJSON;
 
-    private void Awake()
-    {
-        
-    }
-
     private void Update()
     {
         if (playerInRange && !DialogManager.GetInstance().dialogueIsPlaying)
