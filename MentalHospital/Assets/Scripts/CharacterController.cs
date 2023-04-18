@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour
     private bool _isFacingRight;
     
     public bool extraversion;
+    public bool rational;
 
     void Start()
     {

@@ -12,6 +12,4 @@ public class ItemSlot : MonoBehaviour
 
         slotsManager.CheckFull();
     }
-    
-    
 }

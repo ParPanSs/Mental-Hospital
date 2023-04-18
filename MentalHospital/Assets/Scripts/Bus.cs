@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Bus : MonoBehaviour
 {
-    private static Bus instance;
-    
     public GameObject bus;
     private Rigidbody2D _busRb;
     [SerializeField] private CharacterController character;
@@ -13,9 +11,6 @@ public class Bus : MonoBehaviour
     private bool _isInStation;
     private bool _isDriving;
     private bool _inBus;
-    private bool _canMove = true;
-
-    private bool _isPlayerWait;
 
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
@@ -29,10 +24,8 @@ public class Bus : MonoBehaviour
 
     void Update()
     {
-        if (_isInStation && Input.GetKeyDown(KeyCode.E) && CharacterController.GetInstance().extraversion)
+        if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
-            _isPlayerWait = true;
-            _canMove = !_canMove;
             character.rb.bodyType = RigidbodyType2D.Static;
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
@@ -55,14 +48,12 @@ public class Bus : MonoBehaviour
         
         if (bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
         {
-            _canMove = !_canMove;
-            character.rb.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            character.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             character.rb.bodyType = RigidbodyType2D.Dynamic;
             mainCamera.Follow = character.gameObject.transform;
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
-            _isPlayerWait = false;
             StartCoroutine(DrivingAway());
         }
 
