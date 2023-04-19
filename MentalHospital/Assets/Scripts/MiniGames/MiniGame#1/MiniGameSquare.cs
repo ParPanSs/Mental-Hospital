@@ -132,9 +132,9 @@ public class MiniGameSquare : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (introversionCounter.text == "10/10" || extraversionCounter.text == "10/10")
         {
-            if (extraversionCounter.text == "10/10")
-                CharacterController.GetInstance().extraversion = true;
-            SceneManager.LoadScene(2);
+            // if (extraversionCounter.text == "10/10")
+            //     CharacterController.GetInstance().Extraversion();
+            SceneManager.LoadScene(3);
         }
         else
             StopCoroutine(CloseMiniGame());

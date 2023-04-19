@@ -48,7 +48,6 @@ public class Bus : MonoBehaviour
         
         if (bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
         {
-            character.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             character.rb.bodyType = RigidbodyType2D.Dynamic;
             mainCamera.Follow = character.gameObject.transform;
             _isDriving = false;
@@ -92,7 +91,6 @@ public class Bus : MonoBehaviour
     IEnumerator WaitForPlayer()
     {
         yield return new WaitForSeconds(1.5f);
-        character.rb.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         mainCamera.Follow = bus.transform;
         _isDriving = true;
         _inBus = true;

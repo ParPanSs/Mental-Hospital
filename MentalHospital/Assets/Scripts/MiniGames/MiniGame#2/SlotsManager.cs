@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SlotsManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] rounds;
     [SerializeField] private Transform[] slots;
     [SerializeField] private GameObject button;
 
@@ -17,9 +16,9 @@ public class SlotsManager : MonoBehaviour
     {
         if (rationalCounter.text == "3/3" || irrationalCounter.text == "3/3")
         {
-            if (rationalCounter.text == "3/3")
-                CharacterController.GetInstance().rational = true;
-            SceneManager.LoadScene(2);
+            //if (rationalCounter.text == "3/3")
+                //CharacterController.GetInstance().Rational();
+            SceneManager.LoadScene(3);
         }
     }
     public void CheckFull()

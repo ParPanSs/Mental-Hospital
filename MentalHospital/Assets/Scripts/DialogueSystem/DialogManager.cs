@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -71,12 +71,19 @@ public class DialogManager : MonoBehaviour
             return currentLang;
         });
         
+        currentStory.BindExternalFunction("finishDay", (int dayIndex) =>
+        {
+            Debug.Log("Day finished");
+            SceneManager.LoadScene(dayIndex);
+        });
+
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
         currentStory.UnbindExternalFunction("language");
+        currentStory.UnbindExternalFunction("finishDay");
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";

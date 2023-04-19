@@ -35,7 +35,7 @@ public class CharacterController : MonoBehaviour
         return instance;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (DialogManager.GetInstance().dialogueIsPlaying || rb.bodyType == RigidbodyType2D.Static)
         {
@@ -78,4 +78,16 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = false;
     }
+
+
+    public void Extraversion()
+    {
+        extraversion = true;
+    }
+    public void Rational()
+    {
+        rational = true;
+    }
+    
+    
 }
