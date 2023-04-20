@@ -29,6 +29,7 @@ public class MiniGameSquare : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("DayCounter", PlayerPrefs.GetInt("DayCounter") + 1);
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -134,7 +135,7 @@ public class MiniGameSquare : MonoBehaviour
         {
             // if (extraversionCounter.text == "10/10")
             //     CharacterController.GetInstance().Extraversion();
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
         }
         else
             StopCoroutine(CloseMiniGame());

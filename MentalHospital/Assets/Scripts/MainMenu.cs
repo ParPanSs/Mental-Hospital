@@ -5,7 +5,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("DayCounter", 0);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
     }
 
     public void QuitGame()

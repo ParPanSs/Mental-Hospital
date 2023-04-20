@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private float _speed = 100f;
+    [SerializeField] private Sprite[] headsEmotions;
 
     private void Start()
     {
@@ -24,7 +25,10 @@ public class Bullet : MonoBehaviour
 
         if (other.CompareTag("Head"))
         {
-            other.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<SpriteRenderer>().color;
+            if (gameObject.name == "SmileBullet(Clone)")
+                other.GetComponent<SpriteRenderer>().sprite = headsEmotions[0];
+            else
+                other.GetComponent<SpriteRenderer>().sprite = headsEmotions[1];
             Destroy(gameObject);
         }
     }

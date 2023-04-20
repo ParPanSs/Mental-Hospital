@@ -21,6 +21,7 @@ public class CharacterController : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("DayCounter", PlayerPrefs.GetInt("DayCounter") + 1);
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }

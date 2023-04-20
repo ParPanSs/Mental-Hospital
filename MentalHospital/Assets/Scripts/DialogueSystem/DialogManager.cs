@@ -73,7 +73,7 @@ public class DialogManager : MonoBehaviour
         
         currentStory.BindExternalFunction("finishDay", (int dayIndex) =>
         {
-            Debug.Log("Day finished");
+            dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
             SceneManager.LoadScene(dayIndex);
         });
 
