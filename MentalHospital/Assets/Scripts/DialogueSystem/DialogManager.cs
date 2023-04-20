@@ -56,7 +56,6 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -66,7 +65,6 @@ public class DialogManager : MonoBehaviour
             if (currentLang != null)
             {
                 currentLang = PlayerPrefs.GetString("GameLanguage");
-                Debug.Log(currentLang);
             }
             return currentLang;
         });
