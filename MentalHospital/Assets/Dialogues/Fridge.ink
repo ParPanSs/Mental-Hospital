@@ -1,7 +1,7 @@
+INCLUDE globals.ink
 EXTERNAL language(currentLang)
 
-~ temp currentLanguage = language("")
-
+~ currentLanguage = language("en")
 {
     - currentLanguage == "ru": 
        -> RU

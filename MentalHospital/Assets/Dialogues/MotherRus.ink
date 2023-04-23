@@ -1,7 +1,7 @@
+INCLUDE globals.ink
 EXTERNAL language(currentLang)
 
-~ temp currentLanguage = language("")
-
+~ currentLanguage = language("en")
 {
     - currentLanguage == "ru": 
        -> RU
@@ -10,7 +10,6 @@ EXTERNAL language(currentLang)
     - currentLanguage == "cs": 
         -> CS
 }
-
 = RU
 Здесь должна быть финальная версия диалога между Матерью и Кайлом, однако, он все еще в процессе написания.
 

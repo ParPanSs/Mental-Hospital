@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,23 +6,39 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class DialogManager : MonoBehaviour
 {
+    private float typingSpeed = 0.04f;
+
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
     [SerializeField] private GameObject dialoguePanel;
+
+    [SerializeField] private GameObject continueIcon;
+
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
-    
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
+
+    private bool canContinueToNextLine = false;
+
+    private Coroutine displayLineCoroutine;
+
+    private DialogueVariables dialogueVariables;
 
     private static DialogManager instance;
 
     private void Awake()
     {
         instance = this;
+
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
     public static DialogManager GetInstance()
@@ -48,7 +65,7 @@ public class DialogManager : MonoBehaviour
         if (!dialogueIsPlaying)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Return))
         {
             ContinueStory();
         }
@@ -60,18 +77,20 @@ public class DialogManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+
         currentStory.BindExternalFunction("language", (string currentLang) =>
         {
             if (currentLang != null)
             {
                 currentLang = PlayerPrefs.GetString("GameLanguage");
             }
+
             return currentLang;
         });
-        
-        currentStory.BindExternalFunction("finishDay", (int dayIndex) =>
+        currentStory.BindExternalFunction("finishDay", () =>
         {
-            dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
+            var dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
             SceneManager.LoadScene(dayIndex);
         });
 
@@ -80,8 +99,10 @@ public class DialogManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
-        currentStory.UnbindExternalFunction("language");
         currentStory.UnbindExternalFunction("finishDay");
+        currentStory.UnbindExternalFunction("language");
+
+        dialogueVariables.StopListening(currentStory);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -91,13 +112,52 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
-            
-            DisplayChoices();
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+
         }
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
+
+        continueIcon.SetActive(false);
+        HideChoices();
+        
+        canContinueToNextLine = false;
+
+        foreach (char letter in line.ToCharArray())
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                dialogueText.maxVisibleCharacters = line.Length;
+                break;
+            }
+
+            dialogueText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        continueIcon.SetActive(true);
+        DisplayChoices();
+        canContinueToNextLine = true;
+    }
+
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
         }
     }
 
@@ -131,6 +191,27 @@ public class DialogManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
+    }
+
+    public Ink.Runtime.Object GetVariableState(string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null)
+        {
+            Debug.LogWarning("Ink variable was found to be null: " + variableName);
+        }
+
+        return variableValue;
+    }
+
+    public void OnApplicationQuit()
+    {
+        dialogueVariables.SaveVariables();
     }
 }

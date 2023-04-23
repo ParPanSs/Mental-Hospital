@@ -3,7 +3,7 @@ using UnityEngine;
 public class HeadMoving : MonoBehaviour
 {
     [SerializeField] private Transform headSpawnPosition;
-    private float _speed = 5f;
+    private float _speed = 2f;
     private Rigidbody2D _rb;
 
     private void Start()
