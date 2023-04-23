@@ -1,6 +1,6 @@
 VAR currentLanguage = "en"
 
 EXTERNAL language(currentLanguage) 
-//finishDay()
+EXTERNAL finishDay()
 
 ~ currentLanguage = language(currentLanguage)

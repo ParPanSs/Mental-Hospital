@@ -88,18 +88,18 @@ public class DialogManager : MonoBehaviour
 
             return currentLanguage;
         });
-        /*currentStory.BindExternalFunction("finishDay", () =>
+        currentStory.BindExternalFunction("finishDay", () =>
         {
             var dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
             SceneManager.LoadScene(dayIndex);
-        });*/
+        });
 
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
-        //currentStory.UnbindExternalFunction("finishDay");
+        currentStory.UnbindExternalFunction("finishDay");
         currentStory.UnbindExternalFunction("language");
 
         dialogueVariables.StopListening(currentStory);

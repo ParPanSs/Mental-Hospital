@@ -1,5 +1,4 @@
 INCLUDE globals.ink
-//EXTERNAL language(currentLang)
 
 
 {
@@ -14,7 +13,7 @@ INCLUDE globals.ink
 =RU
 Это психотерапевт. Диалог с ним, к сожалению, все еще отсутсвует.
     *[Закончить день]
-//        ~ finishDay()
+        ~ finishDay()
         -> DONE
     *[Уйти]
         ...
@@ -23,7 +22,7 @@ INCLUDE globals.ink
 =EN
 This is psychoterapeut. Dialogue with him is absent, regretfully.
     *[Finish the day]
-//        ~finishDay()
+        ~finishDay()
         -> DONE
     *[Leave]
         ...
@@ -32,7 +31,7 @@ This is psychoterapeut. Dialogue with him is absent, regretfully.
 =CS
 To je psychoterapeut. Dialog s nim chybi. Je mi lito.
     *[Ukoncit den]
-//        ~finishDay()
+        ~finishDay()
         -> DONE
     *[Ujit]
         ...
