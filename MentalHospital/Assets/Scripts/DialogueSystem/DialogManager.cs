@@ -79,27 +79,27 @@ public class DialogManager : MonoBehaviour
 
         dialogueVariables.StartListening(currentStory);
 
-        currentStory.BindExternalFunction("language", (string currentLang) =>
+        currentStory.BindExternalFunction("language", (string currentLanguage) =>
         {
-            if (currentLang != null)
+            if (currentLanguage != null)
             {
-                currentLang = PlayerPrefs.GetString("GameLanguage");
+                currentLanguage = PlayerPrefs.GetString("GameLanguage");
             }
 
-            return currentLang;
+            return currentLanguage;
         });
-        currentStory.BindExternalFunction("finishDay", () =>
+        /*currentStory.BindExternalFunction("finishDay", () =>
         {
             var dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
             SceneManager.LoadScene(dayIndex);
-        });
+        });*/
 
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
-        currentStory.UnbindExternalFunction("finishDay");
+        //currentStory.UnbindExternalFunction("finishDay");
         currentStory.UnbindExternalFunction("language");
 
         dialogueVariables.StopListening(currentStory);
