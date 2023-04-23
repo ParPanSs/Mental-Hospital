@@ -9,7 +9,6 @@ public class ButtonTextChanging : MonoBehaviour
 
     private void Start()
     {
-        //dropdown.value = PlayerPrefs.GetString("GameLanguage");
         dropdown.captionText.text = PlayerPrefs.GetString("GameLanguage");
     }
 

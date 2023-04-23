@@ -1,5 +1,5 @@
 INCLUDE globals.ink
-EXTERNAL language(currentLang)
+//EXTERNAL language(currentLang)
 
 ~ currentLanguage = language("en")
 {

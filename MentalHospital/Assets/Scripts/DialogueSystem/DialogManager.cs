@@ -79,14 +79,14 @@ public class DialogManager : MonoBehaviour
 
         dialogueVariables.StartListening(currentStory);
 
-        currentStory.BindExternalFunction("language", (string currentLang) =>
+        currentStory.BindExternalFunction("language", (string currentLanguage) =>
         {
-            if (currentLang != null)
+            if (currentLanguage != null)
             {
-                currentLang = PlayerPrefs.GetString("GameLanguage");
+                currentLanguage = PlayerPrefs.GetString("GameLanguage");
             }
 
-            return currentLang;
+            return currentLanguage;
         });
         currentStory.BindExternalFunction("finishDay", () =>
         {

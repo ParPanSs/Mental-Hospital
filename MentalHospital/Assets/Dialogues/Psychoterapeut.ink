@@ -1,18 +1,16 @@
 INCLUDE globals.ink
-EXTERNAL language(currentLang)
-EXTERNAL finishDay()
 
-~ currentLanguage = language("en")
+
 {
     - currentLanguage == "ru": 
-       -> RU
+        -> RU
     - currentLanguage == "en": 
         -> EN
     - currentLanguage == "cs": 
         -> CS
 }
 
-=== RU ===
+=RU
 Это психотерапевт. Диалог с ним, к сожалению, все еще отсутсвует.
     *[Закончить день]
         ~ finishDay()
@@ -21,7 +19,7 @@ EXTERNAL finishDay()
         ...
 -> END
 
-=== EN ===
+=EN
 This is psychoterapeut. Dialogue with him is absent, regretfully.
     *[Finish the day]
         ~finishDay()
@@ -30,7 +28,7 @@ This is psychoterapeut. Dialogue with him is absent, regretfully.
         ...
 ->END
 
-=== CS ===
+=CS
 To je psychoterapeut. Dialog s nim chybi. Je mi lito.
     *[Ukoncit den]
         ~finishDay()
