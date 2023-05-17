@@ -15,9 +15,6 @@ public class CharacterController : MonoBehaviour
     private float _vertical;
 
     private bool _isFacingRight;
-    
-    public bool extraversion;
-    public bool rational;
 
     void Start()
     {
@@ -48,7 +45,6 @@ public class CharacterController : MonoBehaviour
         {
             _horizontal = Input.GetAxis("Horizontal") * _speed;
             _vertical = Input.GetAxis("Vertical") * _speed;
-
             Flip();
             _rb.velocity = new Vector2(_horizontal, _vertical);
             if (_horizontal != 0 || _vertical != 0)
@@ -72,23 +68,14 @@ public class CharacterController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.transform.CompareTag("Wall"))
+        {
             _isTouchingWall = true;
+            col.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = false;
     }
-
-
-    public void Extraversion()
-    {
-        extraversion = true;
-    }
-    public void Rational()
-    {
-        rational = true;
-    }
-    
-    
 }

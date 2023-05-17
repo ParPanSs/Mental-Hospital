@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,7 +5,6 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class DialogManager : MonoBehaviour
 {
@@ -34,11 +32,15 @@ public class DialogManager : MonoBehaviour
 
     private static DialogManager instance;
 
+    [SerializeField] private Animator endOfTheDay;
+
     private void Awake()
     {
         instance = this;
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     public static DialogManager GetInstance()
@@ -65,7 +67,7 @@ public class DialogManager : MonoBehaviour
         if (!dialogueIsPlaying)
             return;
 
-        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Return))
+        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Space))
         {
             ContinueStory();
         }
@@ -91,7 +93,10 @@ public class DialogManager : MonoBehaviour
         currentStory.BindExternalFunction("finishDay", () =>
         {
             var dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
-            SceneManager.LoadScene(dayIndex);
+            endOfTheDay.enabled = true;
+            ExitDialogueMode();
+            dialogueVariables.SaveVariables();
+            StartCoroutine(StartNextDay(dayIndex));
         });
 
         ContinueStory();
@@ -138,7 +143,7 @@ public class DialogManager : MonoBehaviour
 
         foreach (char letter in line.ToCharArray())
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 dialogueText.maxVisibleCharacters = line.Length;
                 break;
@@ -210,8 +215,14 @@ public class DialogManager : MonoBehaviour
         return variableValue;
     }
 
+    private IEnumerator StartNextDay(int dayIndex)
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(dayIndex);
+    }
+
     public void OnApplicationQuit()
     {
-        dialogueVariables.SaveVariables();
+         dialogueVariables.SaveVariables();
     }
 }

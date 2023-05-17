@@ -1,1 +1,0 @@
-﻿{"inkVersion":20,"root":[["ev",{"VAR?":"currentLanguage"},{"x()":"language","exArgs":1},"/ev",{"VAR=":"currentLanguage","re":true},"\n","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^en","/str",{"VAR=":"currentLanguage"},"/ev","end",null],"#f":1}],"listDefs":{}}

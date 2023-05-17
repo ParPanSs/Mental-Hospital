@@ -12,6 +12,7 @@ public class Bus : MonoBehaviour
     private bool _isDriving;
     private bool _inBus;
 
+    [SerializeField] private BoxCollider2D yards;
     public Transform busSpawnPosition;
     public CinemachineVirtualCamera mainCamera;
     public BoxCollider2D wallTrigger;
@@ -21,8 +22,8 @@ public class Bus : MonoBehaviour
     {
         _busRb = bus.GetComponent<Rigidbody2D>();
     }
-
     void Update()
+    
     {
         if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
@@ -46,7 +47,8 @@ public class Bus : MonoBehaviour
             _busRb.bodyType = RigidbodyType2D.Kinematic;
         }
         
-        if (bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
+        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && Behaviour.extravert)
+            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && !Behaviour.extravert))
         {
             character.rb.bodyType = RigidbodyType2D.Dynamic;
             mainCamera.Follow = character.gameObject.transform;

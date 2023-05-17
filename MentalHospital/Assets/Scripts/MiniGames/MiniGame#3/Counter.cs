@@ -20,7 +20,10 @@ public class Counter : MonoBehaviour
             sadCounter.text = sad.Count + "/5";
         }
 
-        // if (smileCounter.text == "5/5" || sadCounter.text == "5/5")
-        //     SceneManager.LoadScene(3);
+        if (smileCounter.text == "5/5" || sadCounter.text == "5/5")
+        {
+            if (smileCounter.text == "5/5")
+                Behaviour.optimist = true;
+        }
     }
 }

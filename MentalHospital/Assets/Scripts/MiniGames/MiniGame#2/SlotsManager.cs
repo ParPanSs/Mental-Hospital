@@ -17,8 +17,8 @@ public class SlotsManager : MonoBehaviour
         if (rationalCounter.text == "3/3" || irrationalCounter.text == "3/3")
         {
             PlayerPrefs.SetInt("DayCounter", PlayerPrefs.GetInt("DayCounter") + 1);
-            //if (rationalCounter.text == "3/3")
-                //CharacterController.GetInstance().Rational();
+            if (rationalCounter.text == "3/3")
+                Behaviour.rational = true;
             SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
         }
     }

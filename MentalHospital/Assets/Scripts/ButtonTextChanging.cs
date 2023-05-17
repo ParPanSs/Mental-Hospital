@@ -5,16 +5,27 @@ using UnityEngine;
 
 public class ButtonTextChanging : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private TMP_Dropdown languageDropdown;
+    [SerializeField] private string[] languages;
 
     private void Start()
     {
-        dropdown.captionText.text = PlayerPrefs.GetString("GameLanguage");
+        int currentLanguageIndex = 0;
+        languageDropdown.captionText.text = PlayerPrefs.GetString("GameLanguage");
+        for (int i = 0; i < languages.Length; i++)
+        {
+            if (languages[i] == languageDropdown.captionText.text)
+            {
+                currentLanguageIndex = i;
+            }
+        }
+        languageDropdown.value = currentLanguageIndex;
+        languageDropdown.RefreshShownValue();
     }
 
     public void ChangeLanguage()
     {
-        PlayerPrefs.SetString("GameLanguage", dropdown.captionText.text);
+        PlayerPrefs.SetString("GameLanguage", languageDropdown.captionText.text);
         PlayerPrefs.Save();
         var language = GetSavedLanguage();
         if (language != Language.Unknown)
