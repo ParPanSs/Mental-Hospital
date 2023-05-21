@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -11,15 +12,20 @@ public class SlotsManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rationalCounter;
     [SerializeField] private TextMeshProUGUI irrationalCounter;
     [SerializeField] private RoundsCounter counter;
+    [SerializeField] private Animator fader;
 
-    void Update()
+    private void Start()
+    {
+        PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
+    }
+    private void Update()
     {
         if (rationalCounter.text == "3/3" || irrationalCounter.text == "3/3")
         {
-            PlayerPrefs.SetInt("DayCounter", PlayerPrefs.GetInt("DayCounter") + 1);
             if (rationalCounter.text == "3/3")
                 Behaviour.rational = true;
-            SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
+            StartCoroutine(EndOfMiniGame());
         }
     }
     public void CheckFull()
@@ -48,5 +54,12 @@ public class SlotsManager : MonoBehaviour
             irrationalCounter.text = counter.irrational + "/3";
             counter.irrational += 1;
         }
+    }
+
+    private IEnumerator EndOfMiniGame()
+    {
+        fader.SetBool("fader_in", true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
     }
 }

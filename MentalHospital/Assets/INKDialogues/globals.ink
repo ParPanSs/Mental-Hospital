@@ -2,6 +2,7 @@ EXTERNAL language(currentLanguage)
 EXTERNAL finishDay()
 
 VAR currentLanguage = ""
-VAR isWatered = false
+VAR flowerIsWatered = false
+VAR dogWasKicked = false
 
 ~ currentLanguage = language(currentLanguage)

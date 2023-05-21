@@ -13,15 +13,19 @@ public class MainMenu : MonoBehaviour
         {
             PlayerPrefs.SetString("GameLanguage", "en");
         }
-
-        PlayerPrefs.DeleteKey("DayCounter");
-        PlayerPrefs.Save();
     }
     public void PlayGame()
     {
-        PlayerPrefs.SetInt("DayCounter", 0);
+        PlayerPrefs.SetInt("DayCounter", 1);
+        PlayerPrefs.DeleteKey("INK_VARIABLES");
         PlayerPrefs.Save();
-        SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter"));
+    }
+
+    public void ContinueGame()
+    {
+        if(PlayerPrefs.HasKey("DayCounter"))
+            SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter"));
     }
 
     public void QuitGame()

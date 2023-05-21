@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class MiniGameSquare : MonoBehaviour
 {
+    [SerializeField] private Animator fader;
+    
     private bool _isTouchingDot;
     private bool _isTouchingWall;
     
@@ -26,10 +28,12 @@ public class MiniGameSquare : MonoBehaviour
 
     private List<Rigidbody2D> pushedDot = new List<Rigidbody2D>();
     private List<Rigidbody2D> pulledDot = new List<Rigidbody2D>();
+    
 
     private void Start()
     {
-        PlayerPrefs.SetInt("DayCounter", PlayerPrefs.GetInt("DayCounter") + 1);
+        PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -128,13 +132,16 @@ public class MiniGameSquare : MonoBehaviour
             _isTouchingDot = true;
     }
 
-    IEnumerator CloseMiniGame()
+    private IEnumerator CloseMiniGame()
     {
         yield return new WaitForSeconds(1f);
         if (introversionCounter.text == "10/10" || extraversionCounter.text == "10/10")
         {
             if (extraversionCounter.text == "10/10")
                 Behaviour.extravert = true;
+            fader.SetBool("fader_in", true);
+            _rb.bodyType = RigidbodyType2D.Static;
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
         }
         else

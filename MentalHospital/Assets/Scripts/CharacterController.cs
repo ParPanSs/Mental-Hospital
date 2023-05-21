@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class CharacterController : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("DayCounter", PlayerPrefs.GetInt("DayCounter") + 1);
+        PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
@@ -71,6 +73,11 @@ public class CharacterController : MonoBehaviour
         {
             _isTouchingWall = true;
             col.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (col.transform.CompareTag("BorderSwitch"))
+        {
+            col.GetComponentInParent<BoxCollider2D>().enabled = true;
         }
     }
     private void OnTriggerExit2D(Collider2D col)

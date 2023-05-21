@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class InBath : MonoBehaviour
 {
-    public GameObject bath;
-    public Transform bathSpawnPoint;
-    public Transform characterPoint;
-    public Transform roomSpawnPoint;
-    public GameObject background;
+    [SerializeField] private GameObject bath;
+    [SerializeField] private Transform bathSpawnPoint;
+    [SerializeField] private Transform characterPoint;
+    [SerializeField] private Transform roomSpawnPoint;
+    [SerializeField] private GameObject background;
+    [SerializeField] private BoxCollider2D flower;
     private bool _inTrigger;
     private bool _inBath;
 
-    void Update()
+    private void Update()
     {
         if (_inTrigger && Input.GetKeyDown(KeyCode.E))
         {
@@ -18,7 +19,7 @@ public class InBath : MonoBehaviour
         }
     }
 
-    void Teleportation()
+    private void Teleportation()
     {
         if (!_inBath)
         {
@@ -26,6 +27,7 @@ public class InBath : MonoBehaviour
             bath.SetActive(true);
             characterPoint = bathSpawnPoint;
             _inBath = true;
+            flower.enabled = false;
         }
         else
         {
@@ -33,6 +35,7 @@ public class InBath : MonoBehaviour
             bath.SetActive(false);
             characterPoint = roomSpawnPoint;
             _inBath = false;
+            flower.enabled = true;
         }
     }
 

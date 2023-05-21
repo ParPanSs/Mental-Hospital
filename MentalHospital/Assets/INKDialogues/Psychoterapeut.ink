@@ -28,10 +28,10 @@ This is psychoterapeut. Dialogue with him is absent, regretfully.
 ->END
 
 =CS
-To je psychoterapeut. Dialog s nim chybi. Je mi lito.
-    *[Ukoncit den]
+To je psychoterapeut. Dialog s nim chybí. Je mi lito.
+    *[Ukončit den]
         ~ finishDay()
         -> END
-    *[Ujit]
+    *[Ujít]
         -> DONE
 -> END

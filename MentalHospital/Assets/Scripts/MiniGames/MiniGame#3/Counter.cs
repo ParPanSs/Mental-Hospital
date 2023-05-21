@@ -10,7 +10,12 @@ public class Counter : MonoBehaviour
     [SerializeField] private Sprite[] headSprites;
     [SerializeField] private GameObject[] heads;
 
-    void Update()
+    private void Start()
+    {
+        PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
+    }
+    private void Update()
     {
         for (int i = 0; i < heads.Length; i++)
         {

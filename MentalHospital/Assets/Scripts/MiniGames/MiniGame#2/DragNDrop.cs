@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DragNDrop : MonoBehaviour
 {
-    private bool isDragging = false;
+    private bool isDragging;
     private Vector3 startPosition;
     private Transform startParent;
 
@@ -14,10 +14,7 @@ public class DragNDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isDragging)
-        {
-            isDragging = true;
-        }
+        isDragging = true;
     }
 
     private void OnMouseDrag()
@@ -25,7 +22,7 @@ public class DragNDrop : MonoBehaviour
         if (isDragging)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
+            transform.position = new Vector3(mousePosition.x, mousePosition.y, -1f);
         }
     }
 
@@ -48,14 +45,13 @@ public class DragNDrop : MonoBehaviour
                 else
                 {
                     collider.transform.GetComponent<SpriteRenderer>().enabled = false;
-                    transform.position = collider.transform.position;
+                    transform.position = new Vector3(collider.transform.position.x,
+                        collider.transform.position.y, -1);
                     transform.SetParent(collider.transform);
                     isOverSlot = true;
                     break;
                 }
             }
-
-            
         }
 
         if (!isOverSlot)

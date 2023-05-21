@@ -16,6 +16,7 @@ INCLUDE globals.ink
         -> DONE
     * [Пнуть]
         Вы пнули собаку. Она обиженно скулит. У вас совести нет.
+        ~ dogWasKicked = true
         -> DONE
         
 -> END
@@ -27,6 +28,7 @@ This is a dog. It seems to be happy.
         -> DONE
     * [Kick]
         You kicked the dog. It's whining resentfully. Do you have a conscience?
+        ~ dogWasKicked = true
         -> DONE
 -> END
 
@@ -36,7 +38,7 @@ Tohle je pes. Vypádá šťastné.
         Vý hladite psa. Pes spokojené vrtí chvostem.
         -> DONE
     *[Kopnout]
-        Koupnuli jste psa. Pes kňučí uraženě. Máte svědomí?
+        Kopnuli jste psa. Kňučí uraženě. Nemáte svědomí.
+        ~ dogWasKicked = true
         -> DONE
 -> END
-        

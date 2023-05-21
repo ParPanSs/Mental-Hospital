@@ -15,7 +15,7 @@ INCLUDE globals.ink
 Это цветок. Кажется, ему не хватает воды.
     *[Полить]
         Вы полили цветок. Спасибо.
-        ~ isWatered = true
+        ~ flowerIsWatered = true
         -> DONE
     *[Уйти] 
         -> DONE
@@ -24,7 +24,7 @@ INCLUDE globals.ink
 This is a flower. It seems to need some water.
     *[Water]
         You watered the flower. Thank you.
-        ~ isWatered = true
+        ~ flowerIsWatered = true
         -> DONE
     *[Leave]
         -> DONE
@@ -33,7 +33,7 @@ This is a flower. It seems to need some water.
 Tohle je květina. Vypádá jakoby potřebuje vodu.
     *[Polít]
         Vý jste polili květinu. Děkuji.
-        ~ isWatered = true
+        ~ flowerIsWatered = true
         -> DONE
     *[Odejít]
     -> DONE

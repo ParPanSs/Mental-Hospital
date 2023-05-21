@@ -93,7 +93,7 @@ public class DialogManager : MonoBehaviour
         currentStory.BindExternalFunction("finishDay", () =>
         {
             var dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
-            endOfTheDay.enabled = true;
+            endOfTheDay.SetBool("fader_in", true);
             ExitDialogueMode();
             dialogueVariables.SaveVariables();
             StartCoroutine(StartNextDay(dayIndex));
