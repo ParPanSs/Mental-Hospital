@@ -3,7 +3,7 @@ using UnityEngine;
 public class DialogTrigger : MonoBehaviour
 {
     private bool playerInRange;
-    [SerializeField] private TextAsset inkJSON;
+    [SerializeField] public TextAsset inkJSON;
 
     private void Update()
     {

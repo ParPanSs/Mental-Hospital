@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,7 @@ public class CharacterController : MonoBehaviour
     private float _vertical;
 
     private bool _isFacingRight;
+    private bool _isSitting;
 
     void Start()
     {
@@ -50,9 +52,20 @@ public class CharacterController : MonoBehaviour
             Flip();
             _rb.velocity = new Vector2(_horizontal, _vertical);
             if (_horizontal != 0 || _vertical != 0)
+            {
                 _animator.SetBool("isWalk", true);
+                _animator.SetBool("isSitting", false);
+            }
             else
                 _animator.SetBool("isWalk", false);
+        }
+    }
+
+    private void Update()
+    {
+        if (_isSitting && Input.GetKeyDown(KeyCode.E))
+        {
+            _animator.SetBool("isSitting", true);
         }
     }
 
@@ -79,10 +92,31 @@ public class CharacterController : MonoBehaviour
         {
             col.GetComponentInParent<BoxCollider2D>().enabled = true;
         }
+
+        if (col.transform.CompareTag("Girl"))
+        {
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON);
+        }
+
+        if (col.transform.CompareTag("Sit"))
+        {
+            _isSitting = true;
+        }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Sit"))
+        {
+            
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = false;
+        if (col.transform.CompareTag("Sit"))
+            _isSitting = false;
     }
 }

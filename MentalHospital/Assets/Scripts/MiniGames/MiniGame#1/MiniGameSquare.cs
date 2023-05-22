@@ -8,6 +8,10 @@ using UnityEngine.SceneManagement;
 public class MiniGameSquare : MonoBehaviour
 {
     [SerializeField] private Animator fader;
+
+    [SerializeField] private Animator introversionCharacteristic;
+    [SerializeField] private Animator extraversionCharacteristic;
+    [SerializeField] private Animator blackBack;
     
     private bool _isTouchingDot;
     private bool _isTouchingWall;
@@ -137,10 +141,20 @@ public class MiniGameSquare : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (introversionCounter.text == "10/10" || extraversionCounter.text == "10/10")
         {
-            if (extraversionCounter.text == "10/10")
-                Behaviour.extravert = true;
-            fader.SetBool("fader_in", true);
             _rb.bodyType = RigidbodyType2D.Static;
+            blackBack.enabled = true;
+            if (extraversionCounter.text == "10/10")
+            {
+                Behaviour.extravert = true;
+                extraversionCharacteristic.enabled = true;
+            }
+            else
+            {
+                introversionCharacteristic.enabled = true;
+            }
+            yield return new WaitForSeconds(2f);
+            
+            fader.SetBool("fader_in", true);
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
         }

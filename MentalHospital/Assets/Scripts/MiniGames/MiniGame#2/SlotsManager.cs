@@ -13,6 +13,9 @@ public class SlotsManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI irrationalCounter;
     [SerializeField] private RoundsCounter counter;
     [SerializeField] private Animator fader;
+    [SerializeField] private Animator rationalCharacteristic;
+    [SerializeField] private Animator irrationalCharacteristic;
+    [SerializeField] private Animator blackBack;
 
     private void Start()
     {
@@ -23,15 +26,24 @@ public class SlotsManager : MonoBehaviour
     {
         if (rationalCounter.text == "3/3" || irrationalCounter.text == "3/3")
         {
+            blackBack.enabled = true;
             if (rationalCounter.text == "3/3")
+            {
                 Behaviour.rational = true;
+                rationalCharacteristic.enabled = true;
+            }
+            else
+            {
+                irrationalCharacteristic.enabled = true;
+            }
+
             StartCoroutine(EndOfMiniGame());
         }
     }
     public void CheckFull()
     {
         var fullSlot = slots.Where(slot => slot.transform.childCount == 1).ToList();
-        if (fullSlot.Count == slots.Length)
+        if (fullSlot.Count == slots.Length && !(rationalCounter.text == "3/3" || irrationalCounter.text == "3/3"))
         {
             button.SetActive(true);
         }
@@ -54,10 +66,12 @@ public class SlotsManager : MonoBehaviour
             irrationalCounter.text = counter.irrational + "/3";
             counter.irrational += 1;
         }
+        button.SetActive(false);
     }
 
     private IEnumerator EndOfMiniGame()
     {
+        yield return new WaitForSeconds(2f);
         fader.SetBool("fader_in", true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);

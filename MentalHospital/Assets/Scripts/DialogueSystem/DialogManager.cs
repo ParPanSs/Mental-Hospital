@@ -19,6 +19,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject choicesBackground;
     private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
@@ -52,7 +53,7 @@ public class DialogManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-
+        choicesBackground.SetActive(false);
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
         foreach (GameObject choice in choices)
@@ -164,6 +165,8 @@ public class DialogManager : MonoBehaviour
         {
             choiceButton.SetActive(false);
         }
+
+        choicesBackground.SetActive(false);
     }
 
     private void DisplayChoices()
@@ -171,12 +174,12 @@ public class DialogManager : MonoBehaviour
         List<Choice> currentChoices = currentStory.currentChoices;
 
         int index = 0;
-
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
+            choicesBackground.SetActive(true);
         }
 
         for (int i = index; i < choices.Length; i++)

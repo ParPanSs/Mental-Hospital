@@ -9,6 +9,9 @@ public class Counter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sadCounter;
     [SerializeField] private Sprite[] headSprites;
     [SerializeField] private GameObject[] heads;
+    [SerializeField] private Animator pessimistCharacteristic;
+    [SerializeField] private Animator optimistCharacteristic;
+    [SerializeField] private Animator blackBack;
 
     private void Start()
     {
@@ -27,8 +30,16 @@ public class Counter : MonoBehaviour
 
         if (smileCounter.text == "5/5" || sadCounter.text == "5/5")
         {
+            blackBack.enabled = true;
             if (smileCounter.text == "5/5")
+            {
                 Behaviour.optimist = true;
+                optimistCharacteristic.enabled = true;
+            }
+            else
+            {
+                pessimistCharacteristic.enabled = true;
+            }
         }
     }
 }
