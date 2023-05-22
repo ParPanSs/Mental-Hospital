@@ -102,18 +102,20 @@ public class CharacterController : MonoBehaviour
         {
             _isSitting = true;
         }
-    }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.transform.CompareTag("Sit"))
+        if (col.transform.GetComponentInChildren<Canvas>() != null)
         {
-            
+            col.transform.GetComponentInChildren<Canvas>().enabled = true;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
+        if (col.transform.GetComponentInChildren<Canvas>() != null)
+        {
+            col.transform.GetComponentInChildren<Canvas>().enabled = false;
+        }
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = false;
         if (col.transform.CompareTag("Sit"))
