@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
@@ -14,12 +15,12 @@ public class DialogManager : MonoBehaviour
 
     [SerializeField] private GameObject dialoguePanel;
 
-    [SerializeField] private GameObject continueIcon;
-
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicesBackground;
+    [SerializeField] private Animator choicesAnimator;
+    [SerializeField] private Animator portraitAnimator;
     private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
@@ -35,13 +36,13 @@ public class DialogManager : MonoBehaviour
 
     [SerializeField] private Animator endOfTheDay;
 
+    private const string PORTRAIT_TAG = "portrait";
+
     private void Awake()
     {
         instance = this;
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
-
-        //DontDestroyOnLoad(gameObject);
     }
 
     public static DialogManager GetInstance()
@@ -68,7 +69,7 @@ public class DialogManager : MonoBehaviour
         if (!dialogueIsPlaying)
             return;
 
-        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Return))
         {
             ContinueStory();
         }
@@ -118,17 +119,49 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            if (displayLineCoroutine != null)
+            if (displayLineCoroutine != null) 
             {
                 StopCoroutine(displayLineCoroutine);
             }
-
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
-
+            string nextLine = currentStory.Continue();
+            // handle case where the last line is an external function
+            if (nextLine.Equals("") && !currentStory.canContinue)
+            {
+                ExitDialogueMode();
+            }
+            // otherwise, handle the normal case for continuing the story
+            else 
+            {
+                // handle tags
+                HandleTags(currentStory.currentTags);
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            }
         }
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogWarning("Tag doesn't match the lenght parameter");
+            }
+
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+            }
         }
     }
 
@@ -137,14 +170,13 @@ public class DialogManager : MonoBehaviour
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
 
-        continueIcon.SetActive(false);
         HideChoices();
         
         canContinueToNextLine = false;
 
         foreach (char letter in line.ToCharArray())
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 dialogueText.maxVisibleCharacters = line.Length;
                 break;
@@ -153,8 +185,6 @@ public class DialogManager : MonoBehaviour
             dialogueText.maxVisibleCharacters++;
             yield return new WaitForSeconds(typingSpeed);
         }
-
-        continueIcon.SetActive(true);
         DisplayChoices();
         canContinueToNextLine = true;
     }
@@ -165,14 +195,14 @@ public class DialogManager : MonoBehaviour
         {
             choiceButton.SetActive(false);
         }
-
-        choicesBackground.SetActive(false);
+        Camera.main.GetComponent<PostProcessVolume>().enabled = false;
+        choicesAnimator.SetBool("isOpen", false);
+        StartCoroutine(CloseChoices());
     }
 
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
-
         int index = 0;
         foreach (Choice choice in currentChoices)
         {
@@ -180,6 +210,7 @@ public class DialogManager : MonoBehaviour
             choicesText[index].text = choice.text;
             index++;
             choicesBackground.SetActive(true);
+            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
         }
 
         for (int i = index; i < choices.Length; i++)
@@ -227,5 +258,11 @@ public class DialogManager : MonoBehaviour
     public void OnApplicationQuit()
     {
          dialogueVariables.SaveVariables();
+    }
+
+    private IEnumerator CloseChoices()
+    {
+        yield return new WaitForSeconds(0.8f);
+        choicesBackground.SetActive(false);
     }
 }

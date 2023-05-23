@@ -10,6 +10,12 @@ TagManager:
   - Draggable
   - Bounds
   - GameField
+  - Girl
+  - Wall
+  - Sit
+  - Yard
+  - BorderSwitch
+  - Mom
   layers:
   - Default
   - TransparentFX
@@ -17,7 +23,7 @@ TagManager:
   - Dots
   - Water
   - UI
-  - 
+  - PostProcessing
   - 
   - 
   - Colliders

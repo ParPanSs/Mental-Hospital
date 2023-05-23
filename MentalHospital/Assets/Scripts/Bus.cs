@@ -22,12 +22,12 @@ public class Bus : MonoBehaviour
     {
         _busRb = bus.GetComponent<Rigidbody2D>();
     }
-    void Update()
-    
+    private void Update()
     {
         if (_isInStation && Input.GetKeyDown(KeyCode.E))
         {
             character.rb.bodyType = RigidbodyType2D.Static;
+            character.animator.SetBool("isWalk", false);
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
             _isDriving = true;

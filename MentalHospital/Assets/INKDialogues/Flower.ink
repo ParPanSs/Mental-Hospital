@@ -13,27 +13,27 @@ INCLUDE globals.ink
 
 = RU
 Это цветок. Кажется, ему не хватает воды.
-    *[Полить]
+    + [Полить]
         Вы полили цветок. Спасибо.
         ~ flowerIsWatered = true
         -> DONE
-    *[Уйти] 
+    + [Уйти] 
         -> DONE
 
 = EN
 This is a flower. It seems to need some water.
-    *[Water]
+    + [Water]
         You watered the flower. Thank you.
         ~ flowerIsWatered = true
         -> DONE
-    *[Leave]
+    + [Leave]
         -> DONE
 
 = CS
 Tohle je květina. Vypádá jakoby potřebuje vodu.
-    *[Polít]
+    + [Polít]
         Vý jste polili květinu. Děkuji.
         ~ flowerIsWatered = true
         -> DONE
-    *[Odejít]
+    + [Odejít]
     -> DONE

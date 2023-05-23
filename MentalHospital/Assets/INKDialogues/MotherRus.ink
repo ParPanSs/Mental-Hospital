@@ -9,26 +9,26 @@ INCLUDE globals.ink
         -> CS
 }
 = RU
-Доброе утро, сын.
-    *[Поприветствовать]
+Доброе утро, сын. #portrait:Mother
+    * [Поприветствовать]
         Не забудь, что сегодня вечером ты записан к доктору.
         -> DONE
-    *[Отмена]
-        -> END
+    * [Отмена]
+        -> DONE
 -> END
 = EN
-Morning, son.
+Morning, son. #portrait:Mother
     * [Greeting]
         Don't forget about your evening doctor appointment.
         -> DONE
     * [Cancel]
-        -> END
+        -> DONE
 -> END
 = CS
-Dobré ráno, syne.
+Dobré ráno, syne. #portrait:Mother
     * [Uvítat]
-        Nezapomeň na večerní zápis k doktorovi.
+        Nezapomeň na večerní zápis k doktorovi. #portrait:Mother
         -> DONE
     * [Zrušení]
-        -> END
+        -> DONE
 ->END

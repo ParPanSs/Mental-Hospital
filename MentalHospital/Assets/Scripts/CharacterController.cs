@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     public Rigidbody2D rb => _rb;
     private Animator _animator;
 
+    public Animator animator => _animator;
     private bool _isTouchingWall;
     public bool isTouchingWall => _isTouchingWall;
 
@@ -18,6 +19,8 @@ public class CharacterController : MonoBehaviour
 
     private bool _isFacingRight;
     private bool _isSitting;
+
+    private Vector2 _sitPosition;
 
     void Start()
     {
@@ -39,7 +42,7 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogManager.GetInstance().dialogueIsPlaying || rb.bodyType == RigidbodyType2D.Static)
+        if (DialogManager.GetInstance().dialogueIsPlaying)
         {
             _animator.SetBool("isWalk", false);
             _rb.velocity = new Vector2(0, 0);
@@ -66,6 +69,7 @@ public class CharacterController : MonoBehaviour
         if (_isSitting && Input.GetKeyDown(KeyCode.E))
         {
             _animator.SetBool("isSitting", true);
+            _rb.transform.position = _sitPosition;
         }
     }
 
@@ -85,12 +89,12 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Wall"))
         {
             _isTouchingWall = true;
-            col.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            //col.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (col.transform.CompareTag("BorderSwitch"))
         {
-            col.GetComponentInParent<BoxCollider2D>().enabled = true;
+            col.transform.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (col.transform.CompareTag("Girl"))
@@ -101,6 +105,7 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Sit"))
         {
             _isSitting = true;
+            _sitPosition = col.transform.GetChild(0).GetComponent<Transform>().position;
         }
 
         if (col.transform.GetComponentInChildren<Canvas>() != null)
@@ -119,6 +124,8 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Wall"))
             _isTouchingWall = false;
         if (col.transform.CompareTag("Sit"))
+        {
             _isSitting = false;
+        }
     }
 }
