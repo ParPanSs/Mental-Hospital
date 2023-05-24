@@ -12,12 +12,13 @@ INCLUDE globals.ink
 
 
 = RU
-Это цветок. Кажется, ему не хватает воды.
+Как ты сегодня, друг?
     * [Полить]
-        Вы полили цветок. Спасибо.
+        Всем нужна вода.
         ~ flowerIsWatered = true
         -> DONE
-    * [Уйти] 
+    * [Уйти]
+        ... #portrait:default
         -> DONE
 
 = EN
@@ -27,6 +28,7 @@ This is a flower. It seems to need some water.
         ~ flowerIsWatered = true
         -> DONE
     * [Leave]
+        ... #portrait:default
         -> DONE
 
 = CS
@@ -36,4 +38,5 @@ Tohle je květina. Vypádá jakoby potřebuje vodu.
         ~ flowerIsWatered = true
         -> DONE
     * [Odejít]
-    -> DONE
+    ... #portrait:default
+        -> DONE

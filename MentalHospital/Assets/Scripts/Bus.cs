@@ -24,7 +24,7 @@ public class Bus : MonoBehaviour
     }
     private void Update()
     {
-        if (_isInStation && Input.GetKeyDown(KeyCode.E))
+        if (_isInStation)
         {
             character.rb.bodyType = RigidbodyType2D.Static;
             character.animator.SetBool("isWalk", false);

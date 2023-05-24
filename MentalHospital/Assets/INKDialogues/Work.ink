@@ -35,6 +35,7 @@ INCLUDE globals.ink
         -> ThirdChoice
     = ThirdChoice
     С наступающим Новым годом! Пусть в новом году тебя окружают только положительные эмоции, здоровье и благополучие. Желаю...
+    ~ workWasDone = true
     *[Успехов]
         Вы выбрали первый вариант. Сегодня работы больше нет.
         -> END
@@ -72,6 +73,7 @@ Happy birthday! May the sun always shine brightly in your life, and may success 
         -> ThirdChoice
     = ThirdChoice
     Happy New Year! May the coming year bring you only positive emotions, good health, and prosperity. Wishing you...
+    ~ workWasDone = true
     *[Success]
         You have chosen first variant. No more work for today.
         -> END
@@ -109,6 +111,7 @@ Přeji ti šťastný den narozenin! Ať slunce vždy září jasně ve tvém ži
         -> ThirdChoice
     = ThirdChoice
     S přicházejícím Novým rokem! Ať tě v novém roce obklopují pouze pozitivní emoce, zdraví a blahobyt. Přeji ti...
+    ~ workWasDone = true
     *[Úspěch]
         Výbrali jste první variantu. Dnes už není žádná práce.
         -> END

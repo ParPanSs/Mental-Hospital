@@ -15,6 +15,7 @@ INCLUDE globals.ink
         ~ finishDay()
         -> DONE
     *[Уйти]
+        ... #portrait:default
         -> DONE
 -> END
 
@@ -24,6 +25,7 @@ This is psychoterapeut. Dialogue with him is absent, regretfully. #portrait:Psyc
         ~ finishDay()
         -> DONE
     *[Leave]
+        ... #portrait:default
         -> DONE
 ->END
 
@@ -33,5 +35,6 @@ To je psychoterapeut. Dialog s nim chybí. Je mi lito. #portrait:Psychoterapeut
         ~ finishDay()
         -> END
     *[Ujít]
+        ... #portrait:default
         -> DONE
 -> END

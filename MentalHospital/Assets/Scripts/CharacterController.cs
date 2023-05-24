@@ -104,6 +104,11 @@ public class CharacterController : MonoBehaviour
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON);
         }
 
+        if (col.transform.CompareTag("Mom"))
+        {
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON);
+        }
+
         if (col.transform.CompareTag("Sit"))
         {
             _isSitting = true;

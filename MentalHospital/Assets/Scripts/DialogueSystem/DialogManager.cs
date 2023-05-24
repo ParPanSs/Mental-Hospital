@@ -119,6 +119,11 @@ public class DialogManager : MonoBehaviour
                 itemPickup.PickUp();
             }
         });
+        
+        currentStory.BindExternalFunction("callBus", () =>
+        {
+            FindObjectOfType<Bus>().enabled = true;
+        });
 
         ContinueStory();
     }
@@ -127,6 +132,7 @@ public class DialogManager : MonoBehaviour
     {
         currentStory.UnbindExternalFunction("finishDay");
         currentStory.UnbindExternalFunction("language");
+        currentStory.UnbindExternalFunction("pickUpItem");
 
         dialogueVariables.StopListening(currentStory);
         dialogueIsPlaying = false;

@@ -8,7 +8,7 @@ public class CharacteristicMenu : MonoBehaviour
     [SerializeField] private GameObject characteristicMenu;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !characteristicMenu.activeInHierarchy) //_isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !characteristicMenu.activeInHierarchy)
         {
             _isPaused = !_isPaused;
             pauseMenu.SetActive(_isPaused);
@@ -18,7 +18,7 @@ public class CharacteristicMenu : MonoBehaviour
             Time.timeScale = 0f;
             Camera.main.GetComponent<PostProcessVolume>().enabled = true;
         }
-        else
+        else if(!_isPaused && !DialogManager.GetInstance().dialogueIsPlaying)
         {
             Time.timeScale = 1f;
             Camera.main.GetComponent<PostProcessVolume>().enabled = false;

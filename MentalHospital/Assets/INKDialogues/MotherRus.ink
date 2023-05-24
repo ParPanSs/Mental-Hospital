@@ -15,6 +15,7 @@ INCLUDE globals.ink
         Не забудь, что сегодня вечером ты записан к доктору.
         -> DONE
     * [Отмена]
+        ... #portrait:default
         -> DONE
 -> END
 
@@ -24,6 +25,7 @@ Morning, son. #portrait:Mother
         Don't forget about your evening doctor appointment.
         -> DONE
     * [Cancel]
+        ... #portrait:default
         -> DONE
 -> END
 
@@ -33,5 +35,6 @@ Dobré ráno, syne. #portrait:Mother
         Nezapomeň na večerní zápis k doktorovi. #portrait:Mother
         -> DONE
     * [Zrušení]
+        ... #portrait:default
         -> DONE
 ->END

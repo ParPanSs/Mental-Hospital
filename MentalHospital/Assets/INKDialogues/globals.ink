@@ -8,4 +8,6 @@ VAR dogWasKicked = false
 
 VAR candyWasTaken = false
 
+VAR workWasDone = false
+
 ~ currentLanguage = language(currentLanguage)
