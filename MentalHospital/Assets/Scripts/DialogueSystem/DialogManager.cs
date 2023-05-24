@@ -21,6 +21,10 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private GameObject choicesBackground;
     [SerializeField] private Animator choicesAnimator;
     [SerializeField] private Animator portraitAnimator;
+    [SerializeField] private ItemPickup itemPickup;
+    [SerializeField] private Rigidbody2D player;
+    [SerializeField] private LayerMask whatIsItem;
+    
     private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
@@ -73,6 +77,10 @@ public class DialogManager : MonoBehaviour
         {
             ContinueStory();
         }
+        if (choicesAnimator.GetCurrentAnimatorStateInfo(0).IsName("ChoicesExit"))
+        {
+            choicesBackground.SetActive(false);
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -99,6 +107,17 @@ public class DialogManager : MonoBehaviour
             ExitDialogueMode();
             dialogueVariables.SaveVariables();
             StartCoroutine(StartNextDay(dayIndex));
+        });
+        
+        currentStory.BindExternalFunction("pickUpItem", () =>
+        {
+            RaycastHit2D ray = Physics2D.Raycast(player.transform.position, Vector2.up, 100f, whatIsItem);
+            if (ray.collider != null)
+            {
+                Debug.Log("Touched: " + ray.collider.name);
+                itemPickup = ray.collider.GetComponent<ItemPickup>();
+                itemPickup.PickUp();
+            }
         });
 
         ContinueStory();
@@ -142,7 +161,43 @@ public class DialogManager : MonoBehaviour
             ExitDialogueMode();
         }
     }
+    
+    private IEnumerator DisplayLine(string line)
+    {
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
 
+        HideChoices();
+        
+        canContinueToNextLine = false;
+
+        foreach (char letter in line.ToCharArray())
+        {
+            // if (Input.GetKeyDown(KeyCode.Return))
+            // {
+            //     dialogueText.maxVisibleCharacters = line.Length;
+            //     break;
+            // }
+
+            dialogueText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        DisplayChoices();
+        canContinueToNextLine = true;
+    }
+    
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
+        }
+        Camera.main.GetComponent<PostProcessVolume>().enabled = false;
+        choicesAnimator.SetBool("isOpen", false);
+        
+        //StartCoroutine(CloseChoices());
+    }
+    
     private void HandleTags(List<string> currentTags)
     {
         foreach (string tag in currentTags)
@@ -165,52 +220,21 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    private IEnumerator DisplayLine(string line)
-    {
-        dialogueText.text = line;
-        dialogueText.maxVisibleCharacters = 0;
-
-        HideChoices();
-        
-        canContinueToNextLine = false;
-
-        foreach (char letter in line.ToCharArray())
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                dialogueText.maxVisibleCharacters = line.Length;
-                break;
-            }
-
-            dialogueText.maxVisibleCharacters++;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-        DisplayChoices();
-        canContinueToNextLine = true;
-    }
-
-    private void HideChoices()
-    {
-        foreach (GameObject choiceButton in choices)
-        {
-            choiceButton.SetActive(false);
-        }
-        Camera.main.GetComponent<PostProcessVolume>().enabled = false;
-        choicesAnimator.SetBool("isOpen", false);
-        StartCoroutine(CloseChoices());
-    }
-
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
         int index = 0;
+        if (currentChoices.Count > 0)
+        {
+            choicesBackground.SetActive(true);
+            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
+        }
+
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
-            choicesBackground.SetActive(true);
-            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
         }
 
         for (int i = index; i < choices.Length; i++)
@@ -262,7 +286,6 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator CloseChoices()
     {
-        yield return new WaitForSeconds(0.8f);
-        choicesBackground.SetActive(false);
+        yield return new WaitForSeconds(3f);
     }
 }

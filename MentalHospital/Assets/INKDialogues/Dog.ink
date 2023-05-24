@@ -11,10 +11,10 @@ INCLUDE globals.ink
 
 = RU
 Это собака. Кажется, она довольна жизнью. #portrait:Dog
-    + [Погладить]
+    * [Погладить]
         Вы гладите собаку. Она довольно машет хвостом. #portrait:Dog
         -> DONE
-    + [Пнуть]
+    * [Пнуть]
         Вы пнули собаку. Она обиженно скулит. У вас совести нет. #portrait:Dog
         ~ dogWasKicked = true
         -> DONE
@@ -23,10 +23,10 @@ INCLUDE globals.ink
 
 = EN
 This is a dog. It seems to be happy. #portrait:dog
-    + [Pet]
+    * [Pet]
         You are petting the dog. It's waving it's tale happily. #portrait:Dog
         -> DONE
-    + [Kick]
+    * [Kick]
         You kicked the dog. It's whining resentfully. Do you have a conscience? #portrait:Dog
         ~ dogWasKicked = true
         -> DONE
@@ -34,10 +34,10 @@ This is a dog. It seems to be happy. #portrait:dog
 
 = CS
 Tohle je pes. Vypádá šťastné. #portrait:dog
-    + [Pohladit]
+    * [Pohladit]
         Vý hladite psa. Pes spokojené vrtí chvostem. #portrait:Dog
         -> DONE
-    + [Kopnout]
+    * [Kopnout]
         Kopnuli jste psa. Kňučí uraženě. Nemáte svědomí. #portrait:Dog
         ~ dogWasKicked = true
         -> DONE

@@ -8,6 +8,7 @@ INCLUDE globals.ink
     - currentLanguage == "cs": 
         -> CS
 }
+
 = RU
 Доброе утро, сын. #portrait:Mother
     * [Поприветствовать]
@@ -16,6 +17,7 @@ INCLUDE globals.ink
     * [Отмена]
         -> DONE
 -> END
+
 = EN
 Morning, son. #portrait:Mother
     * [Greeting]
@@ -24,6 +26,7 @@ Morning, son. #portrait:Mother
     * [Cancel]
         -> DONE
 -> END
+
 = CS
 Dobré ráno, syne. #portrait:Mother
     * [Uvítat]

@@ -10,13 +10,13 @@ INCLUDE globals.ink
 }
 
 = RU
-Коллега занят работой, не стоит его беспокоить.
+Коллега занят работой, не стоит его беспокоить. #portrait:Colleague
 -> END
 
 = EN
-Colleague is busy, do not disturb him.
+Colleague is busy, do not disturb him. #portrait:Colleague
 -> END
 
 = CS
-Kolega má práci. Nerušít, prosím. 
+Kolega má práci. Nerušít, prosím. #portrait:Colleague
 -> END

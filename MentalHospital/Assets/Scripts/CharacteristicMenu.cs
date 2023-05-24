@@ -4,28 +4,29 @@ using UnityEngine.Rendering.PostProcessing;
 public class CharacteristicMenu : MonoBehaviour
 {
     private bool _isPaused;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject characteristicMenu;
     private void Update()
     {
-        if (_isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !characteristicMenu.activeInHierarchy) //_isPaused)
+        {
+            _isPaused = !_isPaused;
+            pauseMenu.SetActive(_isPaused);
+        }
+        if(_isPaused)
         {
             Time.timeScale = 0f;
+            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
         }
         else
         {
             Time.timeScale = 1f;
+            Camera.main.GetComponent<PostProcessVolume>().enabled = false;
         }
     }
 
     public void SetPause()
     {
-        if (!Camera.main.GetComponent<PostProcessVolume>().enabled)
-        {
-            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
-        }
-        else
-        {
-            Camera.main.GetComponent<PostProcessVolume>().enabled = false;
-        }
         _isPaused = !_isPaused;
     }
 }

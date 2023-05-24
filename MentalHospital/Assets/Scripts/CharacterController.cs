@@ -71,6 +71,8 @@ public class CharacterController : MonoBehaviour
             _animator.SetBool("isSitting", true);
             _rb.transform.position = _sitPosition;
         }
+        
+        Debug.DrawRay(transform.position, Vector2.up, Color.red, 100f);
     }
 
     private void Flip()
@@ -112,7 +114,6 @@ public class CharacterController : MonoBehaviour
         {
             col.transform.GetComponentInChildren<Canvas>().enabled = true;
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D col)
