@@ -11,7 +11,7 @@ public class DialogTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                DialogManager.GetInstance().EnterDialogueMode(inkJSON);
+                DialogManager.GetInstance().EnterDialogueMode(inkJSON, gameObject);
             }
         }
     }

@@ -1,5 +1,6 @@
 INCLUDE globals.ink
 
+
 {
     - currentLanguage == "ru": 
        -> RU
@@ -10,7 +11,20 @@ INCLUDE globals.ink
 }
 
 = RU
+~blockChoice(0)
+~blockChoice(1)
 Жаль, что нельзя просто остаться здесь и никуда не идти. #portrait:default
+    
+    *[Заправить кровать]
+        Все должно быть правильно.
+        -> DONE
+    *[Пнуть]
+        Одни кошмары, сколько можно...
+        -> DONE
+    *[Отойти]
+        Сейчас я снова буду здесь.
+        -> DONE
+    
 -> END
 
 = EN

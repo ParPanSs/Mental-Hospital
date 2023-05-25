@@ -10,29 +10,11 @@ INCLUDE globals.ink
 }
 
 == RU
-Это девочка. Вы наступили на ее рисунок. #portrait:Girl
-{
-    - candyWasTaken == true:
-        -> iHaveCandy
-    - candyWasTaken == false:
-        -> NoCandy
-}
-    = iHaveCandy
-        *[Дать конфету]
-            Вы дали девочке конфету.
-            -> END
-        *[Уйти]
-            Вы ушли.
-            -> END
-    -> END
-    = NoCandy
-        *[???]
-            ???
-            -> END
-        *[Уйти]
-            Вы ушли.
-            -> END
-    -> END
+~offCollider()
+Не-е-е-т!!! Мой рисунок... Ты все испортил, испортил! #portrait:Girl
+Я не хотел. #portrait:default
+Я не прощу тебя за то, что ты сделал! #portrait:Girl
+
 -> END
 
 == EN

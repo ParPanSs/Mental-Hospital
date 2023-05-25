@@ -10,14 +10,19 @@ INCLUDE globals.ink
 }
 
 == RU
+~blockChoice(2)
 Вдруг понадобится.
     *[Взять]
         ...
-    -> DONE
+        -> DONE
     
     *[Не брать]
         ...
-    -> DONE
+        -> DONE
+    
+    *[Разбить]
+        ...
+        -> DONE
 -> END
 
 == EN

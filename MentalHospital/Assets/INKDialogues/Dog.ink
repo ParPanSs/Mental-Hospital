@@ -10,12 +10,13 @@ INCLUDE globals.ink
 }
 
 = RU
-Это собака. Кажется, она довольна жизнью. #portrait:Dog
+Гав! #portrait:Dog
+Испытываю ли я привязанность?... #portrait:default
     * [Погладить]
-        Вы гладите собаку. Она довольно машет хвостом. #portrait:Dog
+        Все-таки испытываю. #portrait:default
         -> DONE
     * [Пнуть]
-        Вы пнули собаку. Она обиженно скулит. У вас совести нет. #portrait:Dog
+        Все-таки нет. #portrait:default
         ~ dogWasKicked = true
         -> DONE
         

@@ -12,6 +12,7 @@ INCLUDE globals.ink
 
 
 = RU
+~ blockChoice(2)
 Как ты сегодня, друг?
     * [Полить]
         Всем нужна вода.
@@ -19,6 +20,9 @@ INCLUDE globals.ink
         -> DONE
     * [Уйти]
         ... #portrait:default
+        -> DONE
+    * [Разбить]
+        ...
         -> DONE
 
 = EN

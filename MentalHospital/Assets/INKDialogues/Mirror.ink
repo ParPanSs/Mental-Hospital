@@ -10,7 +10,18 @@ INCLUDE globals.ink
 }
 
 = RU
+~blockChoice(0)
+~blockChoice(1)
 Это я.
+    *[Разбить]
+        Не хочу это видеть.
+        -> DONE
+    *[Успокоиться] 
+        Всего лишь еще один день...
+        -> DONE
+    *[Отойти]
+        ...
+        ->DONE
 -> END
 
 = EN

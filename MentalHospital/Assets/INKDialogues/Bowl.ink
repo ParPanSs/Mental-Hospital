@@ -10,7 +10,7 @@ INCLUDE globals.ink
 }
 
 == RU
-Миска полна.
+Миска полна до краев.
 -> END
 
 == EN

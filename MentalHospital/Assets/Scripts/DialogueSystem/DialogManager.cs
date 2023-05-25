@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
@@ -83,7 +84,7 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, GameObject gameObject)
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
@@ -119,10 +120,19 @@ public class DialogManager : MonoBehaviour
                 itemPickup.PickUp();
             }
         });
+        currentStory.BindExternalFunction("blockChoice", (int choiceIndex) =>
+        {
+            choices[choiceIndex].gameObject.GetComponent<Button>().interactable = false;
+        });
         
         currentStory.BindExternalFunction("callBus", () =>
         {
             FindObjectOfType<Bus>().enabled = true;
+        });
+        
+        currentStory.BindExternalFunction("offCollider", () =>
+        {
+            gameObject.transform.GetComponent<BoxCollider2D>().enabled = false;
         });
 
         ContinueStory();
@@ -133,7 +143,15 @@ public class DialogManager : MonoBehaviour
         currentStory.UnbindExternalFunction("finishDay");
         currentStory.UnbindExternalFunction("language");
         currentStory.UnbindExternalFunction("pickUpItem");
+        currentStory.UnbindExternalFunction("blockChoice");
+        currentStory.UnbindExternalFunction("callBus");
+        currentStory.UnbindExternalFunction("offCollider");
 
+        foreach (var choice in choices)
+        {
+            choice.gameObject.GetComponent<Button>().interactable = true;
+        }
+        
         dialogueVariables.StopListening(currentStory);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -189,6 +207,7 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         DisplayChoices();
+        
         canContinueToNextLine = true;
     }
     

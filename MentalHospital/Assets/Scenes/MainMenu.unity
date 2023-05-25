@@ -3485,8 +3485,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: en
       m_Image: {fileID: 0}
-    - m_Text: cs
-      m_Image: {fileID: 0}
     - m_Text: ru
       m_Image: {fileID: 0}
   m_OnValueChanged:

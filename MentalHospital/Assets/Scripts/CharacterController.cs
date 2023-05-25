@@ -88,6 +88,11 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        // var dialog = col.GetComponent<DialogTrigger>();
+        // if (dialog != null)
+        // {
+        //     DialogManager.GetInstance().EnterDialogueMode(col.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+        // }
         if (col.transform.CompareTag("Wall"))
         {
             _isTouchingWall = true;
@@ -101,12 +106,25 @@ public class CharacterController : MonoBehaviour
 
         if (col.transform.CompareTag("Girl"))
         {
-            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON);
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+            //col.enabled = false;
         }
-
+        
         if (col.transform.CompareTag("Mom"))
         {
-            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON);
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+            // col.transform.GetComponentInChildren<Canvas>().enabled = false;
+            // col.enabled = false;
+        }
+        if (col.transform.CompareTag("Colleague"))
+        {
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+            //col.enabled = false;
+        }
+
+        if (col.CompareTag("Psychoterapeut"))
+        {
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
         }
 
         if (col.transform.CompareTag("Sit"))
