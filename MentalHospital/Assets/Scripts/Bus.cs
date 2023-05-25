@@ -55,6 +55,9 @@ public class Bus : MonoBehaviour
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
+            character.GetComponent<Animator>().SetBool("isSitting", false);
+            character.GetComponent<Animator>().SetBool("isWalk", true);
+            character.GetComponent<Animator>().SetBool("isWalk", false);
             StartCoroutine(DrivingAway());
         }
 

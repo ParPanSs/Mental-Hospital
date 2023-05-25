@@ -126,6 +126,14 @@ public class CharacterController : MonoBehaviour
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
         }
+        if (col.CompareTag("Garage"))
+        {
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+        }
+        if (col.CompareTag("Yard"))
+        {
+            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+        }
 
         if (col.transform.CompareTag("Sit"))
         {
