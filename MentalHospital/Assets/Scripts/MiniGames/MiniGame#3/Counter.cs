@@ -12,9 +12,11 @@ public class Counter : MonoBehaviour
     [SerializeField] private Animator pessimistCharacteristic;
     [SerializeField] private Animator optimistCharacteristic;
     [SerializeField] private Animator blackBack;
+    private Behaviour _behaviour;
 
     private void Start()
     {
+        _behaviour = FindObjectOfType<Behaviour>();
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
     }
@@ -33,7 +35,7 @@ public class Counter : MonoBehaviour
             blackBack.enabled = true;
             if (smileCounter.text == "5/5")
             {
-                Behaviour.optimist = true;
+                _behaviour.thirdCharacteristic = Behaviour.ThirdCharacteristic.Optimist;
                 optimistCharacteristic.enabled = true;
             }
             else

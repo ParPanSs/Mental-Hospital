@@ -17,8 +17,11 @@ public class SlotsManager : MonoBehaviour
     [SerializeField] private Animator irrationalCharacteristic;
     [SerializeField] private Animator blackBack;
 
+    private Behaviour _behaviour;
+
     private void Start()
     {
+        _behaviour = FindObjectOfType<Behaviour>();
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
     }
@@ -29,7 +32,7 @@ public class SlotsManager : MonoBehaviour
             blackBack.enabled = true;
             if (rationalCounter.text == "3/3")
             {
-                Behaviour.rational = true;
+                _behaviour.secondCharacteristic = Behaviour.SecondCharacteristic.Rational;
                 rationalCharacteristic.enabled = true;
             }
             else

@@ -18,8 +18,11 @@ public class Bus : MonoBehaviour
     public BoxCollider2D wallTrigger;
     public GameObject stationWall;
 
+    private Behaviour _behaviour;
+
     private void Start()
     {
+        _behaviour = FindObjectOfType<Behaviour>();
         _busRb = bus.GetComponent<Rigidbody2D>();
     }
     private void Update()
@@ -47,8 +50,8 @@ public class Bus : MonoBehaviour
             _busRb.bodyType = RigidbodyType2D.Kinematic;
         }
         
-        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && Behaviour.extravert)
-            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && !Behaviour.extravert))
+        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && _behaviour.firstCharacteristic == Behaviour.FirstCharacteristic.Extravert)
+            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && _behaviour.firstCharacteristic == Behaviour.FirstCharacteristic.Introvert))
         {
             character.rb.bodyType = RigidbodyType2D.Dynamic;
             mainCamera.Follow = character.gameObject.transform;

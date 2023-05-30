@@ -21,7 +21,7 @@ INCLUDE globals.ink
     * [Уйти]
         ... #portrait:default
         -> DONE
-    * [Разбить]
+    * [*%?;№%(";№]
         ...
         -> DONE
 

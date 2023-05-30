@@ -7,26 +7,35 @@ public class ShowCharacteristics : MonoBehaviour
     [SerializeField] private GameObject rationality;
     [SerializeField] private GameObject irrationality;
 
+    private Behaviour _behaviour;
+
     private void Start()
     {
-        switch (Behaviour.extravert)
+        _behaviour = FindObjectOfType<Behaviour>();
+        if (_behaviour.firstCharacteristic != null)
         {
-            case true:
-                extraversion.SetActive(true);
-                break;
-            default:
-                introversion.SetActive(true);
-                break;
+            switch (_behaviour.firstCharacteristic)
+            {
+                case Behaviour.FirstCharacteristic.Extravert:
+                    extraversion.SetActive(true);
+                    break;
+                default:
+                    introversion.SetActive(true);
+                    break;
+            }
         }
 
-        switch (Behaviour.rational)
+        if (_behaviour.secondCharacteristic != null)
         {
-            case true:
-                rationality.SetActive(true);
-                break;
-            default:
-                irrationality.SetActive(true);
-                break;
+            switch (_behaviour.secondCharacteristic)
+            {
+                case Behaviour.SecondCharacteristic.Rational:
+                    rationality.SetActive(true);
+                    break;
+                default:
+                    irrationality.SetActive(true);
+                    break;
+            }
         }
     }
 }

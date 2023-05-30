@@ -12,15 +12,18 @@ public class DialogManager : MonoBehaviour
 {
     private float typingSpeed = 0.04f;
 
+    [Header("Dialogue Panel")]
     [SerializeField] private TextAsset loadGlobalsJSON;
 
     [SerializeField] private GameObject dialoguePanel;
 
     [SerializeField] private TextMeshProUGUI dialogueText;
-
+    
+    [Header("Choices")]
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicesBackground;
     [SerializeField] private Animator choicesAnimator;
+    
     [SerializeField] private Animator portraitAnimator;
     [SerializeField] private ItemPickup itemPickup;
     [SerializeField] private Rigidbody2D player;

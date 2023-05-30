@@ -32,10 +32,14 @@ public class MiniGameSquare : MonoBehaviour
 
     private List<Rigidbody2D> pushedDot = new List<Rigidbody2D>();
     private List<Rigidbody2D> pulledDot = new List<Rigidbody2D>();
-    
+
+    private Behaviour _behaviour;
+
+
 
     private void Start()
     {
+        _behaviour = FindObjectOfType<Behaviour>();
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
         _rb = GetComponent<Rigidbody2D>();
@@ -145,11 +149,12 @@ public class MiniGameSquare : MonoBehaviour
             blackBack.enabled = true;
             if (extraversionCounter.text == "10/10")
             {
-                Behaviour.extravert = true;
+                _behaviour.firstCharacteristic = Behaviour.FirstCharacteristic.Extravert;
                 extraversionCharacteristic.enabled = true;
             }
             else
             {
+                _behaviour.firstCharacteristic = Behaviour.FirstCharacteristic.Introvert;
                 introversionCharacteristic.enabled = true;
             }
             yield return new WaitForSeconds(2f);

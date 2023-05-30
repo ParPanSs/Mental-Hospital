@@ -24,6 +24,7 @@ public class CharacteristicMenu : MonoBehaviour
             _isPaused = !_isPaused;
             inventoryMenu.SetActive(_isPaused);
             helperMenu.SetActive(!_isPaused);
+            InventoryManager.GetInstance().ListItems();
         }
         
         if (Input.GetKeyDown(KeyCode.C) && !inventoryMenu.activeInHierarchy && !pauseMenu.activeInHierarchy &&
