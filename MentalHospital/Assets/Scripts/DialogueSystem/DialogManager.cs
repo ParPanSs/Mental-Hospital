@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using Ink.Runtime;
@@ -46,6 +47,8 @@ public class DialogManager : MonoBehaviour
 
     private const string PORTRAIT_TAG = "portrait";
 
+    private Behaviour _behaviour;
+
     private void Awake()
     {
         instance = this;
@@ -60,6 +63,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        _behaviour = FindObjectOfType<Behaviour>();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         choicesBackground.SetActive(false);
@@ -128,6 +132,7 @@ public class DialogManager : MonoBehaviour
             choices[choiceIndex].gameObject.GetComponent<Button>().interactable = false;
         });
         
+        
         currentStory.BindExternalFunction("callBus", () =>
         {
             FindObjectOfType<Bus>().enabled = true;
@@ -136,6 +141,17 @@ public class DialogManager : MonoBehaviour
         currentStory.BindExternalFunction("offCollider", () =>
         {
             gameObject.transform.GetComponent<BoxCollider2D>().enabled = false;
+        });
+        
+        currentStory.BindExternalFunction("checkCharacteristic", (int characteristicIndex) =>
+        {
+            var exists = _behaviour.characteristicsList.ElementAtOrDefault(characteristicIndex) != null;
+            if (exists)
+            {
+                return _behaviour.characteristicsList[characteristicIndex].ToString();
+            }
+
+            return "empty";
         });
 
         ContinueStory();
@@ -149,6 +165,7 @@ public class DialogManager : MonoBehaviour
         currentStory.UnbindExternalFunction("blockChoice");
         currentStory.UnbindExternalFunction("callBus");
         currentStory.UnbindExternalFunction("offCollider");
+        currentStory.UnbindExternalFunction("checkCharacteristic");
 
         foreach (var choice in choices)
         {

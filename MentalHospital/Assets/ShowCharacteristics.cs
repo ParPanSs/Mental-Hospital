@@ -12,30 +12,25 @@ public class ShowCharacteristics : MonoBehaviour
     private void Start()
     {
         _behaviour = FindObjectOfType<Behaviour>();
-        if (_behaviour.firstCharacteristic != null)
+        switch (_behaviour.firstCharacteristic)
         {
-            switch (_behaviour.firstCharacteristic)
-            {
-                case Behaviour.FirstCharacteristic.Extravert:
-                    extraversion.SetActive(true);
-                    break;
-                default:
-                    introversion.SetActive(true);
-                    break;
-            }
+            case Behaviour.Characteristics.Extravert:
+                extraversion.SetActive(true);
+                break;
+            case Behaviour.Characteristics.Introvert:
+                introversion.SetActive(true);
+                break;
         }
 
-        if (_behaviour.secondCharacteristic != null)
+        switch (_behaviour.secondCharacteristic)
         {
-            switch (_behaviour.secondCharacteristic)
-            {
-                case Behaviour.SecondCharacteristic.Rational:
-                    rationality.SetActive(true);
-                    break;
-                default:
-                    irrationality.SetActive(true);
-                    break;
-            }
+            case Behaviour.Characteristics.Rational:
+                rationality.SetActive(true);
+                break;
+            case Behaviour.Characteristics.Irrational:
+                irrationality.SetActive(true);
+                break;
         }
+
     }
 }

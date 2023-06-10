@@ -729,6 +729,7 @@ MonoBehaviour:
   firstCharacteristic: 0
   secondCharacteristic: 0
   thirdCharacteristic: 0
+  characteristicsList: 
 --- !u!4 &214648405
 Transform:
   m_ObjectHideFlags: 0

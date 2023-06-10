@@ -50,17 +50,20 @@ public class Bus : MonoBehaviour
             _busRb.bodyType = RigidbodyType2D.Kinematic;
         }
         
-        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && _behaviour.firstCharacteristic == Behaviour.FirstCharacteristic.Extravert)
-            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && _behaviour.firstCharacteristic == Behaviour.FirstCharacteristic.Introvert))
+        if(bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
+            DialogManager.GetInstance().EnterDialogueMode(bus.GetComponent<DialogTrigger>().inkJSON, hospitalPoint.gameObject);
+        
+        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && _behaviour.firstCharacteristic == Behaviour.Characteristics.Extravert)
+            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && _behaviour.firstCharacteristic == Behaviour.Characteristics.Introvert))
         {
             character.rb.bodyType = RigidbodyType2D.Dynamic;
             mainCamera.Follow = character.gameObject.transform;
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
-            character.GetComponent<Animator>().SetBool("isSitting", false);
-            character.GetComponent<Animator>().SetBool("isWalk", true);
-            character.GetComponent<Animator>().SetBool("isWalk", false);
+            character.GetComponent<Animator>().Play("Character_IDLE");//SetBool("isSitting", false);
+            // character.GetComponent<Animator>().SetBool("isWalk", true);
+            // character.GetComponent<Animator>().SetBool("isWalk", false);
             StartCoroutine(DrivingAway());
         }
 

@@ -32,11 +32,12 @@ public class SlotsManager : MonoBehaviour
             blackBack.enabled = true;
             if (rationalCounter.text == "3/3")
             {
-                _behaviour.secondCharacteristic = Behaviour.SecondCharacteristic.Rational;
+                _behaviour.secondCharacteristic = Behaviour.Characteristics.Rational;
                 rationalCharacteristic.enabled = true;
             }
             else
             {
+                _behaviour.secondCharacteristic = Behaviour.Characteristics.Irrational;
                 irrationalCharacteristic.enabled = true;
             }
 

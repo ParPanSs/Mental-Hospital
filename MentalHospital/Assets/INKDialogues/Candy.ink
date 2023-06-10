@@ -11,7 +11,17 @@ INCLUDE globals.ink
         -> CS
 }
 
-= RU
+=RU
+~ firstCharacteristic = checkCharacteristic(0)
+{
+    - firstCharacteristic == "Extravert":
+        -> EXTRAVERSION_RU
+    - firstCharacteristic == "Introvert":
+        -> INTROVERSION_RU
+}
+-> END
+
+= EXTRAVERSION_RU
 Сахар с водой, в целом, вкусно.
     * [Взять]
         ~ pickUpItem()
@@ -28,10 +38,28 @@ INCLUDE globals.ink
         -> DONE
 -> END
 
-= EN
+=INTROVERSION_RU
+~blockChoice(1)
+Сахар с водой, в целом, вкусно.
+    * [Взять]
+        ~ pickUpItem()
+        ~ candyWasTaken = true
+        Вдруг захочется.
+        -> DONE
+    *[*%?;№%(";№]
+        Хочешь? #portrait:default
+        Я уже съела несколько штук, пока пила чай. #portrait:Mother
+        Возьми лучше себе.
+        -> DONE
+    * [Не брать]
+        Не думаю, что это нужно.
+        -> DONE
+-> END
+
+===EN===
 Colleague is busy, do not disturb him.
 -> END
 
-= CS
+===CS===
 Kolega má práci. Nerušít, prosím. 
 -> END

@@ -5,7 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class MiniGameSquare : MonoBehaviour
+public class MiniGameSquare : Behaviour
 {
     [SerializeField] private Animator fader;
 
@@ -15,6 +15,7 @@ public class MiniGameSquare : MonoBehaviour
     
     private bool _isTouchingDot;
     private bool _isTouchingWall;
+    private bool _coroutineIsRunning;
     
     //square moving
     private Rigidbody2D _rb;
@@ -33,7 +34,7 @@ public class MiniGameSquare : MonoBehaviour
     private List<Rigidbody2D> pushedDot = new List<Rigidbody2D>();
     private List<Rigidbody2D> pulledDot = new List<Rigidbody2D>();
 
-    private Behaviour _behaviour;
+    [SerializeField] private Behaviour _behaviour;
 
 
 
@@ -47,6 +48,9 @@ public class MiniGameSquare : MonoBehaviour
 
     private void Update()
     {
+        if (_coroutineIsRunning)
+            return;
+        
         for (int i = 0; i < dots.Length; i++)
         {
             pushedDot = dots.Where(d => d.IsTouching(
@@ -142,6 +146,7 @@ public class MiniGameSquare : MonoBehaviour
 
     private IEnumerator CloseMiniGame()
     {
+        _coroutineIsRunning = true;
         yield return new WaitForSeconds(1f);
         if (introversionCounter.text == "10/10" || extraversionCounter.text == "10/10")
         {
@@ -149,21 +154,28 @@ public class MiniGameSquare : MonoBehaviour
             blackBack.enabled = true;
             if (extraversionCounter.text == "10/10")
             {
-                _behaviour.firstCharacteristic = Behaviour.FirstCharacteristic.Extravert;
+                _behaviour.firstCharacteristic = Characteristics.Extravert;
+
                 extraversionCharacteristic.enabled = true;
             }
             else
             {
-                _behaviour.firstCharacteristic = Behaviour.FirstCharacteristic.Introvert;
+                _behaviour.firstCharacteristic = Characteristics.Introvert;
+
                 introversionCharacteristic.enabled = true;
             }
             yield return new WaitForSeconds(2f);
             
             fader.SetBool("fader_in", true);
+            
+            _behaviour.AddCharacteristic(_behaviour.firstCharacteristic);
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
         }
         else
+        {
             StopCoroutine(CloseMiniGame());
+            _coroutineIsRunning = false;
+        }
     }
 }

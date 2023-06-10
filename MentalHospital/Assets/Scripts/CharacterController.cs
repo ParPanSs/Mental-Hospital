@@ -21,11 +21,8 @@ public class CharacterController : MonoBehaviour
 
     private Vector2 _sitPosition;
 
-    private Behaviour _behaviour;
-
     void Start()
     {
-        _behaviour = FindObjectOfType<Behaviour>();
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
         _rb = GetComponent<Rigidbody2D>();
@@ -68,8 +65,7 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_behaviour.firstCharacteristic);
-        if (_isSitting && Input.GetKeyDown(KeyCode.E))
+        if (_isSitting && Input.GetKeyDown(KeyCode.E) && !_animator.GetBool("isSitting"))
         {
             _animator.SetBool("isSitting", true);
             _rb.transform.position = _sitPosition;

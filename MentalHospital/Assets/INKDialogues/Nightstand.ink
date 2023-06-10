@@ -9,7 +9,19 @@ INCLUDE globals.ink
         -> CS
 }
 
-== RU
+=RU
+
+~firstCharacteristic = checkCharacteristic(0)
+{
+    - firstCharacteristic == "Introvert":
+        -> INTROVERSION_RU
+    - firstCharacteristic == "Extravert":
+        -> EXTRAVERSION_RU
+}
+
+-> END
+
+=INTROVERSION_RU
 ~blockChoice(2)
 Вдруг понадобится.
     *[Взять]
@@ -20,9 +32,29 @@ INCLUDE globals.ink
         ...
         -> DONE
     
-    *[Разбить]
+    *[*%?;№%(";№]
         ...
         -> DONE
+->END
+
+=EXTRAVERSION_RU
+~blockChoice(2)
+Вдруг позвонят.
+    *[Взять]
+        ...
+        -> DONE
+    
+    *[Не брать]
+        ...
+        -> DONE
+    
+    *[*%?;№%(";№]
+        ...
+        -> DONE
+->END
+
+
+
 -> END
 
 == EN

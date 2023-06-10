@@ -5696,7 +5696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -794, y: -0.000030517578}
+  m_AnchoredPosition: {x: -811, y: -0.000015258789}
   m_SizeDelta: {x: 233, y: 207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &288716343
@@ -9389,7 +9389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492876629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -114.02, y: -1.79, z: 0}
+  m_LocalPosition: {x: -46.37, y: -1.79, z: 0}
   m_LocalScale: {x: 0.8999215, y: 0.8999215, z: 0.8999215}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13883,7 +13883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772181209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -114.02, y: 0.71000004, z: -9}
+  m_LocalPosition: {x: -46.37, y: 0.71000004, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23056,7 +23056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322701063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -114.02, y: 0.71000004, z: -9}
+  m_LocalPosition: {x: -46.37, y: 0.71000004, z: -9}
   m_LocalScale: {x: 0.012722138, y: 0.013655556, z: 0.022125458}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26481,7 +26481,7 @@ GameObject:
   - component: {fileID: 1496094771}
   m_Layer: 0
   m_Name: bed
-  m_TagString: Untagged
+  m_TagString: Bed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38925,10 +38925,6 @@ PrefabInstance:
     - target: {fileID: 7808404915979983048, guid: 58649274643d9474abc0c454c3d77c9b, type: 3}
       propertyPath: m_Name
       value: minibus
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808404915979983048, guid: 58649274643d9474abc0c454c3d77c9b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

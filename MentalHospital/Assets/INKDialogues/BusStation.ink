@@ -11,10 +11,15 @@ EXTERNAL callBus()
 }
 
 = RU
+~firstCharacteristic = checkCharacteristic(0)
 { 
-    - workWasDone == true: 
-        О чем думают люди, когда ждут что-то? О погоде? Сегодня облачно... 
-        ~ callBus()  
+    - workWasDone == true && firstCharacteristic == "Introvert": 
+        О чем думают люди, когда ждут что-то? О погоде? Сегодня облачно... #portrait:default
+        ~ callBus()
+    - workWasDone == true && firstCharacteristic == "Extravert":
+        Сегодня облачно, правда? #portrait:default
+        ...
+        ~ callBus()
     - workWasDone == false:
         Если я уеду, даже не появившись на рабочем месте, я рискую потерять работу.
 }
