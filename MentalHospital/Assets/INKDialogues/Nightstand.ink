@@ -32,7 +32,7 @@ INCLUDE globals.ink
         ...
         -> DONE
     
-    *[*%?;№%(";№]
+    *[Разбить]
         ...
         -> DONE
 ->END
@@ -48,7 +48,7 @@ INCLUDE globals.ink
         ...
         -> DONE
     
-    *[*%?;№%(";№]
+    *[Разбить]
         ...
         -> DONE
 ->END

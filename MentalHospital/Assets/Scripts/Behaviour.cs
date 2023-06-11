@@ -2,22 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Behaviour : MonoBehaviour
 {
-    // public enum FirstCharacteristic
-    // {
-    //     Introvert,
-    //     Extravert
-    // }
-    // public enum SecondCharacteristic
-    // {
-    //     Rational,
-    //     Irrational
-    // }
-    // public enum ThirdCharacteristic
-    // {
-    //     Optimist,
-    //     Pessimist
-    // }
-
     public enum Characteristics
     {
         Introvert,

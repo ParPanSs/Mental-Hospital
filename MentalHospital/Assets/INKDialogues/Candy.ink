@@ -46,7 +46,7 @@ INCLUDE globals.ink
         ~ candyWasTaken = true
         Вдруг захочется.
         -> DONE
-    *[*%?;№%(";№]
+    *[Предложить маме]
         Хочешь? #portrait:default
         Я уже съела несколько штук, пока пила чай. #portrait:Mother
         Возьми лучше себе.

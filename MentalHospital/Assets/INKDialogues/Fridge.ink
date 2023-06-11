@@ -12,7 +12,7 @@ INCLUDE globals.ink
 = RU
 ~blockChoice(0)
 Не чувствую голода.
-    *[*%?;№%(";№]
+    *[Громко хлопнуть]
         Зачем ты это делаешь? #portrait:Mother
         ->DONE
     *[Отойти]

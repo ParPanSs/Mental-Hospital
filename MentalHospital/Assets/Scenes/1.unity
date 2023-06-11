@@ -9322,7 +9322,7 @@ GameObject:
   - component: {fileID: 492876633}
   - component: {fileID: 492876632}
   - component: {fileID: 492876635}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -9389,7 +9389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492876629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.37, y: -1.79, z: 0}
+  m_LocalPosition: {x: -113.9, y: -1.79, z: 0}
   m_LocalScale: {x: 0.8999215, y: 0.8999215, z: 0.8999215}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13883,7 +13883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772181209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.37, y: 0.71000004, z: -9}
+  m_LocalPosition: {x: -113.9, y: 0.71000004, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23056,7 +23056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322701063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.37, y: 0.71000004, z: -9}
+  m_LocalPosition: {x: -113.9, y: 0.71000004, z: -9}
   m_LocalScale: {x: 0.012722138, y: 0.013655556, z: 0.022125458}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31623,6 +31623,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   endOfTheDay: {fileID: 1222224441}
+  readableFont: {fileID: 11400000, guid: 1e8e6063395c647c297bba888913da09, type: 2}
+  unreadableFont: {fileID: 11400000, guid: afe93012d0be349a1a72de0cf94fc07e, type: 2}
 --- !u!1 &1779166186
 GameObject:
   m_ObjectHideFlags: 0
@@ -39016,7 +39018,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8321209726905455435, guid: a4284f74e7e5a41a9a870b4ee81ae591, type: 3}
       propertyPath: m_Name
-      value: candy
+      value: Candy
       objectReference: {fileID: 0}
     - target: {fileID: 8321209726905455439, guid: a4284f74e7e5a41a9a870b4ee81ae591, type: 3}
       propertyPath: m_RootOrder

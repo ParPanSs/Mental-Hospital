@@ -42,7 +42,7 @@ public class Bus : MonoBehaviour
         if (_isDriving)
         {
             _busRb.bodyType = RigidbodyType2D.Dynamic;
-            _busRb.AddForce(Vector2.right.normalized * 2.5f);
+            _busRb.AddForce(Vector2.right.normalized * 5f); 
         }
         else
         {
@@ -61,9 +61,8 @@ public class Bus : MonoBehaviour
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
-            character.GetComponent<Animator>().Play("Character_IDLE");//SetBool("isSitting", false);
-            // character.GetComponent<Animator>().SetBool("isWalk", true);
-            // character.GetComponent<Animator>().SetBool("isWalk", false);
+            character.gameObject.SetActive(false);
+            character.gameObject.SetActive(true);
             StartCoroutine(DrivingAway());
         }
 

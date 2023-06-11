@@ -1076,6 +1076,7 @@ MonoBehaviour:
   introversionCounter: {fileID: 1326923178}
   extraversionCounter: {fileID: 1856780118}
   miniGameBorder: {fileID: 1274679197}
+  _behaviour: {fileID: 0}
 --- !u!50 &803705011
 Rigidbody2D:
   serializedVersion: 4
@@ -2163,8 +2164,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
-  m_sharedMaterial: {fileID: -4314411149890783995, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1e8e6063395c647c297bba888913da09, type: 2}
+  m_sharedMaterial: {fileID: 8210575896395459655, guid: 1e8e6063395c647c297bba888913da09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2977,8 +2978,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
-  m_sharedMaterial: {fileID: -4314411149890783995, guid: 538cb0d731dc44586a93feb2d8ee2917, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1e8e6063395c647c297bba888913da09, type: 2}
+  m_sharedMaterial: {fileID: 8210575896395459655, guid: 1e8e6063395c647c297bba888913da09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3128,7 +3129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u042D\u043A\u0441\u0442\u0440\u0430\u0432\u0435\u0440\u0441\u0438\u044F"
+  m_text: Extraversion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e8e6063395c647c297bba888913da09, type: 2}
   m_sharedMaterial: {fileID: 8210575896395459655, guid: 1e8e6063395c647c297bba888913da09, type: 2}

@@ -37,17 +37,13 @@ public class CharacteristicMenu : MonoBehaviour
         if(_isPaused || inventoryMenu.activeInHierarchy || characteristicMenu.activeInHierarchy)
         {
             Time.timeScale = 0f;
-            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        else if(DialogManager.GetInstance().dialogueIsPlaying)
-            Camera.main.GetComponent<PostProcessVolume>().enabled = true;
 
         else
         {
             Time.timeScale = 1f;
-            Camera.main.GetComponent<PostProcessVolume>().enabled = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -56,5 +52,6 @@ public class CharacteristicMenu : MonoBehaviour
     public void SetPause()
     {
         _isPaused = !_isPaused;
+        Camera.main.GetComponent<PostProcessVolume>().enabled = _isPaused;
     }
 }

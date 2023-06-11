@@ -49,6 +49,9 @@ public class DialogManager : MonoBehaviour
 
     private Behaviour _behaviour;
 
+    [SerializeField] private TMP_FontAsset readableFont;
+    [SerializeField] private TMP_FontAsset unreadableFont;
+
     private void Awake()
     {
         instance = this;
@@ -119,7 +122,7 @@ public class DialogManager : MonoBehaviour
         
         currentStory.BindExternalFunction("pickUpItem", () =>
         {
-            RaycastHit2D ray = Physics2D.Raycast(player.transform.position, Vector2.up, 100f, whatIsItem);
+            RaycastHit2D ray = Physics2D.CircleCast(player.transform.position, 5f, Vector2.zero, Mathf.Infinity, whatIsItem);
             if (ray.collider != null)
             {
                 Debug.Log("Touched: " + ray.collider.name);
@@ -130,6 +133,8 @@ public class DialogManager : MonoBehaviour
         currentStory.BindExternalFunction("blockChoice", (int choiceIndex) =>
         {
             choices[choiceIndex].gameObject.GetComponent<Button>().interactable = false;
+            choices[choiceIndex].gameObject.GetComponentInChildren<TextMeshProUGUI>().font =
+                unreadableFont;
         });
         
         
@@ -170,6 +175,7 @@ public class DialogManager : MonoBehaviour
         foreach (var choice in choices)
         {
             choice.gameObject.GetComponent<Button>().interactable = true;
+            choice.gameObject.GetComponentInChildren<TextMeshProUGUI>().font = readableFont;
         }
         
         dialogueVariables.StopListening(currentStory);
@@ -239,7 +245,7 @@ public class DialogManager : MonoBehaviour
         }
         Camera.main.GetComponent<PostProcessVolume>().enabled = false;
         choicesAnimator.SetBool("isOpen", false);
-        
+        player.bodyType = RigidbodyType2D.Dynamic;
         //StartCoroutine(CloseChoices());
     }
     
@@ -273,6 +279,10 @@ public class DialogManager : MonoBehaviour
         {
             choicesBackground.SetActive(true);
             Camera.main.GetComponent<PostProcessVolume>().enabled = true;
+
+            player.velocity = new Vector2(0, 0);
+            player.bodyType = RigidbodyType2D.Static;
+            player.gameObject.GetComponent<Animator>().SetBool("isWalk", false);
         }
 
         foreach (Choice choice in currentChoices)

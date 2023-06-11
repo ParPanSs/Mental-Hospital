@@ -27,7 +27,7 @@ INCLUDE globals.ink
         *[Уйти]
             Это на твоей совести. #portrait:Girl
             -> DONE
-        *[*%?;№%(";№]
+        *[Угрожать]
             Я позову маму! #portrait:girl
             -> DONE
     -> END
@@ -36,13 +36,13 @@ INCLUDE globals.ink
         ~blockChoice(0)
         ~offCollider()
         ... #portrait:Girl
-        *[*%?;№%(";№]
+        *[Дать конфету]
             Ладно, ты прощен. #portrait:Girl
             -> DONE
         *[Уйти]
             Это на твоей совести. #portrait:Girl
             -> DONE
-        *[*%?;№%(";№]
+        *[Угрожать]
             Я позову маму! #portrait:girl
             -> DONE
     -> END

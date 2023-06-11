@@ -41,12 +41,12 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogManager.GetInstance().dialogueIsPlaying)
-        {
-            _animator.SetBool("isWalk", false);
-            _rb.velocity = new Vector2(0, 0);
-            return;
-        }
+        // if (DialogManager.GetInstance().dialogueIsPlaying)
+        // {
+        //     _animator.SetBool("isWalk", false);
+        //     _rb.velocity = new Vector2(0, 0);
+        //     return;
+        // }
         if (rb.bodyType != RigidbodyType2D.Static)
         {
             _horizontal = Input.GetAxis("Horizontal") * _speed;
@@ -87,15 +87,9 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        // var dialog = col.GetComponent<DialogTrigger>();
-        // if (dialog != null)
-        // {
-        //     DialogManager.GetInstance().EnterDialogueMode(col.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
-        // }
         if (col.transform.CompareTag("Wall"))
         {
             _isTouchingWall = true;
-            //col.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (col.transform.CompareTag("BorderSwitch"))
@@ -106,26 +100,18 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Girl"))
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
-            //col.enabled = false;
         }
         
         if (col.transform.CompareTag("Mom"))
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
-            // col.transform.GetComponentInChildren<Canvas>().enabled = false;
-            // col.enabled = false;
         }
         if (col.transform.CompareTag("Colleague"))
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
-            //col.enabled = false;
         }
 
         if (col.CompareTag("Psychoterapeut"))
-        {
-            DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
-        }
-        if (col.CompareTag("Garage"))
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
         }

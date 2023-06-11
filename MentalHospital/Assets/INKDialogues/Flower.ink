@@ -13,7 +13,13 @@ INCLUDE globals.ink
 
 = RU
 ~ blockChoice(2)
-Как ты сегодня, друг?
+~ firstCharacteristic = checkCharacteristic(0)
+{
+- firstCharacteristic == "Introvert":
+    Как ты сегодня, друг?
+- firstCharacteristic == "Extravert":
+    ...
+}
     * [Полить]
         Всем нужна вода.
         ~ flowerIsWatered = true
@@ -21,10 +27,9 @@ INCLUDE globals.ink
     * [Уйти]
         ... #portrait:default
         -> DONE
-    * [*%?;№%(";№]
+    * [Разбить]
         ...
         -> DONE
-
 = EN
 This is a flower. It seems to need some water.
     * [Water]
