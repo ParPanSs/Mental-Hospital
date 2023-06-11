@@ -29,7 +29,7 @@ public class Bus : MonoBehaviour
     {
         if (_isInStation)
         {
-            character.rb.bodyType = RigidbodyType2D.Static;
+            character.gameObject.SetActive(false);
             character.animator.SetBool("isWalk", false);
             var position = busSpawnPosition.position;
             bus.transform.position = new Vector3(position.x, position.y, position.z);
@@ -56,13 +56,13 @@ public class Bus : MonoBehaviour
         if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && _behaviour.firstCharacteristic == Behaviour.Characteristics.Extravert)
             || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && _behaviour.firstCharacteristic == Behaviour.Characteristics.Introvert))
         {
-            character.rb.bodyType = RigidbodyType2D.Dynamic;
+            character.gameObject.SetActive(true);
             mainCamera.Follow = character.gameObject.transform;
             _isDriving = false;
             _inBus = false;
             hospitalPoint.GetComponent<BoxCollider2D>().enabled = false;
-            character.gameObject.SetActive(false);
-            character.gameObject.SetActive(true);
+            // character.gameObject.SetActive(false);
+            // character.gameObject.SetActive(true);
             StartCoroutine(DrivingAway());
         }
 

@@ -21,6 +21,8 @@ public class CharacterController : MonoBehaviour
 
     private Vector2 _sitPosition;
 
+    [HideInInspector] public bool canMove;
+
     void Start()
     {
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
