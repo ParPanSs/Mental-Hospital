@@ -24,6 +24,8 @@ public class CharacterController : MonoBehaviour
 
     void Start()
     {
+        DialogManager.GetInstance().EnterDialogueMode(gameObject.GetComponent<DialogTrigger>().inkJSON, gameObject);
+
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
         _rb = GetComponent<Rigidbody2D>();

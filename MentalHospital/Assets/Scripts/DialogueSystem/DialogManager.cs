@@ -67,8 +67,8 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         _behaviour = FindObjectOfType<Behaviour>();
-        dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        //dialogueIsPlaying = false;
+        //dialoguePanel.SetActive(false);
         choicesBackground.SetActive(false);
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
