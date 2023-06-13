@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97182d51714347a3ada913d55493aa9, type: 3}
   m_Name: Poster
   m_EditorClassIdentifier: 
-  itemName: Poster
-  itemSprite: {fileID: 21300000, guid: 6b5de5c2aef6046c4aa5cb513230ec31, type: 3}
+  itemSprite: {fileID: 21300000, guid: 282da1b8f169247c29ad0bf6ff7b1d4c, type: 3}

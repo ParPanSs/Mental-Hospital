@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97182d51714347a3ada913d55493aa9, type: 3}
   m_Name: Candy
   m_EditorClassIdentifier: 
-  itemName: Candy
-  itemSprite: {fileID: 21300000, guid: eef60559c98c443e7a727479d35e8771, type: 3}
+  itemSprite: {fileID: 21300000, guid: 6e062b0643e63467ab07f73c2b0c8ee0, type: 3}

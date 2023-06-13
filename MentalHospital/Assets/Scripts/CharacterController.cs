@@ -20,8 +20,7 @@ public class CharacterController : MonoBehaviour
     private bool _isSitting;
 
     private Vector2 _sitPosition;
-
-    [HideInInspector] public bool canMove;
+    private bool _isListening;
 
     void Start()
     {
@@ -43,12 +42,12 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // if (DialogManager.GetInstance().dialogueIsPlaying)
-        // {
-        //     _animator.SetBool("isWalk", false);
-        //     _rb.velocity = new Vector2(0, 0);
-        //     return;
-        // }
+        if (DialogManager.GetInstance().dialogueIsPlaying && !_isListening)
+        {
+            _animator.SetBool("isWalk", false);
+            _rb.velocity = new Vector2(0, 0);
+            return;
+        }
         if (rb.bodyType != RigidbodyType2D.Static)
         {
             _horizontal = Input.GetAxis("Horizontal") * _speed;
@@ -89,6 +88,11 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.transform.GetComponentInChildren<Canvas>() != null)
+        {
+            col.transform.GetComponentInChildren<Canvas>().enabled = true;
+        }
+        
         if (col.transform.CompareTag("Wall"))
         {
             _isTouchingWall = true;
@@ -111,6 +115,8 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Colleague"))
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
+            _isListening = true;
+            
         }
 
         if (col.CompareTag("Psychoterapeut"))
@@ -128,10 +134,7 @@ public class CharacterController : MonoBehaviour
             _sitPosition = col.transform.GetChild(0).GetComponent<Transform>().position;
         }
 
-        if (col.transform.GetComponentInChildren<Canvas>() != null)
-        {
-            col.transform.GetComponentInChildren<Canvas>().enabled = true;
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D col)

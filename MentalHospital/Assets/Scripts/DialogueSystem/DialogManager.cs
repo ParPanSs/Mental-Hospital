@@ -133,7 +133,7 @@ public class DialogManager : MonoBehaviour
         currentStory.BindExternalFunction("blockChoice", (int choiceIndex) =>
         {
             choices[choiceIndex].gameObject.GetComponent<Button>().interactable = false;
-            choices[choiceIndex].gameObject.GetComponentInChildren<TextMeshProUGUI>().font =
+            choices[choiceIndex].gameObject.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().font =
                 unreadableFont;
         });
         
@@ -145,7 +145,7 @@ public class DialogManager : MonoBehaviour
         
         currentStory.BindExternalFunction("offCollider", () =>
         {
-            gameObject.transform.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.transform.GetComponent<Collider2D>().enabled = false;
         });
         
         currentStory.BindExternalFunction("checkCharacteristic", (int characteristicIndex) =>
@@ -245,7 +245,6 @@ public class DialogManager : MonoBehaviour
         }
         Camera.main.GetComponent<PostProcessVolume>().enabled = false;
         choicesAnimator.SetBool("isOpen", false);
-        player.bodyType = RigidbodyType2D.Dynamic;
         //StartCoroutine(CloseChoices());
     }
     
@@ -279,9 +278,7 @@ public class DialogManager : MonoBehaviour
         {
             choicesBackground.SetActive(true);
             Camera.main.GetComponent<PostProcessVolume>().enabled = true;
-
             player.velocity = new Vector2(0, 0);
-            player.bodyType = RigidbodyType2D.Static;
             player.gameObject.GetComponent<Animator>().SetBool("isWalk", false);
         }
 

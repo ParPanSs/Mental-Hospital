@@ -40,10 +40,8 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in _items)
         {
             GameObject obj = Instantiate(_inventoryItem, _itemContent);
-            var itemName = obj.transform.Find("Name").GetComponent<TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("Icon").GetComponent<Image>();
 
-            itemName.text = item.itemName;
             itemIcon.sprite = item.itemSprite;
         }
     }

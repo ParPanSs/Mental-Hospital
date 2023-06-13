@@ -18,7 +18,7 @@ EXTERNAL callBus()
         ~ callBus()
     - workWasDone == true && firstCharacteristic == "Extravert":
         Сегодня облачно, правда? #portrait:default
-        ...
+        ... #portrait: Granny
         ~ callBus()
     - workWasDone == false:
         Если я уеду, даже не появившись на рабочем месте, я рискую потерять работу.

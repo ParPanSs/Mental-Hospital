@@ -12,10 +12,15 @@ INCLUDE globals.ink
 == RU
 ~offCollider()
 Не-е-е-т!!! Мой рисунок... Ты все испортил, испортил! #portrait:Girl
-Я не хотел. #portrait:default
-Я не прощу тебя за то, что ты сделал! #portrait:Girl
-
--> END
+*Я не хотел. #portrait:default
+    Я не прощу тебя за то, что ты сделал! #portrait:Girl
+    -> END
+*Сама виновата. #portrait:default
+    Я не прощу тебя за то, что ты сделал! #portrait:Girl
+    -> END
+*Прости. #portrait:default
+    Я не прощу тебя за то, что ты сделал! #portrait:Girl
+    -> END
 
 == EN
 This is a girl. You've stepped on her drawing. #portrait:Girl

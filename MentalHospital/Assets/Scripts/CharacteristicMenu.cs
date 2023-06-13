@@ -34,19 +34,19 @@ public class CharacteristicMenu : MonoBehaviour
             characteristicMenu.SetActive(_isPaused);
             helperMenu.SetActive(!_isPaused);
         }
-        if(_isPaused || inventoryMenu.activeInHierarchy || characteristicMenu.activeInHierarchy)
-        {
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-
-        else
-        {
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        // if(_isPaused || inventoryMenu.activeInHierarchy || characteristicMenu.activeInHierarchy)
+        // {
+        //     Time.timeScale = 0f;
+        //     Cursor.visible = true;
+        //     Cursor.lockState = CursorLockMode.None;
+        // }
+        //
+        // else
+        // {
+        //     Time.timeScale = 1f;
+        //     Cursor.visible = false;
+        //     Cursor.lockState = CursorLockMode.Locked;
+        // }
     }
 
     public void SetPause()

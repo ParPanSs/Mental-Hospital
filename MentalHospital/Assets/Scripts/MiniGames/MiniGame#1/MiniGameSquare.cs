@@ -12,6 +12,7 @@ public class MiniGameSquare : Behaviour
     [SerializeField] private Animator introversionCharacteristic;
     [SerializeField] private Animator extraversionCharacteristic;
     [SerializeField] private Animator blackBack;
+    [SerializeField] private Animator day;
     
     private bool _isTouchingDot;
     private bool _isTouchingWall;
@@ -169,7 +170,9 @@ public class MiniGameSquare : Behaviour
             fader.SetBool("fader_in", true);
             
             _behaviour.AddCharacteristic(_behaviour.firstCharacteristic);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2.5f);
+            day.gameObject.SetActive(true);
+            yield return new WaitForSeconds(1.4f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
         }
         else
