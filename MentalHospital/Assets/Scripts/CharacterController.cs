@@ -71,8 +71,6 @@ public class CharacterController : MonoBehaviour
             _animator.SetBool("isSitting", true);
             _rb.transform.position = _sitPosition;
         }
-        
-        Debug.DrawRay(transform.position, Vector2.up, Color.red, 100f);
     }
 
     private void Flip()
