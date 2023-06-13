@@ -88,11 +88,11 @@ public class MiniGameSquare : Behaviour
 
         if (_isTouchingDot)
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 Push();
             }
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
+            if (Input.GetKey(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.RightShift))
             {
                 Pull();
             }

@@ -139,6 +139,10 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
+        if (col.transform.CompareTag("Colleague"))
+        {
+            _isListening = false;
+        }
         if (col.transform.GetComponentInChildren<Canvas>() != null)
         {
             col.transform.GetComponentInChildren<Canvas>().enabled = false;
