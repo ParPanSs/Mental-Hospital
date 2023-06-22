@@ -21,13 +21,13 @@ public class Guns : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Instantiate(smileBullet, smileGun.GetComponentInChildren<Transform>().position, Quaternion.identity);
             Instantiate(sadBullet, sadGun.GetComponentInChildren<Transform>().position, Quaternion.identity);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             ChangePositions();
         }

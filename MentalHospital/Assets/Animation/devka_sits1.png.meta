@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -117,7 +117,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: devka_sits1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 501
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38caa448b4ea4f8586891d081c3aafb
+      internalID: 1692335642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 501
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602cb7209ae874bf2aca650a1943dfb0
+      internalID: -412983084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_2
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 501
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bd8669ea54a4d72892c969c45afe3e
+      internalID: 773350690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 501
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2cb8e88d3e6474c8c5472f4c46ded1
+      internalID: -1813436876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 501
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878259dfa36124302b097045bca6e318
+      internalID: -1096728925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af99520bc02674fee8e655d724d9bb08
+      internalID: -1848037046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 334
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598d33ec1f7a842498ceda40884943ec
+      internalID: 1924622557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_7
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 334
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b381b587e5464ebba7fad6a28f5fa48
+      internalID: -982570497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_8
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 334
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64bd7783420954033959185e6aff2057
+      internalID: 2043796827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_9
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 334
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79111fa68417f4568bc1ec2aec773e03
+      internalID: 1074972541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616e7d743cfbf42aa892629d578bd7d2
+      internalID: -1175001246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 167
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d840002e08fa4ee8b6cb76a6cb848c0
+      internalID: 621492621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_12
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 167
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1edd5bcdfb2824b2597528f908cb9f56
+      internalID: 1970355635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_13
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 167
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0f8bc29f50547918e1cb5693f6c787
+      internalID: -1350005596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_14
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 167
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83c74f2ba47a482ea5d2029adbd8371
+      internalID: -2057403532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: devka_sits1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 99
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559362e709f284ef3b09325dc8028143
+      internalID: -260454678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -128,7 +464,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      devka_sits1_7: -982570497
+      devka_sits1_10: -1175001246
+      devka_sits1_2: 773350690
+      devka_sits1_4: -1096728925
+      devka_sits1_14: -2057403532
+      devka_sits1_5: -1848037046
+      devka_sits1_8: 2043796827
+      devka_sits1_12: 1970355635
+      devka_sits1_11: 621492621
+      devka_sits1_13: -1350005596
+      devka_sits1_3: -1813436876
+      devka_sits1_1: -412983084
+      devka_sits1_9: 1074972541
+      devka_sits1_0: 1692335642
+      devka_sits1_15: -260454678
+      devka_sits1_6: 1924622557
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
