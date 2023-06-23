@@ -21,6 +21,7 @@ public class CharacterController : MonoBehaviour
 
     private Vector2 _sitPosition;
     private bool _isListening;
+    private bool _isAtWork;
 
     void Start()
     {
@@ -71,6 +72,12 @@ public class CharacterController : MonoBehaviour
         if (_isSitting && Input.GetKeyDown(KeyCode.E) && !_animator.GetBool("isSitting"))
         {
             _animator.SetBool("isSitting", true);
+            _rb.transform.position = _sitPosition;
+        }
+
+        if (_isAtWork && DialogManager.GetInstance().dialogueIsPlaying)
+        {
+            _animator.Play("Character_at_Work");
             _rb.transform.position = _sitPosition;
         }
     }
@@ -131,6 +138,11 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Sit"))
         {
             _isSitting = true;
+            _sitPosition = col.transform.GetChild(0).GetComponent<Transform>().position;
+        }
+        if (col.transform.CompareTag("Work"))
+        {
+            _isAtWork = true;
             _sitPosition = col.transform.GetChild(0).GetComponent<Transform>().position;
         }
 

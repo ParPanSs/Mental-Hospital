@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -117,7 +117,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: announcement_anim1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e147417de8e1d4b1fa55f93f7a7ecd37
+      internalID: -425104836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 360
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3dc017e9ee504303b8bbd47cffdc9f0
+      internalID: -186934949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 360
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d71d255fd6f44314bc9acafe15736a6
+      internalID: -1788068579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_3
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 360
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38b480df1a9042dbbf8f48166165b22
+      internalID: 365054956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_4
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 360
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e944c65d259a74d5587e7c95371650b4
+      internalID: -120296130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f5388dc61ba486580deefbca82f2d9
+      internalID: 808308254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 240
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d4d911ea18a47a0904a467e602c635
+      internalID: 1520921431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_7
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 240
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18768c6b5e5c141e6921509bb2a8db5b
+      internalID: -1508096275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_8
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 240
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc3ca755aaa649d6828445cfb264170
+      internalID: -568610090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_9
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 240
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16bb5821dc7048dd838c463b59fbd81
+      internalID: 1028388089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9ff581a3bc14b5ba54fc7af3996394
+      internalID: 446711257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 120
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69ff0c3068e647f2bc0fd5e8d472e62
+      internalID: 577067934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_12
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 120
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3d848f6bd064518915673c072a5df1
+      internalID: -988145727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_13
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 120
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a034757a0142d4abd88bab9344c07a3e
+      internalID: 872285823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_14
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 120
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0316f7c2175774976b31e6703d913ccf
+      internalID: 1817287340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15edd3074ef07483992ce6e9b025463d
+      internalID: 1790966791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_16
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f9c2ec4121e4dc49556987edd835f9
+      internalID: -1850288589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: announcement_anim1_17
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 0
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75000bb40c16644cc86dccef5b3c0b07
+      internalID: 652322546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -128,7 +506,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      announcement_anim1_5: 808308254
+      announcement_anim1_6: 1520921431
+      announcement_anim1_9: 1028388089
+      announcement_anim1_4: -120296130
+      announcement_anim1_15: 1790966791
+      announcement_anim1_0: -425104836
+      announcement_anim1_12: -988145727
+      announcement_anim1_8: -568610090
+      announcement_anim1_10: 446711257
+      announcement_anim1_13: 872285823
+      announcement_anim1_16: -1850288589
+      announcement_anim1_14: 1817287340
+      announcement_anim1_17: 652322546
+      announcement_anim1_1: -186934949
+      announcement_anim1_2: -1788068579
+      announcement_anim1_3: 365054956
+      announcement_anim1_7: -1508096275
+      announcement_anim1_11: 577067934
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

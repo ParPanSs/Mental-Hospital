@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de872744aaf1f8a43b9e57dff1a18d00
+guid: c070ec2124c2f41ee818074952b3445c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu6_0
+      name: mother_walk1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4320
-        width: 1920
-        height: 1080
+        y: 582
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b6045e38745d470dbbda731f700c2a1
-      internalID: -1708281251
+      spriteID: 1cffe3cde013440649445288107373dd
+      internalID: 357818198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_1
+      name: mother_walk1_1
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 4320
-        width: 1920
-        height: 1080
+        x: 127
+        y: 582
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34dea3a678d42460e954f691c07a9cda
-      internalID: 1153838186
+      spriteID: 8072517e51ccb4b799df0f77fcfbbc2d
+      internalID: 550327183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_2
+      name: mother_walk1_2
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 4320
-        width: 1920
-        height: 1080
+        x: 254
+        y: 582
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3b01bcc6b3b54dcab6d6f4e2f667a61
-      internalID: -2085948966
+      spriteID: 0e0cffd5c59dc4e8db722bb8aa696f12
+      internalID: 55342295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_3
+      name: mother_walk1_3
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 4320
-        width: 1920
-        height: 1080
+        x: 381
+        y: 582
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 964ec64f050534ed39d5312606d18736
-      internalID: -1336479798
+      spriteID: ab3a568eda85d43a2a4dcc224bdcd10e
+      internalID: 257485449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_4
+      name: mother_walk1_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3240
-        width: 1920
-        height: 1080
+        x: 508
+        y: 582
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd01cf227253442bbb070476cf48df41
-      internalID: -1036619560
+      spriteID: ff8ba09d9e33a4224aa77693bc506fd1
+      internalID: 26668853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_5
+      name: mother_walk1_5
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 3240
-        width: 1920
-        height: 1080
+        x: 635
+        y: 582
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,62 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bf441b7a77f446fbbfe8419d4df01d8
-      internalID: 411002435
+      spriteID: fd9ccf846596248bc9593dfe3b53ceb1
+      internalID: -1650919670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_6
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a531354aed7f740f2855d9ebfcfb4c9e
-      internalID: 1573525257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu6_7
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94372a8d3e9434f65adf6148aebf0272
-      internalID: 1439851605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu6_8
+      name: mother_walk1_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
-        width: 1920
-        height: 1080
+        y: 291
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d681e22c22b1b4972b3d4492264e2550
-      internalID: -78298213
+      spriteID: 07634ee1f053a40b098b4df670e858df
+      internalID: 1731974336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_9
+      name: mother_walk1_7
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 2160
-        width: 1920
-        height: 1080
+        x: 127
+        y: 291
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 251373a67d65b43579c0d226787bf5a0
-      internalID: -38397199
+      spriteID: 2df503b9d3b8a4538af0b79675ab1de8
+      internalID: -1021322384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_10
+      name: mother_walk1_8
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2160
-        width: 1920
-        height: 1080
+        x: 254
+        y: 291
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b26b1af28c5574b4c835e1703e86c671
-      internalID: 1420653736
+      spriteID: b7f0cd775d6bf4546a0d04320a3930f3
+      internalID: 136048980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_11
+      name: mother_walk1_9
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 2160
-        width: 1920
-        height: 1080
+        x: 381
+        y: 291
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cfbe894b198241398c126f4a555f453
-      internalID: 872525154
+      spriteID: 06a4ae8238a4d43388af4eaf688e481f
+      internalID: -1433443643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_12
+      name: mother_walk1_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1080
-        width: 1920
-        height: 1080
+        x: 508
+        y: 291
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d44261ccbe7b549ee9a75d5439c24258
-      internalID: 1694860711
+      spriteID: 71a6730a2c42c46278550b3b7f8dd767
+      internalID: -65533475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_13
+      name: mother_walk1_11
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1080
-        width: 1920
-        height: 1080
+        x: 635
+        y: 291
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,62 +364,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c8d7b7a6bfd64aa2a33f0bbe5e14e65
-      internalID: -1767516405
+      spriteID: d2899058ce90d47e4bba9daa4b152e53
+      internalID: -297444891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_14
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f82e5f714aae47febe149eb06d80153
-      internalID: 695787178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu6_15
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 888ecd199e1874bcd891d52dd00ff672
-      internalID: -1368074995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu6_16
+      name: mother_walk1_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,20 +385,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be5ae429e7ae466e87bd9cf63cc2e9c
-      internalID: -555383992
+      spriteID: 10a4e41fa918c45c1b6c37e8b4c5a9a2
+      internalID: 1439529753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_17
+      name: mother_walk1_13
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 127
         y: 0
-        width: 1920
-        height: 1080
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,20 +406,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 332c39f6bd84d407b95102db1f403859
-      internalID: 1350812778
+      spriteID: a06972e20e19e4a28a1833bf7cd0a958
+      internalID: 895235309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_18
+      name: mother_walk1_14
       rect:
         serializedVersion: 2
-        x: 3840
+        x: 254
         y: 0
-        width: 1920
-        height: 1080
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,20 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1dcfe40da9f249158f047d182a87dac
-      internalID: -2065842432
+      spriteID: abd7475e02f194948b5b4c4cf1d355b0
+      internalID: -1709332619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu6_19
+      name: mother_walk1_15
       rect:
         serializedVersion: 2
-        x: 5760
+        x: 381
         y: 0
-        width: 1920
-        height: 1080
+        width: 127
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -532,8 +448,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b02d30a8f63e247c9aec86a1e6d9bf1c
-      internalID: -612116901
+      spriteID: 801cbe55b66024b748e9721cbe94b617
+      internalID: -1718050132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mother_walk1_16
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 0
+        width: 127
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee3e110d24f647848bdf58b82cf1098
+      internalID: 1142887959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mother_walk1_17
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 0
+        width: 127
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3b45d9943fa487fbc04cc48a7b4d0b
+      internalID: 1554763473
       vertices: []
       indices: 
       edges: []
@@ -549,26 +507,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      menu6_18: -2065842432
-      menu6_10: 1420653736
-      menu6_2: -2085948966
-      menu6_3: -1336479798
-      menu6_8: -78298213
-      menu6_14: 695787178
-      menu6_13: -1767516405
-      menu6_5: 411002435
-      menu6_7: 1439851605
-      menu6_19: -612116901
-      menu6_9: -38397199
-      menu6_1: 1153838186
-      menu6_6: 1573525257
-      menu6_0: -1708281251
-      menu6_11: 872525154
-      menu6_12: 1694860711
-      menu6_17: 1350812778
-      menu6_16: -555383992
-      menu6_4: -1036619560
-      menu6_15: -1368074995
+      mother_walk1_13: 895235309
+      mother_walk1_2: 55342295
+      mother_walk1_9: -1433443643
+      mother_walk1_5: -1650919670
+      mother_walk1_14: -1709332619
+      mother_walk1_6: 1731974336
+      mother_walk1_8: 136048980
+      mother_walk1_17: 1554763473
+      mother_walk1_1: 550327183
+      mother_walk1_7: -1021322384
+      mother_walk1_0: 357818198
+      mother_walk1_11: -297444891
+      mother_walk1_12: 1439529753
+      mother_walk1_15: -1718050132
+      mother_walk1_16: 1142887959
+      mother_walk1_10: -65533475
+      mother_walk1_4: 26668853
+      mother_walk1_3: 257485449
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
