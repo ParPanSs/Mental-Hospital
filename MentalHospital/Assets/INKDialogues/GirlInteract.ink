@@ -22,6 +22,7 @@ INCLUDE globals.ink
         ~offCollider()
         ... #portrait:Girl
         *[Дать конфету]
+            ~ apologizeWasTaken = true
             Ладно, ты прощен. #portrait:Girl
             -> DONE
         *[Уйти]

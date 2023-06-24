@@ -1,4 +1,4 @@
-INCLUDE globals.ink
+INCLUDE ../globals.ink
 
 {
     - currentLanguage == "ru": 
@@ -10,7 +10,13 @@ INCLUDE globals.ink
 }
 
 = RU
-{ dogWasKicked == false: Это собака. Она все еще довольна жизнью. | Вчера вы пнули собаку и теперь она вас боится. }
+Удобный шкаф.
+    *[Сменить одежду]
+        Ничего не изменилось.
+        -> DONE
+    *[Отойти]
+        ...
+        -> DONE
 -> END
 
 = EN
@@ -20,4 +26,3 @@ INCLUDE globals.ink
 = CS
 { dogWasKicked == false: Tohle je pes. Ještě vypádá šťastné. | Vy jste kopnuli psa včera, tak teď se vás bojí. }
 -> END
-        

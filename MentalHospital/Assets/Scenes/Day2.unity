@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 466b14ab8aace4735b346e6f3baf080a, type: 3}
+  inkJSON: {fileID: 4900000, guid: 5bac1b9ba4b89454cb6aba3dbef94226, type: 3}
 --- !u!212 &26752278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3188,9 +3188,11 @@ GameObject:
   m_Component:
   - component: {fileID: 157560457}
   - component: {fileID: 157560456}
+  - component: {fileID: 157560459}
+  - component: {fileID: 157560458}
   m_Layer: 0
   m_Name: Kitchen
-  m_TagString: Untagged
+  m_TagString: Mom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3254,6 +3256,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157560458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157560455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 6d8ea153b9fbd45f9a722ae5273844d0, type: 3}
+--- !u!61 &157560459
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157560455}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.9922333, y: -1.2328299}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.245163, y: 5.52297}
+  m_EdgeRadius: 0
 --- !u!1 &158508541
 GameObject:
   m_ObjectHideFlags: 0
@@ -9431,7 +9472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 4e45419e4d5a54dcc8be3a123eecbc2d, type: 3}
+  inkJSON: {fileID: 4900000, guid: 77ce450cbbc8243898f9ab12f452f506, type: 3}
 --- !u!212 &497567104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12285,7 +12326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 1ad3d435a48fe49319d731bdded392a4, type: 3}
+  inkJSON: {fileID: 4900000, guid: c0a1b9dd906de402dbf545fbcea38eb4, type: 3}
 --- !u!95 &665551599
 Animator:
   serializedVersion: 4
@@ -14817,6 +14858,8 @@ GameObject:
   - component: {fileID: 788856513}
   - component: {fileID: 788856512}
   - component: {fileID: 788856515}
+  - component: {fileID: 788856516}
+  - component: {fileID: 788856517}
   m_Layer: 0
   m_Name: Man
   m_TagString: Untagged
@@ -14936,6 +14979,45 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.1101227, y: 0.1594044}
+  m_EdgeRadius: 0
+--- !u!114 &788856516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788856511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 72c9e71111c314dfbbaf6714cf5027cc, type: 3}
+--- !u!61 &788856517
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788856511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.03, y: 3.3}
+    newSize: {x: 2.03, y: 3.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.03, y: 3.3}
   m_EdgeRadius: 0
 --- !u!1 &793871743
 GameObject:
@@ -18297,7 +18379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 202505fccb440469d8e6f5d5bf621634, type: 3}
+  inkJSON: {fileID: 4900000, guid: 2677948de3dbb49b39d2dbb652c23e46, type: 3}
 --- !u!61 &991812043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21334,7 +21416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 5800af4f9cb9a460f8e2e70b76858209, type: 3}
+  inkJSON: {fileID: 4900000, guid: 556a46c53f1714aedb904a61643bda37, type: 3}
 --- !u!114 &1189343528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26597,7 +26679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 3ce3ec603eb754746b28b9093cad9f4c, type: 3}
+  inkJSON: {fileID: 4900000, guid: 9b8c358e4aa064d13b8c21783c41db2c, type: 3}
 --- !u!61 &1527103869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27527,7 +27609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 0ae63d331bce046d39d2a57f157d31da, type: 3}
+  inkJSON: {fileID: 4900000, guid: e0c40bb16f7204126be25a5ed3ae5701, type: 3}
 --- !u!61 &1554060028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33471,7 +33553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 6bf4b9cbc3587496abd755d9ee35510d, type: 3}
+  inkJSON: {fileID: 4900000, guid: 913c4b9d0f85b4978954e6ec0c5f1f6b, type: 3}
 --- !u!61 &1837609451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36214,12 +36296,11 @@ GameObject:
   - component: {fileID: 1967838184}
   - component: {fileID: 1967838188}
   - component: {fileID: 1967838187}
-  - component: {fileID: 1967838186}
   - component: {fileID: 1967838189}
   - component: {fileID: 1967838190}
   m_Layer: 0
   m_Name: mother
-  m_TagString: Mom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36240,19 +36321,6 @@ Transform:
   m_Father: {fileID: 157560457}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1967838186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967838183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 65dbbe566a3cf495c8a77a9dcabccc12, type: 3}
 --- !u!61 &1967838187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38255,7 +38323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292367f7364b646d2a744bf4ade82160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 3aa64f5888fea4cf89b099a4d2c414a5, type: 3}
+  inkJSON: {fileID: 4900000, guid: 3d86ed7d216f14fc09354e1ce8f8760e, type: 3}
 --- !u!61 &2088407034
 BoxCollider2D:
   m_ObjectHideFlags: 0

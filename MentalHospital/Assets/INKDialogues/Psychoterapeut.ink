@@ -79,6 +79,7 @@ INCLUDE globals.ink
 Хочу ли я принимать таблетки? #portrait:default
 *[Выпить]
     Горькие.
+    ~pillsWasTaken = true
     ~finishDay()
     -> END
 *[Не пить]

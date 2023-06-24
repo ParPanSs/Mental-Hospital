@@ -19,6 +19,8 @@ VAR fifthCharacteristic = ""
 VAR flowerIsWatered = false
 VAR dogWasKicked = false
 
+VAR pillsWasTaken = false
+VAR apologizeWasTaken = false
 
 VAR candyWasTaken = false
 
