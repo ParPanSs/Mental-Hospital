@@ -33,6 +33,7 @@ public class DialogManager : MonoBehaviour
     [Header("Postcards")] 
     [SerializeField] private GameObject[] cards;
     [SerializeField] private Sprite[] images;
+    [SerializeField] private GameObject bed;
     
     private TextMeshProUGUI[] choicesText;
 
@@ -200,6 +201,11 @@ public class DialogManager : MonoBehaviour
                 cards[i].gameObject.SetActive(false);
             }
         });
+        currentStory.BindExternalFunction("bed", () =>
+        {
+            bed.GetComponent<SpriteRenderer>().sprite = images[9];
+        });
+        
         
         
 
@@ -208,12 +214,18 @@ public class DialogManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
+        currentStory.UnbindExternalFunction("finishDay");
         currentStory.UnbindExternalFunction("language");
         currentStory.UnbindExternalFunction("pickUpItem");
         currentStory.UnbindExternalFunction("blockChoice");
         currentStory.UnbindExternalFunction("callBus");
         currentStory.UnbindExternalFunction("offCollider");
         currentStory.UnbindExternalFunction("checkCharacteristic");
+        currentStory.UnbindExternalFunction("firstCard");
+        currentStory.UnbindExternalFunction("secondCard");
+        currentStory.UnbindExternalFunction("thirdCard");
+        currentStory.UnbindExternalFunction("hideCards");
+        currentStory.UnbindExternalFunction("bed");
 
         foreach (var choice in choices)
         {

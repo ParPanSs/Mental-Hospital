@@ -1,4 +1,5 @@
 INCLUDE ../globals.ink
+EXTERNAL bed()
 
 {
     - currentLanguage == "ru": 
@@ -35,6 +36,7 @@ INCLUDE ../globals.ink
 Каждый день одно и то же. #portrait:default
     *[Заправить]
         Все должно быть правильно.
+        ~bed()
         -> DONE
     *[Kick]
         Одни кошмары, сколько можно...
