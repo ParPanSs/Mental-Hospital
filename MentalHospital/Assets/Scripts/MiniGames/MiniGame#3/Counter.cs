@@ -35,12 +35,14 @@ public class Counter : MonoBehaviour
             blackBack.enabled = true;
             if (smileCounter.text == "5/5")
             {
-                _behaviour.thirdCharacteristic = Behaviour.Characteristics.Optimist;
+                _behaviour.AddCharacteristic(Characteristics.Optimist);
+                _behaviour.thirdCharacteristic = Characteristics.Optimist;
                 optimistCharacteristic.enabled = true;
             }
             else
             {
-                _behaviour.thirdCharacteristic = Behaviour.Characteristics.Pessimist;
+                _behaviour.AddCharacteristic(Characteristics.Pessimist);
+                _behaviour.thirdCharacteristic = Characteristics.Pessimist;
                 pessimistCharacteristic.enabled = true;
             }
         }

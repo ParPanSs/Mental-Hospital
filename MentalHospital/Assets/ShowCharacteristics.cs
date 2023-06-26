@@ -14,20 +14,20 @@ public class ShowCharacteristics : MonoBehaviour
         _behaviour = FindObjectOfType<Behaviour>();
         switch (_behaviour.firstCharacteristic)
         {
-            case Behaviour.Characteristics.Extravert:
+            case Characteristics.Extravert:
                 extraversion.SetActive(true);
                 break;
-            case Behaviour.Characteristics.Introvert:
+            case Characteristics.Introvert:
                 introversion.SetActive(true);
                 break;
         }
 
         switch (_behaviour.secondCharacteristic)
         {
-            case Behaviour.Characteristics.Rational:
+            case Characteristics.Rational:
                 rationality.SetActive(true);
                 break;
-            case Behaviour.Characteristics.Irrational:
+            case Characteristics.Irrational:
                 irrationality.SetActive(true);
                 break;
         }

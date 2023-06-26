@@ -16,6 +16,7 @@ public class SlotsManager : MonoBehaviour
     [SerializeField] private Animator rationalCharacteristic;
     [SerializeField] private Animator irrationalCharacteristic;
     [SerializeField] private Animator blackBack;
+    [SerializeField] private Animator day;
 
     private Behaviour _behaviour;
 
@@ -32,12 +33,12 @@ public class SlotsManager : MonoBehaviour
             blackBack.enabled = true;
             if (rationalCounter.text == "3/3")
             {
-                _behaviour.secondCharacteristic = Behaviour.Characteristics.Rational;
+                _behaviour.secondCharacteristic = Characteristics.Rational;
                 rationalCharacteristic.enabled = true;
             }
             else
             {
-                _behaviour.secondCharacteristic = Behaviour.Characteristics.Irrational;
+                _behaviour.secondCharacteristic = Characteristics.Irrational;
                 irrationalCharacteristic.enabled = true;
             }
 
@@ -77,7 +78,10 @@ public class SlotsManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         fader.SetBool("fader_in", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
+        day.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.4f);
+        _behaviour.AddCharacteristic(_behaviour.secondCharacteristic);
         SceneManager.LoadScene(PlayerPrefs.GetInt("DayCounter") + 1);
     }
 }

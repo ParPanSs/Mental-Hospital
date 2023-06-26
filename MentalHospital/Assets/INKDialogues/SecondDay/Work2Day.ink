@@ -1,5 +1,10 @@
 INCLUDE ../globals.ink
 
+EXTERNAL firstCard()
+EXTERNAL secondCard()
+EXTERNAL thirdCard()
+EXTERNAL hideCards()
+
 {
     - currentLanguage == "ru": 
        -> RU
@@ -11,42 +16,55 @@ INCLUDE ../globals.ink
 
 ===RU===
 Сегодняшние задачи: подбор изображений к текстам поздравительных открыток. #portrait:PC
-
+~firstCard()
 Открытка на день рождения:
-    * [1]
+    * [Медведь]
         Вы выбрали первый вариант.
+        ~hideCards()
         -> SecondChoice
-    * [2]
+    * [Нож]
         Вы выбрали второй вариант.
+        ~hideCards()
         -> SecondChoice
-    * [3]
+    * [Торт]
         Вы выбрали третий вариант.
+        ~hideCards()
         -> SecondChoice
     = SecondChoice
+    ~secondCard()
     Открытка на день свадьбы:
-    *[1]
+    *[Подарок]
         Вы выбрали первый вариант.
+        ~hideCards()
         -> ThirdChoice
-    *[2]
+    *[Бутылка]
         Вы выбрали второй вариант.
+        ~hideCards()
         -> ThirdChoice
-    *[3]
+    *[Яблоко]
         Вы выбрали третий вариант.
+        ~hideCards()
         -> ThirdChoice
     = ThirdChoice
-    ~offCollider()
+    ~thirdCard()
     Открытка на новый год:
-    ~ workWasDone = true
-    *[1]
-        Вы выбрали первый вариант. Сегодня работы больше нет.
-        -> END
-    *[2]
-        Вы выбрали второй вариант. Сегодня работы больше нет.
-        -> END
-    *[3]
-        Вы выбрали третий вариант. Сегодня работы больше нет.
-        -> END
     
+    ~ workWasDone = true
+    *[Букет]
+        Вы выбрали первый вариант. Сегодня работы больше нет.
+        ~hideCards()
+        ~offCollider()
+        -> END
+    *[Цветок]
+        Вы выбрали второй вариант. Сегодня работы больше нет.
+        ~hideCards()
+        ~offCollider()
+        -> END
+    *[Кольца]
+        Вы выбрали третий вариант. Сегодня работы больше нет.
+        ~hideCards()
+        ~offCollider()
+        -> END
 -> END
 
 ===EN===

@@ -23,10 +23,12 @@ public class CharacterController : MonoBehaviour
     private bool _isListening;
     private bool _isAtWork;
 
+    private Behaviour _behaviour;
     void Start()
     {
+        _behaviour = FindObjectOfType<Behaviour>();
         DialogManager.GetInstance().EnterDialogueMode(gameObject.GetComponent<DialogTrigger>().inkJSON, gameObject);
-
+        
         PlayerPrefs.SetInt("DayCounter", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
         _rb = GetComponent<Rigidbody2D>();
@@ -77,9 +79,21 @@ public class CharacterController : MonoBehaviour
 
         if (_isAtWork && DialogManager.GetInstance().dialogueIsPlaying)
         {
-            _animator.Play("Character_at_Work");
+            _animator.SetBool("isWorking", true);
             _rb.transform.position = _sitPosition;
         }
+        else
+        {
+            _animator.SetBool("isWorking", false);
+        }
+
+        if (DialogManager.GetInstance().currentStory.currentChoices.Count > 0)
+            _isListening = false;
+        else
+        {
+            _isListening = true;
+        }
+
     }
 
     private void Flip()
@@ -122,8 +136,7 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Colleague"))
         {
             DialogManager.GetInstance().EnterDialogueMode(col.gameObject.GetComponent<DialogTrigger>().inkJSON, col.gameObject);
-            _isListening = true;
-            
+            //_isListening = true;
         }
 
         if (col.CompareTag("Psychoterapeut"))
@@ -153,7 +166,7 @@ public class CharacterController : MonoBehaviour
     {
         if (col.transform.CompareTag("Colleague"))
         {
-            _isListening = false;
+            //_isListening = false;
         }
         if (col.transform.GetComponentInChildren<Canvas>() != null)
         {
@@ -164,6 +177,10 @@ public class CharacterController : MonoBehaviour
         if (col.transform.CompareTag("Sit"))
         {
             _isSitting = false;
+        }
+        if (col.transform.CompareTag("Work"))
+        {
+            _isAtWork = false;
         }
     }
 }

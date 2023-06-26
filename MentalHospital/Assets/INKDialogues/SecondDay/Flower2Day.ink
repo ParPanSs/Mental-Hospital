@@ -9,8 +9,6 @@ INCLUDE ../globals.ink
         -> CS
 }
 
-
-
 = RU
 { 
     - pillsWasTaken == false: 

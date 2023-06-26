@@ -31,4 +31,3 @@ VAR choiceIndex = 0
 
 
 ~ currentLanguage = language(currentLanguage)
-

@@ -29,10 +29,14 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private ItemPickup itemPickup;
     [SerializeField] private Rigidbody2D player;
     [SerializeField] private LayerMask whatIsItem;
+
+    [Header("Postcards")] 
+    [SerializeField] private GameObject[] cards;
+    [SerializeField] private Sprite[] images;
     
     private TextMeshProUGUI[] choicesText;
 
-    private Story currentStory;
+    public Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
     private bool canContinueToNextLine = false;
@@ -115,7 +119,6 @@ public class DialogManager : MonoBehaviour
         {
             var dayIndex = PlayerPrefs.GetInt("DayCounter") + 1;
             endOfTheDay.SetBool("fader_in", true);
-            ExitDialogueMode();
             dialogueVariables.SaveVariables();
             StartCoroutine(StartNextDay(dayIndex));
         });
@@ -158,13 +161,53 @@ public class DialogManager : MonoBehaviour
 
             return "empty";
         });
+        
+        currentStory.BindExternalFunction("firstCard", () =>
+        {
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].gameObject.SetActive(true);
+                cards[0].gameObject.GetComponent<Image>().sprite = images[0];
+                cards[1].gameObject.GetComponent<Image>().sprite = images[1];
+                cards[2].gameObject.GetComponent<Image>().sprite = images[2];
+            }
+        });
+        currentStory.BindExternalFunction("secondCard", () =>
+        {
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].gameObject.SetActive(true);
+                cards[0].gameObject.GetComponent<Image>().sprite = images[3];
+                cards[1].gameObject.GetComponent<Image>().sprite = images[4];
+                cards[2].gameObject.GetComponent<Image>().sprite = images[5];
+            }
+        });
+        currentStory.BindExternalFunction("thirdCard", () =>
+        {
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].gameObject.SetActive(true);
+
+                cards[0].gameObject.GetComponent<Image>().sprite = images[6];
+                cards[1].gameObject.GetComponent<Image>().sprite = images[7];
+                cards[2].gameObject.GetComponent<Image>().sprite = images[8];
+            }
+        });
+        currentStory.BindExternalFunction("hideCards", () =>
+        {
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].gameObject.SetActive(false);
+            }
+        });
+        
+        
 
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
-        currentStory.UnbindExternalFunction("finishDay");
         currentStory.UnbindExternalFunction("language");
         currentStory.UnbindExternalFunction("pickUpItem");
         currentStory.UnbindExternalFunction("blockChoice");
@@ -188,6 +231,11 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
+            foreach (var choice in choices)
+            {
+                choice.gameObject.GetComponent<Button>().interactable = true;
+                choice.gameObject.GetComponentInChildren<TextMeshProUGUI>().font = readableFont;
+            }
             if (displayLineCoroutine != null) 
             {
                 StopCoroutine(displayLineCoroutine);
@@ -327,6 +375,7 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator StartNextDay(int dayIndex)
     {
+        ExitDialogueMode();
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(dayIndex);
     }

@@ -53,8 +53,8 @@ public class Bus : MonoBehaviour
         if(bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()))
             DialogManager.GetInstance().EnterDialogueMode(bus.GetComponent<DialogTrigger>().inkJSON, hospitalPoint.gameObject);
         
-        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && _behaviour.firstCharacteristic == Behaviour.Characteristics.Extravert)
-            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && _behaviour.firstCharacteristic == Behaviour.Characteristics.Introvert))
+        if ((bus.GetComponent<BoxCollider2D>().IsTouching(hospitalPoint.GetComponent<BoxCollider2D>()) && _behaviour.characteristicsList.Contains(Characteristics.Extravert))
+            || (bus.GetComponent<BoxCollider2D>().IsTouching(yards) && _behaviour.characteristicsList.Contains(Characteristics.Introvert)))
         {
             if(bus.GetComponent<BoxCollider2D>().IsTouching(yards))
             {

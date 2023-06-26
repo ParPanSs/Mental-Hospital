@@ -13,32 +13,30 @@ EXTERNAL callBus()
 == RU
 ~offCollider()
 О, да это же ты, ломатель моих рисунков, на этот раз ты его не испортишь! #portrait:Girl
-
 {
     - apologizeWasTaken == true:
         ~ blockChoice(1)
     - apologizeWasTaken == false:
         ~ blockChoice(0)
 }
-
+...
 *Я же извинился.#portrait:default
     Я все равно это помню, ломатель.#portrait:Girl
-    -> Questions
 *...#portrait:default
     Это все еще на твоей совести.#portrait:Girl
-    -> Questions
+- -> Questions
 
 ->END
 
 = Questions
+...
 *Что ты здесь делаешь? #portrait:default
-->SmallTalk
 *Ты не маленькая ездить одна? #portrait:default
-->SmallTalk
+-->SmallTalk
 ->END
 
 = SmallTalk
-Я жду маму, она ушла и обещала, что скоро вернется обратно.#portrait:Girl
+Я жду маму, она ушла и обещала, что скоро вернется обратно. #portrait:Girl
 Давно уже сидишь? #portrait:default
 Я каждый день сюда прихожу, хочу встретить ее сразу на остановке и подарить рисунок, папа говорит, что я обязательно дождусь. Ты тоже так думаешь? #portrait:Girl
 *Не думаю, что она вернется. #portrait:default
