@@ -61,22 +61,20 @@ INCLUDE ../globals.ink
     -> Part7
 =Part7
 Ты думаешь, что они должны понести наказание за это? Ответить за случившееся? #portrait:Psychoterapeut
-    *[Невиновность] #portrait:default
+    *[Это не их вина] #portrait:default
         Они не виноваты. 
-        -> Part8
-    *[Бездействие] #portrait:default
+    *[Они виноваты] #portrait:default
         Они виноваты в бездействии.
-        -> Part8
     *[Не знаю] #portrait:default
         Я не знаю.
-        -> Part8
+        --> Part8
 =Part8
 Стало ли что-то яснее? Может ты что-то новое открыл в себе? #portrait:Psychoterapeut
-    * [Да]
+    * [Да, вроде]
         Да, вроде что-то понимаю. #portrait:default
         -> Ending
-    * [Нет]
-        Больше запутался. #portrait:default
+    * [Больше запутался]
+        Больше запутался во всем. #portrait:default
         -> Ending
     *[Не знаю] 
         Я не знаю. #portrait:default

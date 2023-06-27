@@ -32,7 +32,7 @@ INCLUDE ../globals.ink
             Не кажется ли тебе странным, что ты не помнишь?#portrait:Psychoterapeut
             Чем ты занимался, что твоя психика решила скрыть это в твоих воспоминаниях? 
             Чем-то неправильным? Травмирующим?
-                ***[Нет]
+                ***[Такого не было]
                     Ничего такого не было... Наверное.#portrait:default
                 ->DesireOfPower
     
@@ -67,14 +67,14 @@ INCLUDE ../globals.ink
         ~blockChoice(0)
 }
 
-*[Контроль]
+*[Я должен контролировать]
     Она должна делать то, что я хочу.#portrait:default
     Очень хорошо.#portrait:Psychoterapeut
     ->Ending
-*[Страх]
+*[Она меня укусит]
     Она меня укусит.#portrait:default
-*[Безразличие]
-    Зачем ей убегать?#portrait:default
+*[Зачем ей убегать?]
+    Зачем ей убегать от меня?#portrait:default
 
 - То есть сделает так, как ты не хочешь?#portrait:Psychoterapeut
 *Да.#portrait:default

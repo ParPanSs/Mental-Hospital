@@ -33,15 +33,15 @@ EXTERNAL hideCards()
     = SecondChoice
     ~secondCard()
     Открытка на день свадьбы:
-    *[Бутылка]
+    *[Кольца]
         Вы выбрали первый вариант.
         ~hideCards()
         -> ThirdChoice
-    *[Подарок]
+    *[Цветок]
         Вы выбрали второй вариант.
         ~hideCards()
         -> ThirdChoice
-    *[Яблоко]
+    *[Букет]
         Вы выбрали третий вариант.
         ~hideCards()
         -> ThirdChoice
@@ -50,17 +50,17 @@ EXTERNAL hideCards()
     Открытка на новый год:
     
     ~ workWasDone = true
-    *[Букет]
+    *[Бутылка]
         Вы выбрали первый вариант. Сегодня работы больше нет.
         ~hideCards()
         ~offCollider()
         -> END
-    *[Цветок]
+    *[Подарок]
         Вы выбрали второй вариант. Сегодня работы больше нет.
         ~hideCards()
         ~offCollider()
         -> END
-    *[Кольца]
+    *[Яблоко]
         Вы выбрали третий вариант. Сегодня работы больше нет.
         ~hideCards()
         ~offCollider()
