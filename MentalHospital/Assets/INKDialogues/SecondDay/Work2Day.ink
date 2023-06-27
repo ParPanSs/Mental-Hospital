@@ -33,11 +33,11 @@ EXTERNAL hideCards()
     = SecondChoice
     ~secondCard()
     Открытка на день свадьбы:
-    *[Подарок]
+    *[Бутылка]
         Вы выбрали первый вариант.
         ~hideCards()
         -> ThirdChoice
-    *[Бутылка]
+    *[Подарок]
         Вы выбрали второй вариант.
         ~hideCards()
         -> ThirdChoice

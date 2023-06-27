@@ -12,11 +12,11 @@ INCLUDE ../globals.ink
 ===RU==
 Как твое самочувствие, Ян? #portrait:Psychoterapeut
 * Лучше. #portrait:default
--> Part2
+    -> Part2
 * Так же. #portrait:default
-->Part2
+    ->Part2
 * Не знаю. #portrait:default
-->Part2
+    ->Part2
 
 =Part2
 Что произошло за эту неделю? Были ли какие-то особые случаи? #portrait:Psychoterapeut
@@ -36,10 +36,12 @@ INCLUDE ../globals.ink
             -> Part4
 =Part4
 На что это похоже? Может ты испытывал что-то подобное уже до этого? С отцом? #portrait:Psychoterapeut
-            * Похоже. #portrait:default
-            -> Part5
-            * Нет. #portrait:default
-            -> Part5
+            * [Да] #portrait:default
+                Похоже.
+                -> Part5
+            * [Нет] #portrait:default
+                Ничего подобного раньше не испытывал.
+                -> Part5
 =Part5
 Что-ж, можем тогда продолжить с того, на чем закончили в прошлый раз. #portrait:Psychoterapeut
 ->LOST
@@ -59,22 +61,29 @@ INCLUDE ../globals.ink
     -> Part7
 =Part7
 Ты думаешь, что они должны понести наказание за это? Ответить за случившееся? #portrait:Psychoterapeut
-    * Они не виноваты. #portrait:default
-    -> Part8
-    * Они виноваты в бездействии. #portrait:default
-    -> Part8
-    * Я не знаю. #portrait:default
-    -> Part8
+    *[Невиновность] #portrait:default
+        Они не виноваты. 
+        -> Part8
+    *[Бездействие] #portrait:default
+        Они виноваты в бездействии.
+        -> Part8
+    *[Не знаю] #portrait:default
+        Я не знаю.
+        -> Part8
 =Part8
 Стало ли что-то яснее? Может ты что-то новое открыл в себе? #portrait:Psychoterapeut
-    * Да, вроде что-то понимаю. #portrait:default
-    -> Ending
-    * Больше запутался. #portrait:default
-    -> Ending
-    * Я не знаю. #portrait:default
-    -> Ending
+    * [Да]
+        Да, вроде что-то понимаю. #portrait:default
+        -> Ending
+    * [Нет]
+        Больше запутался. #portrait:default
+        -> Ending
+    *[Не знаю] 
+        Я не знаю. #portrait:default
+        -> Ending
 =Ending
-Ян, не забывай, пожалуйста, пить каждый день лекарства, которые я тебе назначил, это очень важно для твоего самочувствия. На сегодня мы закончим, у нас всех был тяжелый день. #portrait:Psychoterapeut
+Ян, не забывай, пожалуйста, пить каждый день лекарства, которые я тебе назначил, это очень важно для твоего самочувствия. 
+На сегодня мы закончим, у нас всех был тяжелый день. #portrait:Psychoterapeut
 
 Хочу ли я принимать таблетки? #portrait:default
 *[Выпить]

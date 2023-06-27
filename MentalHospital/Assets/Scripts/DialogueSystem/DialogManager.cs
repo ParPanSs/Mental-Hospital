@@ -178,9 +178,9 @@ public class DialogManager : MonoBehaviour
             for (int i = 0; i < cards.Length; i++)
             {
                 cards[i].gameObject.SetActive(true);
-                cards[0].gameObject.GetComponent<Image>().sprite = images[3];
-                cards[1].gameObject.GetComponent<Image>().sprite = images[4];
-                cards[2].gameObject.GetComponent<Image>().sprite = images[5];
+                cards[0].gameObject.GetComponent<Image>().sprite = images[6];
+                cards[1].gameObject.GetComponent<Image>().sprite = images[7];
+                cards[2].gameObject.GetComponent<Image>().sprite = images[8];
             }
         });
         currentStory.BindExternalFunction("thirdCard", () =>
@@ -189,9 +189,9 @@ public class DialogManager : MonoBehaviour
             {
                 cards[i].gameObject.SetActive(true);
 
-                cards[0].gameObject.GetComponent<Image>().sprite = images[6];
-                cards[1].gameObject.GetComponent<Image>().sprite = images[7];
-                cards[2].gameObject.GetComponent<Image>().sprite = images[8];
+                cards[0].gameObject.GetComponent<Image>().sprite = images[3];
+                cards[1].gameObject.GetComponent<Image>().sprite = images[4];
+                cards[2].gameObject.GetComponent<Image>().sprite = images[5];
             }
         });
         currentStory.BindExternalFunction("hideCards", () =>

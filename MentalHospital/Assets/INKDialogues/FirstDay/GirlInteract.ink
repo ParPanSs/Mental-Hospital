@@ -21,12 +21,13 @@ INCLUDE ../globals.ink
         ~blockChoice(2)
         ~offCollider()
         ... #portrait:Girl
+        
+        *[Уйти]
+            Это на твоей совести. #portrait:Girl
+            -> DONE
         *[Дать конфету]
             ~ apologizeWasTaken = true
             Ладно, ты прощен. #portrait:Girl
-            -> DONE
-        *[Уйти]
-            Это на твоей совести. #portrait:Girl
             -> DONE
         *[Treat]
             Я позову маму! #portrait:girl

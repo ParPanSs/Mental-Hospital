@@ -12,6 +12,7 @@ INCLUDE ../globals.ink
 = RU
 Доброе утро, Ян. #portrait:Mother
     *[Промолчать] #portrait:default
+        ...
         Тебе опять снились кошмары? #portrait:Mother
         ... #portrait:default
         Бедный мой мальчик... Надеюсь, что психотерапевт тебе все-таки поможет. #portrait:Mother

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -45,6 +46,13 @@ public class Counter : MonoBehaviour
                 _behaviour.thirdCharacteristic = Characteristics.Pessimist;
                 pessimistCharacteristic.enabled = true;
             }
+
         }
+    }
+
+    private IEnumerator NextDay()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
     }
 }
